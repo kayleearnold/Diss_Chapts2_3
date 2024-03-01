@@ -19,13 +19,13 @@
 
 library(here)
 
-phyloseq <- qza_to_phyloseq(features = "./Data/Scripts/Qiime2/table_guts-August2019.qza", 
-                           tree = "./Data/Scripts/Qiime2/rooted-tree_guts-August2019.qza", 
-                          taxonomy = "./Data/Scripts/Qiime2/Guts_taxonomy-Sept2019.qza", 
-                          metadata = "./Data/Metadata/Cleaned_metadata/2024_Updated_Cleaned_Metadata.tsv")
+phyloseq <- qza_to_phyloseq(features = "./Clean/Scripts/Qiime2/table_guts-August2019.qza", 
+                           tree = "./Clean/Scripts/Qiime2/rooted-tree_guts-August2019.qza", 
+                          taxonomy = "./Clean/Scripts/Qiime2/Guts_taxonomy-Sept2019.qza", 
+                          metadata = "./Clean/Metadata/2024_Updated_Cleaned_Metadata.tsv")
 
 
-metadata = read_tsv("./Data/Metadata/Cleaned_metadata/2024_Updated_Cleaned_Metadata.tsv")
+metadata = read_tsv("./Clean/Metadata/2024_Updated_Cleaned_Metadata.tsv")
 
 bloodmeal_data <- read_tsv("./Data/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv")
 
