@@ -1,0 +1,27 @@
+FeatureTable and FeatureData summaries
+
+time qiime feature-table summarize \
+  --i-table table_guts-August2019.qza \
+  --o-visualization table_guts-August2019.qzv \
+  --m-sample-metadata-file /Volumes/Kaylee2.0/16S_dissertation_projects/Metadata/Guts_ONLY_metadata2017_validated.tsv
+
+time qiime feature-table tabulate-seqs \
+  --i-data rep-seqs_guts-August2019.qza \
+  --o-visualization rep-seqs_guts-August2019.qzv
+
+(20 seconds locally)
+
+outputs:
+	table_guts-August2019.qzv
+	rep-seqs_guts-August2019.qzv
+
+
+time qiime phylogeny align-to-tree-mafft-fasttree \
+  --i-sequences rep-seqs_guts-August2019.qza \
+  --o-alignment aligned-rep-seqs_guts-August2019.qza \
+  --o-masked-alignment masked-aligned-rep-seqs_guts-August2019.qza \
+  --o-tree unrooted-tree_guts-August2019.qza \
+  --o-rooted-tree rooted-tree_guts-August2019.qza
+
+(7 minutes locally)
+

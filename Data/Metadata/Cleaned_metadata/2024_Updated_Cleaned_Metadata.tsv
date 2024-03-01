@@ -1,0 +1,356 @@
+#SampleID	Sample_Name	PalmID	Especie	Estadio	Age_Group	Procedencia	Habitat	Region	FirstBM	TypeBM_Updated	TypeBM	HumanBM	MammalBM	BirdBM	ReptileBM	NumberBM	SecondBM	ThirdBM	FourthBM	FifthBM	PCR_Results_121_122	PCR_Results_duplex_Trangeli	PCR_Results_duplex_Tcruzi	Coinfection	Infection_Type	SingleInf_Tcruzi
+#q2:types	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical	categorical
+A1.P1	1	CC2	R. pallescens	Adult	N4_Adult	Cerro Cama	Pasture	La Chorrera	Human	Mammal	Mammal	Yes	Yes	No	No	Two	Philander	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+A2.P1	2	CC2	R. pallescens	Adult	N4_Adult	Cerro Cama	Pasture	La Chorrera	Piranga	Bird	Bird	No	No	Yes	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+A3.P1	3	CC2	R. pallescens	N3	N1_N3	Cerro Cama	Pasture	La Chorrera	Human	Bird	Mix	Yes	Yes	Yes	No	Three	Piranga	Other	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+A4.P1	4	CC3	R. pallescens	N5	N4_Adult	Cerro Cama	Pasture	La Chorrera	Heteromys	Mammal	Mix	Yes	Yes	Yes	No	Three	Piranga	Human	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+A5.P1	5	CC3	R. pallescens	N4	N4_Adult	Cerro Cama	Pasture	La Chorrera	Mus	Mus	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+A6.P1	6	CC3	R. pallescens	N5	N4_Adult	Cerro Cama	Pasture	La Chorrera	Human	Other	Mammal	Yes	Yes	No	No	Three	Other	Potos	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+A7.P1	7	CC3	R. pallescens	N4	N4_Adult	Cerro Cama	Pasture	La Chorrera	Human	Human	Mammal	Yes	Yes	No	No	Two	Mus	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+A8.P1	8	CC3	R. pallescens	N3	N1_N3	Cerro Cama	Pasture	La Chorrera	Other	Other	Other	No	No	No	No	Three	Piranga	Thraupis	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+A9.P1	9	CC3	R. pallescens	N3	N1_N3	Cerro Cama	Pasture	La Chorrera	Thraupis	Bird	Bird	No	No	Yes	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+A10.P1	10	CC3	R. pallescens	N3	N1_N3	Cerro Cama	Pasture	La Chorrera	Heteromys	Mammal	Mammal	No	Yes	No	No	Three	Other	Mus	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+A11.P1	11	CC3	R. pallescens	N2	N1_N3	Cerro Cama	Pasture	La Chorrera	Human	Human	Mammal	Yes	Yes	No	No	Three	Mus	NA	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+A12.P1	12	CC3	R. pallescens	N2	N1_N3	Cerro Cama	Pasture	La Chorrera	Mus	Mammal	Mammal	No	Yes	No	No	Two	Bos	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+B1.P1	13	CC3	R. pallescens	N1	N1_N3	Cerro Cama	Pasture	La Chorrera	Human	Human	Mammal	Yes	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+B2.P1	14	CC3	R. pallescens	N1	N1_N3	Cerro Cama	Pasture	La Chorrera	Human	Bird	Mix	Yes	Yes	Yes	No	Four	Piranga	Metachirus	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+B3.P1	15	CC3	R. pallescens	N1	N1_N3	Cerro Cama	Pasture	La Chorrera	Canis	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Negative	Positive	Positive	No	Trangeli	Negative
+B4.P1	18	CA1P17	R. pallescens	Adult	N4_Adult	Capira	Pasture	Capira	Human	Human	Mammal	Yes	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Positive	No	Negative	Negative
+B5.P1	19	CA1P17	R. pallescens	N4	N4_Adult	Capira	Pasture	Capira	Mus	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Metachirus	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+B6.P1	20	CA1P17	R. pallescens	N3	N1_N3	Capira	Pasture	Capira	Metachirus	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Positive	No	Negative	Negative
+B7.P1	21	CA1P17	R. pallescens	N3	N1_N3	Capira	Pasture	Capira	Metachirus	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Mus	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+B8.P1	22	CA1P17	R. pallescens	N2	N1_N3	Capira	Pasture	Capira	Other	Other	Other	Yes	No	No	No	Three	Human	Metachirus	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+B9.P1	23	CA1P17	R. pallescens	N2	N1_N3	Capira	Pasture	Capira	Human	Human	Mammal	Yes	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+B10.P1	24	CA1P17	R. pallescens	Adult	N4_Adult	Capira	Pasture	Capira	Mus	Other	Mammal	No	Yes	No	No	Two	Other	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+B11.P1	25	CA1P17	R. pallescens	N3	N1_N3	Capira	Pasture	Capira	Human	Mammal	Mammal	Yes	Yes	No	No	Two	Mus	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+B12.P1	26	CA1P17	R. pallescens	N2	N1_N3	Capira	Pasture	Capira	Piranga	Bird	Mix	Yes	Yes	Yes	No	Four	Metachirus	Human	Mus	NA	Negative	Negative	Negative	No	Negative	Negative
+C1.P1	27	CA1P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Human	Human	Mammal	Yes	Yes	No	No	Two	Mus	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+C2.P1	28	CA1P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Human	Human	Mammal	Yes	Yes	No	No	Two	Mus	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+C3.P1	29	CA1P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Human	Mammal	Mammal	Yes	Yes	No	No	Two	Bos	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+C4.P1	30	CA1P17	R. pallescens	N5	N4_Adult	Capira	Pasture	Capira	Human	Human	Mammal	Yes	Yes	No	No	Two	Mus	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+C5.P1	31	CA1P17	R. pallescens	N2	N1_N3	Capira	Pasture	Capira	Mus	Mus	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+C6.P1	32	CA1P17	R. pallescens	N2	N1_N3	Capira	Pasture	Capira	Mus	Mammal	Mammal	Yes	Yes	No	No	Four	Human	Metachirus	Philander	NA	Negative	Negative	Negative	No	Negative	Negative
+C7.P1	33	CA1P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Mus	Mus	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+C8.P1	34	CA3P17	R. pallescens	N2	N1_N3	Capira	Pasture	Capira	Mus	Mammal	Mammal	Yes	Yes	No	No	Three	Philander	Human	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+C9.P1	35	CA3P17	R. pallescens	N3	N1_N3	Capira	Pasture	Capira	Human	Mammal	Mammal	Yes	Yes	No	No	Three	Philander	Mus	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+C10.P1	36	CA3P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Human	Other	Mammal	Yes	Yes	No	No	Three	Mus	Other	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+C11.P1	37	CA3P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Philander	Mammal	Mammal	No	Yes	No	No	Two	Mus	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+C12.P1	38	CA3P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Mus	Mus	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+D1.P1	39	CA3P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Philander	Mammal	Mammal	No	Yes	No	No	Two	Bos	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+D2.P1	40	CA3P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Mus	Reptile	Mix	No	Yes	No	Yes	Two	Mabuya	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+D3.P1	41	CA3P17	R. pallescens	N2	N1_N3	Capira	Pasture	Capira	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+D4.P1	42	CA3P17	R. pallescens	N2	N1_N3	Capira	Pasture	Capira	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+D5.P1	43	CA3P17	R. pallescens	Adult	N4_Adult	Capira	Pasture	Capira	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Positive	Negative	No	Trangeli	Negative
+D6.P1	44	CA3P17	R. pallescens	N3	N1_N3	Capira	Pasture	Capira	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+A1.P2	45	CA2P16	R. pallescens	Adult	N4_Adult	Capira	Peridomestic	Capira	Human	Mammal	Mammal	Yes	Yes	No	No	Two	Philander	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+D7.P1	47	CA7P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Mus	Mammal	Mammal	No	Yes	No	No	Two	Philander	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+D8.P1	48	CA7P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Other	Other	Other	No	No	No	No	Two	Philander	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+D9.P1	49	CA7P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Philander	Mammal	Mix	Yes	Yes	Yes	No	Four	Other	Thraupis	Human	NA	Negative	Negative	Negative	No	Negative	Negative
+D10.P1	50	CA7P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Mus	Other	Mammal	No	Yes	No	No	Three	Other	Philander	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+D11.P1	51	CA7P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Mus	Mammal	Mammal	No	Yes	No	No	Two	Philander	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+D12.P1	52	CA7P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Other	Other	Other	No	No	No	No	Two	Philander	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E1.P1	53	CA7P17	R. pallescens	N2	N1_N3	Capira	Pasture	Capira	Other	Other	Other	Yes	No	No	No	Three	Human	Mus	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E2.P1	54	CA7P17	R. pallescens	N2	N1_N3	Capira	Pasture	Capira	Mus	Other	Mammal	Yes	Yes	No	No	Three	Human	Other	NA	NA	Positive	Positive	Negative	Yes	Coinfection	Positive
+E3.P1	55	CA7P17	R. pallescens	N2	N1_N3	Capira	Pasture	Capira	Other	Other	Other	No	No	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E4.P1	56	CA7P17	R. pallescens	N2	N1_N3	Capira	Pasture	Capira	Human	Other	Mammal	Yes	Yes	No	No	Three	Other	Mus	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E5.P1	57	CA7P17	R. pallescens	N5	N4_Adult	Capira	Pasture	Capira	Bos	Mammal	Mammal	Yes	Yes	No	No	Three	Mus	Human	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+E6.P1	58	CA7P17	R. pallescens	N5	N4_Adult	Capira	Pasture	Capira	Human	Other	Mammal	Yes	Yes	No	No	Two	Other	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+E7.P1	59	CA7P17	R. pallescens	N5	N4_Adult	Capira	Pasture	Capira	Mus	Mus	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+E8.P1	60	CA8P17	R. pallescens	N4	N4_Adult	Capira	Pasture	Capira	Other	Other	Other	No	No	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E9.P1	61	CA8P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Human	Mammal	Mammal	Yes	Yes	No	No	Four	Mus	Potos	Other	NA	Negative	Negative	Negative	No	Negative	Negative
+E10.P1	62	CA8P17	R. pallescens	N2	N1_N3	Capira	Pasture	Capira	Other	Other	Other	No	No	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E11.P1	63	CA9P17	R. pallescens	N3	N1_N3	Capira	Pasture	Capira	Mus	Mus	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E12.P1	64	CA9P17	R. pallescens	N3	N1_N3	Capira	Pasture	Capira	Other	Other	Mix	No	Yes	Yes	No	Three	Mus	Piranga	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F1.P1	65	CA9P17	R. pallescens	N3	N1_N3	Capira	Pasture	Capira	Human	Mammal	Mammal	Yes	Yes	No	No	Two	Potos	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F2.P1	66	CA9P17	R. pallescens	N5	N4_Adult	Capira	Pasture	Capira	Mus	Mammal	Mammal	No	Yes	No	No	Two	Philander	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F3.P1	67	CA11P17	R. pallescens	N4	N4_Adult	Capira	Pasture	Capira	Human	Human	Mammal	Yes	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F4.P1	68	CA11P17	R. pallescens	N2	N1_N3	Capira	Pasture	Capira	Other	Other	Other	No	No	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F5.P1	69	CA11P17	R. pallescens	N2	N1_N3	Capira	Pasture	Capira	Other	Other	Other	No	No	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F6.P1	70	CA11P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Other	Other	Other	No	No	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F7.P1	71	CA11P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Mus	Other	Mammal	Yes	Yes	No	No	Four	Human	Other	Philander	NA	Negative	Negative	Negative	No	Negative	Negative
+F8.P1	72	CA11P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Other	Other	Other	Yes	No	No	No	Three	Human	Philander	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F9.P1	73	CA11P17	R. pallescens	N1	N1_N3	Capira	Pasture	Capira	Human	Other	Mammal	Yes	Yes	No	No	Two	Other	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F10.P1	74	LP1	R. pallescens	N3	N1_N3	Las Pavas	Peridomestic	La Chorrera	Other	Other	Other	Yes	No	No	No	Two	Human	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F11.P1	75	LP2_Capira0217	R. pallescens	Adult	N4_Adult	Las Pavas	Peridomestic	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+F12.P1	76	LP2_Capira0217	R. pallescens	N3	N1_N3	Las Pavas	Peridomestic	La Chorrera	Piranga	Bird	Bird	No	No	Yes	No	One	NA	NA	NA	NA	Negative	Positive	Negative	No	Trangeli	Negative
+G1.P1	77	LP3_Capira0317	R. pallescens	N3	N1_N3	Las Pavas	Peridomestic	La Chorrera	Human	Mammal	Mammal	Yes	Yes	No	No	Three	Philander	Mus	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G2.P1	78	LP3_Capira0317	R. pallescens	Adult	N4_Adult	Las Pavas	Peridomestic	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+G3.P1	79	HN1	R. pallescens	N1	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Mus	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G4.P1	80	HN1	T. dimidiata	N4	N4_Adult	La Chorrera	Peridomestic	La Chorrera	Human	Mammal	Mammal	Yes	Yes	No	No	Three	Mus	Philander	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+G5.P1	81	HN7	R. pallescens	Adult	N4_Adult	La Chorrera	Peridomestic	La Chorrera	Mus	Mammal	Mammal	Yes	Yes	No	No	Three	Philander	Human	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+G6.P1	82	HN10	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Mus	Mammal	Mammal	No	Yes	No	No	Two	Philander	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G7.P1	83	HN11	R. pallescens	Adult	N4_Adult	La Chorrera	Peridomestic	La Chorrera	Mus	Mus	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+G8.P1	84	HN11	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Piranga	Bird	Mix	No	Yes	Yes	No	Four	Other	Mus	Philander	NA	Negative	Negative	Negative	No	Negative	Negative
+G9.P1	85	HN2	R. pallescens	N1	N1_N3	La Chorrera	Peridomestic	La Chorrera	Human	Human	Mammal	Yes	Yes	No	No	Two	Mus	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G10.P1	86	HN2	R. pallescens	N1	N1_N3	La Chorrera	Peridomestic	La Chorrera	Other	Other	Other	No	No	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G11.P1	87	HN2	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Mus	Mammal	Mammal	No	Yes	No	No	Two	Philander	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G12.P1	88	HN5	R. pallescens	N1	N1_N3	La Chorrera	Peridomestic	La Chorrera	Mus	Mus	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H1.P1	89	HN5	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Piranga	Bird	Mix	Yes	Yes	Yes	No	Two	Human	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H2.P1	90	HN5	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Piranga	Bird	Bird	No	No	Yes	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H3.P1	91	HN5	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Leopardus	Mammal	Mix	No	Yes	Yes	No	Two	Piranga	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H4.P1	92	HN5	R. pallescens	N4	N4_Adult	La Chorrera	Peridomestic	La Chorrera	Piranga	Bird	Bird	No	No	Yes	Yes	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H5.P1	93	HN5	R. pallescens	N1	N1_N3	La Chorrera	Peridomestic	La Chorrera	Human	Bird	Mix	Yes	Yes	Yes	No	Three	Mus	Piranga	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H6.P1	94	HN5	R. pallescens	N1	N1_N3	La Chorrera	Peridomestic	La Chorrera	Human	Human	Mammal	Yes	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H7.P1	95	HN5	R. pallescens	N1	N1_N3	La Chorrera	Peridomestic	La Chorrera	Mus	Bird	Mix	Yes	Yes	Yes	No	Three	Human	Piranga	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H8.P1	96	HN5	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Piranga	Bird	Bird	No	No	Yes	No	Two	Other	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H9.P1	98	HN5	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Other	Other	Other	No	No	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H10.P1	99	HN5	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Other	Other	Other	No	No	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H11.P1	100	HN5	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Human	Bird	Mix	Yes	Yes	Yes	No	Three	Mus	Piranga	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H12.P1	101	HN5	R. pallescens	N3	N1_N3	La Chorrera	Peridomestic	La Chorrera	Piranga	Bird	Bird	No	No	Yes	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+A2.P2	102	HN3	R. pallescens	Adult	N4_Adult	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Mus	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+A3.P2	103	HN3	R. pallescens	N1	N1_N3	La Chorrera	Peridomestic	La Chorrera	Human	Mammal	Mammal	Yes	Yes	No	No	Four	Procyon	Bos	Mus	NA	Negative	Negative	Negative	No	Negative	Negative
+A4.P2	104	HN3	R. pallescens	N1	N1_N3	La Chorrera	Peridomestic	La Chorrera	Human	Human	Mammal	Yes	Yes	No	No	Two	Mus	NA	NA	NA	NA	Negative	Negative	NA	Negative	Negative
+A5.P2	105	HN3	R. pallescens	N1	N1_N3	La Chorrera	Peridomestic	La Chorrera	Human	Human	Mammal	Yes	Yes	No	No	Two	Mus	NA	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+A6.P2	106	HN3	R. pallescens	N1	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Mus	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+A7.P2	107	HN3	R. pallescens	N3	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+A8.P2	108	HN3	R. pallescens	Adult	N4_Adult	La Chorrera	Peridomestic	La Chorrera	Human	Mammal	Mammal	Yes	Yes	No	No	Three	Mus	Philander	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+A9.P2	109	HN3	R. pallescens	Adult	N4_Adult	La Chorrera	Peridomestic	La Chorrera	Human	Human	Mammal	Yes	Yes	No	No	Two	Mus	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+A10.P2	110	HN9	R. pallescens	Adult	N4_Adult	La Chorrera	Peridomestic	La Chorrera	Human	Human	Mammal	Yes	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+A11.P2	111	HN9	R. pallescens	N5	N4_Adult	La Chorrera	Peridomestic	La Chorrera	Human	Mammal	Mammal	Yes	Yes	No	No	Three	Philander	Mus	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+A12.P2	112	HN9	R. pallescens	N3	N1_N3	La Chorrera	Peridomestic	La Chorrera	Mus	Mus	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+B1.P2	113	HN9	R. pallescens	N3	N1_N3	La Chorrera	Peridomestic	La Chorrera	Turdus	Bird	Mix	No	Yes	Yes	No	Two	Philander	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+B2.P2	114	HN9	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Negative	Negative	Positive	No	Negative	Negative
+B3.P2	115	HN9	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+B4.P2	116	HN9	R. pallescens	N1	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Positive	Negative	Negative	No	Negative	Positive
+B5.P2	117	HN9	R. pallescens	N5	N4_Adult	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+B6.P2	118	HN9	R. pallescens	N3	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Negative
+B7.P2	119	HN9	R. pallescens	N3	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mix	No	Yes	Yes	No	Two	Turdus	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+B8.P2	120	HN9	R. pallescens	N3	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+B9.P2	121	HN9	R. pallescens	N5	N4_Adult	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+B10.P2	122	HN9	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mix	No	Yes	Yes	No	Two	Turdus	NA	NA	NA	Positive	Negative	Negative	No	Tcruzi	Negative
+B11.P2	123	HN9	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Positive	Negative	Yes	Coinfection	Negative
+B12.P2	124	HN9	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Positive	Negative	Yes	Coinfection	Positive
+C1.P2	125	HN9	R. pallescens	N1	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mix	Yes	Yes	Yes	No	Four	Thraupis	Other	Human	NA	Negative	Positive	Positive	No	Trangeli	Negative
+C2.P2	126	HN9	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mix	No	Yes	Yes	No	Two	Thraupis	NA	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+C3.P2	127	HN9	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mix	No	Yes	Yes	No	Three	Thraupis	Mus	NA	NA	Negative	Positive	Negative	No	Trangeli	Negative
+C4.P2	128	HN9	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+C5.P2	129	HN9	R. pallescens	N2	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mix	No	Yes	Yes	No	Two	Thraupis	NA	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+C6.P2	130	HN9	R. pallescens	N3	N1_N3	La Chorrera	Peridomestic	La Chorrera	Philander	Mammal	Mix	No	Yes	Yes	No	Two	Thraupis	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+C7.P2	131	HN9	R. pallescens	N3	N1_N3	La Chorrera	Peridomestic	La Chorrera	Human	Mammal	Mix	Yes	Yes	Yes	No	Four	Philander	Bos	Thraupis	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+C8.P2	132	CHOR1P4	R. pallescens	N3	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mix	No	Yes	Yes	No	Two	Thraupis	NA	NA	NA	Negative	Negative	Negative	No	Tcruzi	Negative
+C9.P2	133	CHOR1P6	R. pallescens	N5	N4_Adult	La Chorrera	Pasture	La Chorrera	Thraupis	Bird	Bird	No	No	Yes	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+C10.P2	134	CHOR1P6	R. pallescens	N3	N1_N3	La Chorrera	Pasture	La Chorrera	Thraupis	Bird	Bird	No	No	Yes	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+C11.P2	135	CHOR1P6	R. pallescens	N2	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mix	No	Yes	Yes	No	Two	Thraupis	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+C12.P2	136	CAM1P17	R. pallescens	Adult	N4_Adult	Campana	Peridomestic	Capira	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Positive	Negative	Yes	Coinfection	Positive
+D1.P2	137	CAM1P17	R. pallescens	N3	N1_N3	Campana	Peridomestic	Capira	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+D2.P2	138	CAM1P17	R. pallescens	N2	N1_N3	Campana	Peridomestic	Capira	Philander	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+D3.P2	139	CAM1P17	R. pallescens	N2	N1_N3	Campana	Peridomestic	Capira	Philander	Mammal	Mammal	Yes	Yes	No	No	Four	Bos	Leopardus	Human	NA	Positive	Positive	Negative	Yes	Coinfection	Positive
+D4.P2	140	CAM1P17	R. pallescens	N2	N1_N3	Campana	Peridomestic	Capira	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Positive	No	Negative	Negative
+D5.P2	141	CAM1P17	R. pallescens	N2	N1_N3	Campana	Peridomestic	Capira	Philander	Mammal	Mammal	No	Yes	No	No	Two	Mus	NA	NA	NA	Negative	Positive	Negative	No	Trangeli	Negative
+D6.P2	142	CAM2P17	R. pallescens	Adult	N4_Adult	Campana	Peridomestic	Capira	Philander	Mammal	Mammal	No	Yes	No	No	Two	Coendou	NA	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+D7.P2	143	CAM2P17	R. pallescens	Adult	N4_Adult	Campana	Peridomestic	Capira	Philander	Mammal	Mammal	No	Yes	No	No	Two	Tamandua	NA	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+D8.P2	144	CHOR1P3	R. pallescens	N2	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	Two	Other	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+D9.P2	145	CHOR1P3	R. pallescens	N4	N4_Adult	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+D10.P2	146	CHOR1P3	R. pallescens	N5	N4_Adult	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+D11.P2	147	CHOR1P3	R. pallescens	N5	N4_Adult	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+D12.P2	148	CHOR1P3	R. pallescens	N5	N4_Adult	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+E1.P2	149	CHOR1P3	R. pallescens	N5	N4_Adult	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+E2.P2	150	CHOR1P3	R. pallescens	N3	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	Two	Other	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E3.P2	151	CHOR1P3	R. pallescens	N3	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Mus	NA	NA	Positive	Negative	Negative	Yes	Tcruzi	Positive
+E4.P2	152	CHOR1P3	R. pallescens	N2	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	Two	Mus	NA	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+E5.P2	153	CHOR1P3	R. pallescens	N1	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	Two	Other	NA	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+E6.P2	154	CHOR1P3	R. pallescens	N1	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E7.P2	155	CHOR1P3	R. pallescens	N1	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	Two	Procyon	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E8.P2	157	CHOR1P3	R. pallescens	N1	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E9.P2	158	CHOR1P3	R. pallescens	N1	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Positive	No	Negative	Negative
+E10.P2	159	CHOR1P3	R. pallescens	N5	N4_Adult	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+E11.P2	160	CHOR1P3	R. pallescens	N5	N4_Adult	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+E12.P2	161	CHOR1P3	R. pallescens	N4	N4_Adult	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	Yes	Yes	No	No	Three	Mus	Human	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F1.P2	162	CHOR1P3	R. pallescens	N4	N4_Adult	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+F2.P2	163	CHOR1P3	R. pallescens	N3	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Positive	No	Negative	Negative
+F3.P2	164	CHOR1P3	R. pallescens	N3	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+F4.P2	165	CHOR1P3	R. pallescens	N3	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+F5.P2	166	CHOR1P3	R. pallescens	N3	N1_N3	La Chorrera	Pasture	La Chorrera	Other	Reptile	Reptile	No	No	No	Yes	Three	Lepidodactylus	Philander	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+F6.P2	167	CHOR1P3	R. pallescens	N1	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F7.P2	168	CHOR1P3	R. pallescens	N2	N1_N3	La Chorrera	Pasture	La Chorrera	Other	Mammal	Mammal	No	Yes	No	No	Two	Philander	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F8.P2	169	CHOR1P3	R. pallescens	N1	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F9.P2	170	CHOR1P3	R. pallescens	N1	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F10.P2	171	CHOR1P1	R. pallescens	N2	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	Yes	Yes	No	No	Four	Other	Human	Bos	NA	Negative	Negative	Negative	No	Negative	Negative
+F11.P2	172	CHOR1P1	R. pallescens	N3	N1_N3	La Chorrera	Pasture	La Chorrera	Other	Mammal	Mammal	No	Yes	No	No	Two	Philander	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F12.P2	173	CHOR1P1	R. pallescens	N3	N1_N3	La Chorrera	Pasture	La Chorrera	Philander	Mammal	Mammal	No	Yes	No	No	Two	Other	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G1.P2	174	CHOR1P1	R. pallescens	N3	N1_N3	La Chorrera	Pasture	La Chorrera	Mus	Bird	Mix	No	Yes	Yes	No	Four	Thraupis	Other	Philander	NA	Negative	Negative	Negative	No	Negative	Negative
+G2.P2	175	CHOR1P1	R. pallescens	Adult	N4_Adult	La Chorrera	Pasture	La Chorrera	Mus	Bird	Mix	No	Yes	Yes	No	Four	Thraupis	Other	Philander	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+G3.P2	176	CHOR1P1	R. pallescens	N5	N4_Adult	La Chorrera	Pasture	La Chorrera	Mus	Mus	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+G4.P2	177	CHOR1P1	R. pallescens	N3	N1_N3	La Chorrera	Pasture	La Chorrera	Mus	Mus	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G5.P2	178	CHOR1P1	R. pallescens	N3	N1_N3	La Chorrera	Pasture	La Chorrera	Other	Other	Other	No	No	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G6.P2	179	CHOR1P1	R. pallescens	N2	N1_N3	La Chorrera	Pasture	La Chorrera	Human	Mammal	Mammal	Yes	Yes	No	No	Three	Mus	Philander	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G7.P2	180	CHOR1P1	R. pallescens	N3	N1_N3	La Chorrera	Pasture	La Chorrera	Other	Other	Mammal	No	Yes	No	No	Two	Mus	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G8.P2	181	CHOR1P2	R. pallescens	N2	N1_N3	La Chorrera	Pasture	La Chorrera	Other	Other	Mix	No	Yes	Yes	No	Three	Mus	Thraupis	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G9.P2	182	CHOR1P2	R. pallescens	N1	N1_N3	La Chorrera	Pasture	La Chorrera	Mus	Bird	Mix	No	Yes	Yes	No	Three	Thraupis	Odocoileus	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G10.P2	184	CHOR1P5	R. pallescens	Adult	N4_Adult	La Chorrera	Pasture	La Chorrera	Thraupis	Bird	Bird	No	No	Yes	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G11.P2	185	CHOR1P5	R. pallescens	N1	N1_N3	La Chorrera	Pasture	La Chorrera	Other	Other	Mix	No	Yes	Yes	No	Four	Mus	Philander	Thraupis	NA	Negative	Negative	Negative	No	Negative	Negative
+G12.P2	186	CAM1P17	R. pallescens	N3	N1_N3	Campana	Peridomestic	Capira	Human	Human	Mammal	Yes	Yes	No	No	Two	Mus	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+H1.P2	187	CAM2P17	R. pallescens	Adult	N4_Adult	Campana	Peridomestic	Capira	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+H2.P2	188	CAM2P17	R. pallescens	Adult	N4_Adult	Campana	Peridomestic	Capira	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H3.P2	189	CAM2P17	R. pallescens	N2	N1_N3	Campana	Peridomestic	Capira	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+H4.P2	190	CAM2P17	R. pallescens	N3	N1_N3	Campana	Peridomestic	Capira	Human	Mammal	Mammal	Yes	Yes	No	No	Two	Philander	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H5.P2	191	CAM2P17	R. pallescens	Adult	N4_Adult	Campana	Peridomestic	Capira	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Negative	Positive	Negative	No	Trangeli	Negative
+H6.P2	192	SF1	T. dimidiata	Adult	N4_Adult	Veraguas	Peridomestic	Veraguas	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+H7.P2	193	SF1	T. dimidiata	Adult	N4_Adult	Veraguas	Peridomestic	Veraguas	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+H8.P2	194	SF1	T. dimidiata	N4	N4_Adult	Veraguas	Peridomestic	Veraguas	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+H9.P2	195	SF1	T. dimidiata	Adult	N4_Adult	Veraguas	Peridomestic	Veraguas	Philander	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+H10.P2	200	SF1	R. pallescens	Adult	N4_Adult	Veraguas	Peridomestic	Veraguas	Thraupis	Bird	Mix	Yes	Yes	Yes	No	Two	Philander	NA	NA	NA	Positive	Positive	Negative	Yes	Coinfection	Positive
+H11.P2	201	SF1	R. pallescens	Adult	N4_Adult	Veraguas	Peridomestic	Veraguas	Philander	Mammal	Mammal	No	Yes	No	No	Two	Procyon	NA	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+H12.P2	202	SF1	R. pallescens	Adult	N4_Adult	Veraguas	Peridomestic	Veraguas	Philander	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Mus	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+A1.P3	218	SF2	R. pallescens	Adult	N4_Adult	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	No	Yes	No	No	Two	Didelphis	NA	NA	NA	Positive	REDO	REDO	NA	Tcruzi	Positive
+A2.P3	219	SF3	R. pallescens	N5	N4_Adult	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+A3.P3	220	SF3	R. pallescens	N5	N4_Adult	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mix	No	Yes	Yes	No	Three	Metachirus	Piranga	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+A4.P3	221	SF3	R. pallescens	N3	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Four	Human	Didelphis	Other	NA	Negative	Negative	Negative	No	Negative	Negative
+A5.P3	222	SF3	R. pallescens	N2	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Three	Didelphis	Human	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+A6.P3	223	SF3	R. pallescens	N1	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Four	Human	Metachirus	Didelphis	NA	Negative	Negative	Negative	No	Negative	Negative
+A7.P3	224	SF4	R. pallescens	N4	N4_Adult	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	No	Yes	No	No	Two	Didelphis	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+A8.P3	225	SF4	R. pallescens	N2	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mix	Yes	Yes	Yes	No	Three	Human	Thraupis	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+A9.P3	226	SF4	R. pallescens	N2	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	No	Yes	No	No	Two	Metachirus	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+A10.P3	227	SF4	R. pallescens	N2	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	No	Yes	No	No	Two	Leopardus	NA	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+A11.P3	228	SF4	R. pallescens	N1	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+A12.P3	235	SF9	R. pallescens	Adult	N4_Adult	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Four	Human	Didelphis	Thraupis	NA	Positive	NA	NA	NA	Tcruzi	Positive
+B1.P3	236	SF9	R. pallescens	Adult	N4_Adult	Veraguas	Pasture	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Positive	Negative	Yes	Coinfection	Positive
+B2.P3	237	SF9	R. pallescens	Adult	N4_Adult	Veraguas	Pasture	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+B3.P3	238	SF9	R. pallescens	Adult	N4_Adult	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	No	Yes	No	No	Two	Didelphis	NA	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+B4.P3	239	SF9	R. pallescens	N4	N4_Adult	Veraguas	Pasture	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Positive	Negative	Yes	Coinfection	Positive
+B5.P3	240	SF9	R. pallescens	N5	N4_Adult	Veraguas	Pasture	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Positive	Negative	Yes	Coinfection	Positive
+B6.P3	241	SF9	R. pallescens	N3	N1_N3	Veraguas	Pasture	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	NA	NA	NA	Tcruzi	Positive
+B7.P3	242	SF9	R. pallescens	N3	N1_N3	Veraguas	Pasture	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+B8.P3	243	SF9	R. pallescens	N3	N1_N3	Veraguas	Pasture	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+B9.P3	244	SF9	R. pallescens	N3	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Three	Didelphis	Human	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+B10.P3	255	SF9	T. dimidiata	Adult	N4_Adult	Veraguas	Pasture	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+B11.P3	256	SF9	T. dimidiata	N4	N4_Adult	Veraguas	Pasture	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+B12.P3	257	SF9	T. dimidiata	Adult	N4_Adult	Veraguas	Pasture	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+C1.P3	258	SF9	T. dimidiata	Adult	N4_Adult	Veraguas	Pasture	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+C2.P3	259	SF10	R. pallescens	Adult	N4_Adult	Veraguas	Forest	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Thraupis	NA	NA	Positive	NA	NA	NA	Tcruzi	Positive
+C3.P3	260	SF10	R. pallescens	Adult	N4_Adult	Veraguas	Forest	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Positive	NA	NA	NA	Tcruzi	Positive
+C4.P3	261	SF10	R. pallescens	Adult	N4_Adult	Veraguas	Forest	Veraguas	Heteromys	Mammal	Mix	No	Yes	Yes	No	Three	Didelphis	Thraupis	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+C5.P3	262	SF10	R. pallescens	N5	N4_Adult	Veraguas	Forest	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+C6.P3	263	SF10	R. pallescens	N5	N4_Adult	Veraguas	Forest	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Didelphis	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+C7.P3	264	SF10	R. pallescens	N5	N4_Adult	Veraguas	Forest	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Didelphis	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+C8.P3	264.5	SF10	R. pallescens	N1	N1_N3	Veraguas	Forest	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Three	Didelphis	Human	NA	NA	Negative	Positive	Negative	No	Trangeli	Negative
+C9.P3	265	SF10	R. pallescens	N4	N4_Adult	Veraguas	Forest	Veraguas	Heteromys	Mammal	Mammal	No	Yes	No	No	Two	Didelphis	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+C10.P3	266	SF10	R. pallescens	N3	N1_N3	Veraguas	Forest	Veraguas	Heteromys	Mammal	Mammal	No	Yes	No	No	Two	Didelphis	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+C11.P3	267	SF10	R. pallescens	N2	N1_N3	Veraguas	Forest	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Other	NA	NA	Positive	Positive	Negative	Yes	Coinfection	Positive
+C12.P3	268	SF10	R. pallescens	N2	N1_N3	Veraguas	Forest	Veraguas	Heteromys	Mammal	Mix	No	Yes	Yes	No	Four	Thraupis	Piranga	Didelphis	NA	Positive	Positive	Negative	Yes	Coinfection	Positive
+D1.P3	293	SF12	R. pallescens	Adult	N4_Adult	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Philander	NA	NA	NA	Positive	NA	NA	NA	Tcruzi	Positive
+D2.P3	294	SF12	R. pallescens	Adult	N4_Adult	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+D3.P3	295	SF12	R. pallescens	Adult	N4_Adult	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	Yes	Yes	No	No	Three	Heteromys	Human	NA	NA	Positive	NA	NA	NA	Tcruzi	Positive
+D4.P3	296	SF12	R. pallescens	Adult	N4_Adult	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+D5.P3	297	SF12	R. pallescens	N5	N4_Adult	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	NA	NA	NA	Tcruzi	Positive
+D6.P3	298	SF12	R. pallescens	N5	N4_Adult	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Positive	Positive	Negative	Yes	Coinfection	Positive
+D7.P3	299	SF12	R. pallescens	N4	N4_Adult	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+D8.P3	300	SF12	R. pallescens	N3	N1_N3	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+D9.P3	301	SF12	R. pallescens	N3	N1_N3	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	Yes	Yes	No	No	Three	Heteromys	Human	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+D10.P3	302	SF12	R. pallescens	N3	N1_N3	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+D11.P3	303	SF12	R. pallescens	N3	N1_N3	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E1.P3	341	SF6	R. pallescens	N1	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Didelphis	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E2.P3	342	SF6	R. pallescens	N2	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mix	No	Yes	No	Yes	Two	Other	Lepidodactylus	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E3.P3	343	SF6	R. pallescens	N2	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E4.P3	344	SF6	R. pallescens	N2	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Didelphis	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E5.P3	345	SF6	R. pallescens	N3	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mix	Yes	Yes	Yes	No	Three	Piranga	Human	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E6.P3	346	SF6	R. pallescens	N3	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mix	No	Yes	Yes	No	Two	Piranga	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E7.P3	347	SF7	R. pallescens	Adult	N4_Adult	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mix	No	Yes	Yes	No	Three	Piranga	Other	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+E8.P3	348	SF7	R. pallescens	N5	N4_Adult	Veraguas	Pasture	Veraguas	Didelphis	Mammal	Mammal	Yes	Yes	No	No	Three	Heteromys	Human	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Positive
+E9.P3	353	SF7	R. pallescens	N1	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+E10.P3	356	SF7	R. pallescens	N1	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mix	Yes	Yes	Yes	No	Four	Piranga	Human	Thraupis	NA	Negative	Negative	Negative	No	Negative	Negative
+E11.P3	359	SF8	R. pallescens	Adult	N4_Adult	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mix	Yes	Yes	Yes	No	Four	Thraupis	Human	Bos	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+E12.P3	360	SF8	R. pallescens	Adult	N4_Adult	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+F1.P3	361	SF8	R. pallescens	Adult	N4_Adult	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mix	Yes	Yes	Yes	No	Four	Thraupis	Other	Human	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+F2.P3	362	SF8	R. pallescens	Adult	N4_Adult	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	No	Yes	No	No	Two	Other	NA	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+F3.P3	368	SF8	R. pallescens	N2	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mix	Yes	Yes	Yes	No	Four	Human	Bos	Thraupis	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+F4.P3	370	SF8	R. pallescens	N1	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Thraupis	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F5.P3	371	SF8	R. pallescens	N1	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mix	No	Yes	Yes	No	Three	Other	Piranga	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F6.P3	372	SF8	R. pallescens	N1	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mix	No	Yes	Yes	No	Two	Piranga	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F7.P3	373	SF8	R. pallescens	N1	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mix	Yes	Yes	No	Yes	Three	Human	Lepidodactylus	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F8.P3	375	SF8	R. pallescens	N1	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+F9.P3	376	SF8	R. pallescens	N1	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F10.P3	377	SF8	R. pallescens	N1	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mix	Yes	Yes	Yes	No	Three	Thraupis	Human	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+F11.P3	378	SF8	R. pallescens	N1	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+F12.P3	379	SF8	R. pallescens	N1	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G1.P3	381	SF8	R. pallescens	N1	N1_N3	Veraguas	Pasture	Veraguas	Didelphis	Mammal	Mammal	Yes	Yes	No	No	Three	Heteromys	Human	NA	NA	Negative	Negative	Negative	NA	Negative	Negative
+G2.P3	381.5	SF8	R. pallescens	N1	N1_N3	Veraguas	Pasture	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Negative	NA	NA	NA	Negative	Negative
+G3.P3	382	SF11	R. pallescens	Adult	N4_Adult	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Negative	NA	NA	NA	Negative	Negative
+G4.P3	383	SF11	R. pallescens	Adult	N4_Adult	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Positive	NA	NA	NA	Tcruzi	Positive
+G5.P3	384	SF11	R. pallescens	Adult	N4_Adult	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+G6.P3	385	SF11	R. pallescens	Adult	N4_Adult	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+G7.P3	389	SF11	R. pallescens	N1	N1_N3	Veraguas	Peridomestic	Veraguas	Heteromys	Mammal	Mammal	No	Yes	No	No	Three	Didelphis	Metachirus	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+G8.P3	391	SF11	R. pallescens	N1	N1_N3	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	Yes	Yes	No	No	Three	Heteromys	Human	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G9.P3	393	SF11	R. pallescens	N1	N1_N3	Veraguas	Peridomestic	Veraguas	Heteromys	Mammal	Mix	No	Yes	Yes	No	Three	Didelphis	Thraupis	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G10.P3	395	SF11	R. pallescens	N1	N1_N3	Veraguas	Peridomestic	Veraguas	Heteromys	Mammal	Mix	No	Yes	Yes	No	Three	Didelphis	Thraupis	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+G11.P3	396	SF11	R. pallescens	Adult	N4_Adult	Veraguas	Peridomestic	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Didelphis	NA	NA	Negative	Negative	Positive	No	Negative	Negative
+G12.P3	397	SF11	R. pallescens	Adult	N4_Adult	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	One	NA	NA	NA	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+H1.P3	398	SF11	R. pallescens	Adult	N4_Adult	Veraguas	Peridomestic	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Philander	NA	NA	NA	Positive	Positive	Positive	Yes	Tcruzi	Positive
+H2.P3	399	SF11	R. pallescens	N1	N1_N3	Veraguas	Peridomestic	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Four	Human	Mus	Didelphis	NA	Negative	Negative	Negative	No	Negative	Negative
+H3.P3	400	SF11	R. pallescens	N1	N1_N3	Veraguas	Peridomestic	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Four	Human	Didelphis	Bos	NA	Negative	Negative	Negative	No	Negative	Negative
+H4.P3	401	SF11	R. pallescens	N1	N1_N3	Veraguas	Peridomestic	Veraguas	Heteromys	Mammal	Mammal	No	Yes	No	No	Three	Didelphis	Other	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H5.P3	402	SF11	R. pallescens	N1	N1_N3	Veraguas	Peridomestic	Veraguas	Human	Mammal	Mammal	Yes	Yes	No	No	Three	Heteromys	Didelphis	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H6.P3	403	SF11	R. pallescens	N1	N1_N3	Veraguas	Peridomestic	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Four	Other	Human	Didelphis	NA	Negative	Negative	Negative	No	Negative	Negative
+H7.P3	405	SF11	R. pallescens	N1	N1_N3	Veraguas	Peridomestic	Veraguas	Heteromys	Mammal	Mammal	No	Yes	No	No	Three	Mus	Didelphis	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H8.P3	406	SF11	R. pallescens	N1	N1_N3	Veraguas	Peridomestic	Veraguas	Heteromys	Mammal	Mammal	No	Yes	No	No	Three	Bos	Didelphis	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H9.P3	407	SF14	R. pallescens	Adult	N4_Adult	Veraguas	Forest	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H10.P3	408	SF15	T. dimidiata	Adult	N4_Adult	Veraguas	Forest	Veraguas	Didelphis	Mammal	Mix	No	Yes	Yes	No	Three	Heteromys	Piranga	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+H11.P3	409	SF15	T. dimidiata	Adult	N4_Adult	Veraguas	Forest	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Four	Didelphis	Human	Mus	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+H12.P3	410	SF15	T. dimidiata	N3	N1_N3	Veraguas	Forest	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Two	Heteromys	NA	NA	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+A1.P4	411	SF15	T. dimidiata	N3	N1_N3	Veraguas	Forest	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Four	Human	Metachirus	Didelphis	NA	Positive	Negative	Negative	No	Tcruzi	Positive
+A2.P4	412	SF15	R. pallescens	Adult	N4_Adult	Veraguas	Forest	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Five	Mus	Human	Metachirus	Didelphis	Positive	Negative	Negative	No	Tcruzi	Positive
+A3.P4	413	SF15	R. pallescens	Adult	N4_Adult	Veraguas	Forest	Veraguas	Didelphis	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Bos	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+A4.P4	414	SF15	R. pallescens	Adult	N4_Adult	Veraguas	Forest	Veraguas	Didelphis	Mammal	Mammal	No	Yes	No	No	Three	Marmosa	Heteromys	NA	NA	Positive	Positive	Negative	Yes	Tcruzi	Positive
+A5.P4	415	SF15	R. pallescens	N4	N4_Adult	Veraguas	Forest	Veraguas	Didelphis	Mammal	Mammal	Yes	Yes	No	No	Three	Heteromys	Human	NA	NA	Positive	Positive	Positive	Yes	Tcruzi	Positive
+A6.P4	416	SF15	R. pallescens	N3	N1_N3	Veraguas	Forest	Veraguas	Didelphis	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Heteromys	NA	NA	Positive	Positive	Positive	Yes	Tcruzi	Negative
+A7.P4	417	SF15	R. pallescens	N3	N1_N3	Veraguas	Forest	Veraguas	Didelphis	Mammal	Mammal	Yes	Yes	No	No	Two	Human	NA	NA	NA	Positive	Positive	Positive	Yes	Tcruzi	Negative
+A8.P4	418	SF15	R. pallescens	N3	N1_N3	Veraguas	Forest	Veraguas	Didelphis	Mammal	Mammal	Yes	Yes	No	No	Three	Heteromys	Human	NA	NA	Positive	Positive	Positive	Yes	Tcruzi	Negative
+A9.P4	419	SF15	R. pallescens	N3	N1_N3	Veraguas	Forest	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Four	Human	Mus	Bos	NA	Positive	Negative	Positive	No	Tcruzi	Positive
+A10.P4	420	SF15	R. pallescens	N3	N1_N3	Veraguas	Forest	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Three	Didelphis	Human	NA	NA	Positive	Positive	Positive	Yes	Coinfection	Negative
+A11.P4	421	SF15	R. pallescens	N3	N1_N3	Veraguas	Forest	Veraguas	Didelphis	Mammal	Mammal	Yes	Yes	No	No	Three	Human	Heteromys	NA	NA	Positive	Positive	Positive	Yes	Tcruzi	Positive
+A12.P4	422	SF15	R. pallescens	N3	N1_N3	Veraguas	Forest	Veraguas	Didelphis	Mammal	Mammal	Yes	Yes	No	No	Three	Heteromys	Human	NA	NA	Negative	Negative	Negative	No	Negative	Negative
+B1.P4	423	SF15	R. pallescens	N2	N1_N3	Veraguas	Forest	Veraguas	Heteromys	Mammal	Mammal	Yes	Yes	No	No	Four	Human	Metachirus	Didelphis	NA	Negative	Negative	Negative	No	Negative	Negative
+B2.P4	Lab01	Lab	R. pallescens	Adult	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+B3.P4	Lab02	Lab	R. pallescens	Adult	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+B4.P4	Lab03	Lab	R. pallescens	Adult	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+B5.P4	Lab04	Lab	R. pallescens	Adult	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+B6.P4	Lab05	Lab	R. pallescens	Adult	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+B7.P4	Lab06	Lab	R. pallescens	N5	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+B8.P4	Lab07	Lab	R. pallescens	N5	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+B9.P4	Lab08	Lab	R. pallescens	N5	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+B10.P4	Lab09	Lab	R. pallescens	N5	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+B11.P4	Lab10	Lab	R. pallescens	N5	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+B12.P4	Lab11	Lab	R. pallescens	N4	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+C1.P4	Lab12	Lab	R. pallescens	N4	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+C2.P4	Lab13	Lab	R. pallescens	N4	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+C3.P4	Lab14	Lab	R. pallescens	N4	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+C4.P4	Lab15	Lab	R. pallescens	N4	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+C5.P4	Lab16	Lab	R. pallescens	N4	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+C6.P4	Lab17	Lab	R. pallescens	Adult	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+C7.P4	Lab18	Lab	R. pallescens	Adult	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+C8.P4	Lab19	Lab	R. pallescens	Adult	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+C9.P4	Lab20	Lab	R. pallescens	Adult	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+C10.P4	Lab21	Lab	R. pallescens	Adult	N4_Adult	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+C11.P4	Lab22	Lab	R. pallescens	N3	N1_N3	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+C12.P4	Lab23	Lab	R. pallescens	N3	N1_N3	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+D1.P4	Lab24	Lab	R. pallescens	N3	N1_N3	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+D2.P4	Lab25	Lab	R. pallescens	N3	N1_N3	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+D3.P4	Lab26	Lab	R. pallescens	N3	N1_N3	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+D4.P4	Lab28	Lab	R. pallescens	N2	N1_N3	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+D5.P4	Lab29	Lab	R. pallescens	N2	N1_N3	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+D6.P4	Lab30	Lab	R. pallescens	N2	N1_N3	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+D7.P4	Lab31	Lab	R. pallescens	N2	N1_N3	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+D8.P4	Lab32	Lab	R. pallescens	N2	N1_N3	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+D9.P4	Lab36	Lab	R. pallescens	N1	N1_N3	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+D10.P4	Lab37	Lab	R. pallescens	N1	N1_N3	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+D11.P4	Lab40	Lab	R. pallescens	N1	N1_N3	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+D12.P4	Lab41	Lab	R. pallescens	N1	N1_N3	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+E1.P4	Lab42	Lab	R. pallescens	N1	N1_N3	University	Lab	University	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Unassigned.P1	NA	NA	NA	NA	NA	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Unassigned.P2	NA	NA	NA	NA	NA	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Unassigned.P3	NA	NA	NA	NA	NA	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Unassigned.P5	NA	NA	NA	NA	NA	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+F6.P5	Neg1	NA	Neg	Neg	Neg	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+G3.P5	Neg10	NA	Neg	Neg	Neg	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+G4.P5	Neg11	NA	Neg	Neg	Neg	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+G5.P5	Neg12	NA	Neg	Neg	Neg	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+G6.P5	Neg13	NA	Neg	Neg	Neg	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+G7.P5	Neg14	NA	Neg	Neg	Neg	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+F7.P5	Neg2	NA	Neg	Neg	Neg	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+F8.P5	Neg3	NA	Neg	Neg	Neg	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+F9.P5	Neg4	NA	Neg	Neg	Neg	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+F10.P5	Neg5	NA	Neg	Neg	Neg	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+F11.P5	Neg6	NA	Neg	Neg	Neg	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+F12.P5	Neg7	NA	Neg	Neg	Neg	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+G1.P5	Neg8	NA	Neg	Neg	Neg	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+G2.P5	Neg9	NA	Neg	Neg	Neg	Neg	Neg	Neg	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA

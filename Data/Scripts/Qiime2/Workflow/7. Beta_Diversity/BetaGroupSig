@@ -1,0 +1,67 @@
+*Unweighted*
+
+
+time qiime diversity beta-group-significance \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --m-metadata-column Region \
+  --o-visualization unweighted-unifrac-REGION-significance.qzv \
+  --p-pairwise
+
+
+time qiime diversity beta-group-significance \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --m-metadata-column HABITAT \
+  --o-visualization unweighted-unifrac-HABITAT-significance.qzv \
+  --p-pairwise
+
+
+time qiime diversity beta-group-significance \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --m-metadata-column ESTADIO \
+  --o-visualization unweighted-unifrac-AGE-significance.qzv \
+  --p-pairwise
+
+
+time qiime diversity beta-group-significance \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --m-metadata-column PalmID \
+  --o-visualization unweighted-unifrac-PalmID-significance.qzv \
+  --p-pairwise
+
+
+*Weighted*
+
+time qiime diversity beta-group-significance \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --m-metadata-column Region \
+  --o-visualization weighted-unifrac-REGION-significance.qzv \
+  --p-pairwise
+
+
+time qiime diversity beta-group-significance \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --m-metadata-column HABITAT \
+  --o-visualization weighted-unifrac-HABITAT-significance.qzv \
+  --p-pairwise
+
+
+time qiime diversity beta-group-significance \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --m-metadata-column ESTADIO \
+  --o-visualization weighted-unifrac-AGE-significance.qzv \
+  --p-pairwise
+
+
+time qiime diversity beta-group-significance \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --m-metadata-column PalmID \
+  --o-visualization weighted-unifrac-PalmID-significance.qzv \
+  --p-pairwise

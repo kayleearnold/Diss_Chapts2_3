@@ -1,0 +1,173 @@
+---
+title: "Metadata-Organization"
+author: "Kaylee Arnold"
+date: "7/1/2020"
+output: pdf_document
+---
+
+#Load libraries
+```{r}
+library(tidyverse)
+library(readr)
+library(dbplyr)
+library(ggplot2)
+```
+
+
+#Load gut metadata
+```{r}
+gut_data <- read_tsv("/Volumes/Kaylee2.0/Dissertation_projects/Metadata/Guts_ONLY_metadata2017_validated-corrected.tsv")
+```
+
+#Clean up data (rename columns to be compatible with R, delete unnecessary columns)
+```{r}
+gut_data <- gut_data %>% rename(PalmID = "CODIGO-CV") #rename CODIGO-CV to PalmID
+gut_data <- gut_data %>% rename(Infection_Type = "Infection") #rename infection to infection_type
+
+gut_data <- gut_data %>% select(- "Well_ID", -"Sequencing_PlateNumber", -"DATE", -"Type of Molecular Analysis", -"Notes", -"sex", -"Dissections", -"Date of dissections", -"Date of Gut DNA extractions", -"Gut DNA 260_280 score", -"NUMBER", -"Gut DNA Concentration ng/µL", -"Date of Salivary DNA extractions", -"16S Sequencing", -"PCR_To_Redo", -"Duplex PCR date", -"121_122 PCR date") #remove columns that I don't need for analyses
+
+colnames(gut_data) #list out current column names
+
+count(gut_data, )
+count(gut_data, HABITAT, PalmID)
+count(gut_data, PalmID)
+count(gut_data, Region, PalmID)
+count(gut_data, PROCEDENCIA)
+count(gut_data, Coinfection)
+count(gut_data, SingleInf_Tcruzi)
+count(gut_data, SingleInf_Trangeli)
+count(gut_data, HumanBM)
+count(gut_data, TypeBM)
+count(gut_data, NumberBM)
+count(gut_data, ESTADIO, Region)
+count(gut_data, ESPECIE)
+count(gut_data, Infection_Type)
+
+```
+
+#Subset data to only R. pallescens and only T. dimidiata
+```{r}
+
+##subset metadata to only include field caught R pallescens, and exclude sample that was only a molt and could not be dissected/sequenced) -- 288 samples
+Rpal_metadata <- filter(gut_data, ESPECIE == "R. pallescens" & HABITAT != "Lab" & Sample_Name != "229")
+
+##subset metadata to only include field caught T dimidiata that were sequenced -- 13 samples
+Tdim_metadata <- filter(gut_data, ESPECIE == "T. dimidiata" & HABITAT != "Lab")
+
+#subset metadata to only include lab R pallescens that were sequenced 
+Rpal_lab_metadata <- filter(gut_data, ESPECIE == "R. pallescens" & HABITAT == "Lab")
+
+
+
+```
+
+#Save these cleaned and organized metadata subsets to tsv to be used in data analyses
+```{r eval=FALSE, include=FALSE}
+write_tsv(Rpal_metadata, path = "Rpal_guts_cleaned_metadata_2020.tsv", append = F)
+write_tsv(Tdim_metadata, path = "Tdim_guts_cleaned_metadata_2020.tsv", append = F)
+write_tsv(Rpal_lab_metadata, path = "Rpal_guts_lab_cleaned_metadata_2020.tsv", append = F)
+```
+
+#How many
+```{r}
+PalmID <- table(Rpal_metadata$HABITAT)
+print(PalmID)
+
+filter(Rpal_metadata, Region == "Veraguas") 
+
+filter(Rpal_metadata, HABITAT == "Pasture", HumanBM == "Yes") ## 72 HumanBM
+filter(Rpal_metadata, HABITAT == "Forest", HumanBM == "Yes") ## 16 HumanBM
+filter(Rpal_metadata, HABITAT == "Peridomestic", HumanBM == "Yes") ##38 HumanBM
+
+##Coinfections x habitat
+filter(Rpal_metadata, HABITAT == "Pasture", Coinfection == "Yes") ## 9 coinfection
+filter(Rpal_metadata, HABITAT == "Forest", Coinfection == "yes") ## 10 coinfection
+filter(Rpal_metadata, HABITAT == "Peridomestic", Coinfection == "yes") #20 coninfections
+
+filter(Rpal_metadata, PROCEDENCIA == "Veraguas", Coinfection == "yes") #23 coinfections @ veraguas
+
+filter(Rpal_metadata, Coinfection == "Yes") #40 samples
+filter(Rpal_metadata, SingleInf_Tcruzi == "Single") #91 samples
+filter(Rpal_metadata, SingleInf_Trangeli == "Single") #7 samples
+
+filter(Rpal_metadata, HABITAT == "Pasture", Coinfection == "Yes") ## 9 coinfection
+filter(Rpal_metadata, HABITAT == "Forest", Coinfection == "Yes") ##  10 coinfection
+filter(Rpal_metadata, HABITAT == "Peridomestic", Coinfection == "Yes") #21 coinfection
+
+
+filter(Rpal_metadata, HABITAT == "Peridomestic", Region == "Canal") #77
+filter(Rpal_metadata, HABITAT == "Pasture", Region == "Canal") #113
+filter(Rpal_metadata, HABITAT == "Peridomestic", Region == "Veraguas") #33
+filter(Rpal_metadata, HABITAT == "Pasture", Region == "Veraguas") #47
+
+
+#sort data by PalmID and Habitat
+Rpal_metadata %>%
+  count(PalmID, HABITAT, sort = T) %>% 
+  filter(HABITAT == "Pasture")
+
+#sort by palmID and number of samples per habitat type at each region
+Rpal_metadata %>%
+  count(PalmID, HABITAT, Region, Sample_Name, sort = T) %>% 
+  filter(HABITAT == "Pasture") %>%
+  filter(Region == "Canal") #14 pasture palms canal, 113 R pallescens
+
+
+Rpal_metadata %>%
+  count(PalmID, HABITAT, Region, Sample_Name, sort = T) %>% 
+  filter(HABITAT == "Peridomestic") %>%
+  filter(Region == "Canal") #14 peridomestic palms, 71 R pallescens
+
+
+Rpal_metadata %>%
+  count(PalmID, HABITAT, Region, Sample_Name, sort = T) %>% 
+  filter(HABITAT == "Pasture") %>%
+  filter(Region == "Veraguas") #7 palms, 47 r pallescens
+
+Rpal_metadata %>%
+  count(PalmID, HABITAT, Region, Sample_Name, sort = T) %>% 
+  filter(HABITAT == "Peridomestic") %>%
+  filter(Region == "Veraguas") #4 palms
+
+Rpal_metadata %>%
+  count(PalmID, HABITAT, Region, sort = T) %>% 
+  filter(Region == "Veraguas") %>%
+  filter(HABITAT == "Forest")
+  
+
+
+#Habitat type x Human Type
+Rpal_metadata %>%
+  count(HABITAT, HumanBM, sort = T) %>% 
+  filter(HABITAT == "Pasture")
+
+#PalmID x Samples
+Rpal_metadata %>%
+  count(PalmID, sort = T)
+
+Rpal_metadata %>%
+  count(TypeBM, sort = T)
+
+Rpal_metadata %>%
+  count(SingleInf_Tcruzi, sort = T) 
+
+Rpal_metadata %>%
+  count(SingleInf_Trangeli, sort = T)
+
+Rpal_metadata %>%
+  count(Coinfection, sort = T)
+
+Rpal_metadata %>%
+  count(PROCEDENCIA, sort = T)
+
+Rpal_metadata %>%
+  count(`Canal-Veraguas`, sort = T)
+
+
+```
+
+
+```{r}
+variables <- read_tsv("Variables-GUTS-ONLY.tsv")
+```
+

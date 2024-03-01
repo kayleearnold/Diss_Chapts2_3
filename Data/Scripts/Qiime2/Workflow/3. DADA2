@@ -1,0 +1,80 @@
+DADA2 filtering (denoises and pairs)
+-Using UGA Cluter
+
+
+Use FileZilla to transfer files to scratch folder (check gacrc for updates to upload and syncing methods)
+
+Host : sftp://xfer.gacrc.uga.edu
+Username: ka14691
+Password: myID password
+Port: 22
+Quickconnect
+
+Using the cluster
+
+*signing on*
+
+ssh ka14691@sapelo2.gacrc.uga.edu
+cd /scratch/ka14691/gut_salivary/guts-ONLY/August2019
+
+Create file (check updates to gacrc formats. Has since been updated from time of run)
+
+---beginning of script
+
+nano dada2-guts-ONLY-August2019.sh (create file)
+
+#!/bin/bash
+#SBATCH --partition=batch
+#SBATCH --job-name=dada2-guts-ONLY-August2019
+#SBATCH --ntasks=1
+#SBATCH --time=60:00:00
+#SBATCH --mem=25G
+
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=ka14691@uga.edu
+
+
+cd /scratch/ka14691/gut_salivary/guts-ONLY/August2019
+
+module load QIIME2/2018.11
+
+export LC_ALL=en_US.utf-8
+export LANG=en_US.utf-8
+
+
+time qiime dada2 denoise-paired \
+  --i-demultiplexed-seqs August_guts-trimmed_sequences.qza \
+  --p-trunc-len-f 270 \
+  --p-trunc-len-r 250 \
+  --o-table guts_table_trimmed_August2019.qza \
+  --o-representative-sequences guts_rep-seqs_trimmed_August2019.qza \
+  --o-denoising-stats guts_denoising-stats_trimmed_August2019.qza
+  
+---end of script
+
+(2:45:15 on cluster)
+
+outputs: 	guts_denoising-stats_trimmed_August2019.qza
+		guts_rep-seqs_trimmed_August2019.qza
+		guts_table_trimmed_August2019.qza
+    
+
+move files to local computer usign FileZilla
+
+summarize
+
+---beginning of script
+
+time qiime metadata tabulate \
+  --m-input-file guts_denoising-stats_trimmed_August2019.qza \
+  --o-visualization guts_denoising-stats_trimmed_August2019.qzv
+  
+---end of script
+
+(13 seconds locally)
+
+
+Rename files
+
+mv guts_rep-seqs_trimmed_August2019.qza rep-seqs_guts-August2019.qza
+mv guts_table_trimmed_August2019.qza table_guts-August2019.qza

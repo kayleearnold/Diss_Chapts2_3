@@ -1,0 +1,189 @@
+ADONIS
+Updated August 2022 - (originally completed July 2020 on August 2019 filtered) - Adonis test: We can also use the adonis action to look at a multivariate model. The adonis action uses a PERMANOVA test, but a different implementation that permits multiple effects to be tested simultaneously (similar to how we used ANOVA earlier for multivariate effects on alpha diversity). **qiime2 documents**
+
+
+UNWEIGHTED
+
+
+*model 1* 
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization unweighted_adonis_mod1.qzv \
+  --p-formula "Region * HABITAT * TypeBM * PalmID"
+
+*model 2*
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization unweighted_adonis_mod2.qzv \
+  --p-formula "Region * HABITAT"
+
+*model 3*
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization unweighted_adonis_mod3.qzv \
+  --p-formula "Region * TypeBM"
+
+*model 4*
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization unweighted_adonis_mod4.qzv \
+  --p-formula "Region * PalmID"
+
+*mod 5*
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization unweighted_adonis_mod5.qzv \
+  --p-formula "Region * ESTADIO"
+
+
+*mod 6*
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization unweighted_adonis_mod6.qzv \
+  --p-formula "HABITAT * TypeBM"
+
+*mod 7*
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization unweighted_adonis_mod7.qzv \
+  --p-formula "HABITAT * PalmID"
+
+*mod 8*
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization unweighted_adonis_mod8.qzv \
+  --p-formula "HABITAT * ESTADIO"
+
+mod 9
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization unweighted_adonis_mod9.qzv \
+  --p-formula "TypeBM * PalmID"
+
+mod 10
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization unweighted_adonis_mod10.qzv \
+  --p-formula "TypeBM * ESTADIO"
+
+mod 11
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization unweighted_adonis_mod11.qzv \
+  --p-formula "ESTADIO * PalmID"
+
+
+WEIGHTED
+
+
+*model 1* 
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization weighted_adonis_mod1.qzv \
+  --p-formula "Region * HABITAT * TypeBM * PalmID"
+
+*model 2*
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization weighted_adonis_mod2.qzv \
+  --p-formula "Region * HABITAT"
+
+*model 3*
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization weighted_adonis_mod3.qzv \
+  --p-formula "Region * TypeBM"
+
+*model 4*
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization weighted_adonis_mod4.qzv \
+  --p-formula "Region * PalmID"
+
+*mod 5*
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization weighted_adonis_mod5.qzv \
+  --p-formula "Region * ESTADIO"
+
+
+*mod 6*
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization weighted_adonis_mod6.qzv \
+  --p-formula "HABITAT * TypeBM"
+
+*mod 7*
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization weighted_adonis_mod7.qzv \
+  --p-formula "HABITAT * PalmID"
+
+*mod 8*
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization weighted_adonis_mod8.qzv \
+  --p-formula "HABITAT * ESTADIO"
+
+mod 9
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization weighted_adonis_mod9.qzv \
+  --p-formula "TypeBM * PalmID"
+
+mod 10
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization weighted_adonis_mod10.qzv \
+  --p-formula "TypeBM * ESTADIO"
+
+mod 11
+
+time qiime diversity adonis \
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_July_2022/weighted_unifrac_distance_matrix.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization weighted_adonis_mod11.qzv \
+  --p-formula "ESTADIO * PalmID"
+

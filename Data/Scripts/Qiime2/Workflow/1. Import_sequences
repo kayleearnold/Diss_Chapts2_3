@@ -1,0 +1,25 @@
+Check for qiime2 updates using qiime2.org
+
+source activate qiime2-2019.7
+
+Create manifest file
+
+Must be in this file format: (check format in textedit, excel and google sheets can add extra symbols)
+sample-id,absolute-filepath,direction
+sample-1,$PWD/some/filepath/sample1_R1.fastq.gz,forward
+sample-2,$PWD/some/filepath/sample2_R1.fastq.gz,forward
+
+import data (make sure everything is in the right director, or add the directory name to the filename)
+
+time qiime tools import \
+ --type 'SampleData[PairedEndSequencesWithQuality]' \
+ --input-path guts_ONLY-manifest.txt \
+ --output-path August_guts-paired-end-demux.qza \
+ --input-format PairedEndFastqManifestPhred33
+
+output: August_guts-paired-end-demux.qza
+(30 minutes locally)
+
+time qiime demux summarize \
+  --i-data August_guts-paired-end-demux.qza \
+  --o-visualization August_guts-paired-end-demux.qzv

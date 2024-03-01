@@ -1,0 +1,36 @@
+Code	Location	Town	Sampling Dates	Stipe Height (m)	Total Height (m)	DOM	Lianas 	Epiphytes	Surrounding Canopy Cover	# Connected Trees	Fruiting	Fruiting Sex	Photo?	Habitat Type	# T. dimidiata Collected	# T. dimidiata for UGA	# R. pallescens Collected 	# R. pallescens  for UGA	Total  Collected	Total for UGA	Method	# R. pallescens day 1	# R. pallescens day 2	# R. pallescens day 3	Location 	Notes
+CHOR1P1	N 08 50.769 W 079 56.250	La Chorrera	24-27 June  2017	3.256	4.8	1			5%	0	N		yes	Pasture	0	0	10	10	10	10	Noireau 	9	1	0	La Chorrera	Chinche only
+CHOR1P2	N 08 50.762 W 079 56.262	La Chorrera	24-27 June  2017	3.468	4.45	3	1	>10	1%	0	y	F	yes	Pasture	0	0	3	3	3	3	Noireau 	2	0	1	La Chorrera	Chinche only
+CHOR1P3	N 08 50.760 W 079 56.269	La Chorrera	24-27 June  2017	3.668	4.26	3			20%	2	y	M	yes	Pasture	0	0	27	27	27	27	Noireau 	17	10	0	La Chorrera	Chinche only
+CHOR1P4	N 08 50.755 W 079 56.261	La Chorrera	24-27 June  2017	2.606	3.21	2	2	4	0	0	N	NA	yes	Pasture	0	0	1	1	1	1	Noireau 	0	0	1	La Chorrera	Chinche only
+CHOR1P5	N 08 50.721 W 079 56.276	La Chorrera	24-27 June  2017	4.636	4.8	2	0	>10	0	0	N	NA	yes	Pasture	0	0	2	2	2	2	Noireau 	1	0	1	La Chorrera	Chinche only
+CHOR1P6	N 08 50.712 W 079 56.284	La Chorrera	24-27 June  2017	3.236	3.8	1	2	0	3%	0	N	NA	yes	Pasture	0	0	4	4	4	4	Noireau 	4	0	0	La Chorrera	Chinche only
+CHOR1P7	N 08 50.709 W 079 56.273	La Chorrera	24-27 June  2017	4.256	4.35	1	1	0	0	0	N	NA	yes	Pasture	0	0	0	0	0	0	Noireau 	0	0	0	La Chorrera	Chinche only
+DHN1	N 08 53.920 W 079 53.434	La Chorrera	24-27 June  2017	2.524	4.69	4	11	0	0	0	y	F + M	yes	Peridomestic	1	1	1	1	2	2	Noireau 	0	0	2	Hacienda Nicole	Chinche only
+DHN2	N 08 53.901 W 079 53.440	La Chorrera	24-27 June  2017	1.846	5.25	4	0	1	24%	1 (A. butyracea)	y	F	yes	Peridomestic	0	0	3	3	3	3	Noireau 	2	1	0	Hacienda Nicole	Chinche only
+DHN3	N 08 53.922 W 079 53.415	La Chorrera	24-27 June  2017	0	5.397	4	3	0	0	0	N	NA	yes	Peridomestic	0	0	7	7	7	7	Noireau 	3	4	0	Hacienda Nicole	Chinche only
+DHN4	N 08 53.933 W 079 53.402	La Chorrera	24-27 June  2017	0	3.67	3	1	0	0	0	y	F	yes	Peridomestic	0	0	0	0	0	0	Noireau 	0	0	0	Hacienda Nicole	Chinche only
+DHN5	N 08 53.918 W 079 53.397	La Chorrera	24-27 June  2017	4.278	4.856	2	0	0	0	0	y	F	yes	Peridomestic	0	0	14	14	14	14	Noireau 	5	4	5	Hacienda Nicole	Chinche only
+DHN6	N 08 53.937 W 079 53.382	La Chorrera	24-27 June  2017	2.621	4.4	1		0	0	0	y	F	yes	Peridomestic	0	0	0	0	0	0	Noireau 	0	0	0	Hacienda Nicole	Community + chinche
+DHN7	N 08 53.940 W 079 53.391	La Chorrera	24-27 June  2017	3.196	4.74	1	1	0	0	0	y	F	yes	Peridomestic	0	0	1	1	1	1	Noireau 	0	1	0	Hacienda Nicole	Community+chinche
+DHN8	N 08 53.944 W 079 53.406	La Chorrera	24-27 June  2017	1.956	4.29	1	1	0	4%	1	y	F	yes	Peridomestic	0	0	0	0	0	0	Noireau 	0	0	0	Hacienda Nicole	Chinche only
+DHN9	N 08 53.947 W 079 53.409	La Chorrera	24-27 June  2017	0	3.871	3	2	0	10%	0	N	NA	yes	Peridomestic	0	0	24	24	24	24	Noireau 	12	6	6	Hacienda Nicole	Community + chinche
+CAM1	N 08 42.678 W 079 54.111	Campana	2 -8 Jul 2017	2.521	6.7	1	1	0	90%	3	N	NA	yes	Peridomestic cerca Forest	0	0	7	7	7	7	Noireau 	0	0	1	Campana	Chinche only
+CAM2	N 08 42.656 W 079 54.154	Campana	2 -8 Jul 2017	4.03	5.62	4	1	0	50%	4	N	NA	yes	Peridomestic cerca Forest	0	0	7	7	7	7	Noireau 	2	0	5	Campana	Chinche only
+CAM3	N 08 42.553 W 079 54.221	Campana	2 -8 Jul 2017	4.447	5.267	3	0	0	10%	1	y	F	yes	Peridomestic cerca Forest	0	0	0	0	0	0	Noireau 	0	0	0	Campana	Chinche only
+SF1	N 08 31.387 W 081 04.378	Santa Fe	8-Jul-17	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	Peridomestic cerca Forest	9	4	18	10	27	14	Felled	0	0	0	Santa Fe	Community
+SF2	N 08 31.362 W 081 04.373	Santa Fe	8-9 Jul 2017	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	Pasture	0	0	1	1	1	1	Noireau 	1	0	0	Santa Fe	Chinche only
+SF3	N 08 31.342 W 081 04.380	Santa Fe	8-9 Jul 2017	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	Pasture	0	0	5	5	5	5	Noireau 	5	0	0	Santa Fe	Chinche only
+SF4	N 08 31.317 W 081 04.395	Santa Fe	8-9 Jul 2017	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	Pasture	0	0	4	4	4	4	Noireau 	4	0	0	Santa Fe	Chinche only
+SF5	N 08 32.472 W 081 03.84	Santa Fe	9-Jul-17	6.44	12.66	NA 	NA 	NA 	0%	0	NA	NA	NA	Pasture	0	0	5	0	5	0	Felled	0	0	0	El Pantano	Community
+SF6 	N 08 32.474 W 081 03.794	Santa Fe	9-10 Jul 2017	NA	NA	NA 	NA 	NA 						Pasture	0	0	6	6	6	6	Noireau 	6	0	0	El Pantano	Chinche only
+SF7	N 08 32.466 W 081 03.835	Santa Fe	9-10 Jul 2018	NA	NA	NA 	NA 	NA 						Pasture	1	1	11	11	12	12	Noireau 	12	0	0	El Pantano	Chinche only
+SF8	N 08 32.457 W 081 03.830	Santa Fe	9-10 Jul 2019	NA	NA	NA 	NA 	NA 						Pasture	0	0	23	23	23	23	Noireau 	23	0	0	El Pantano	Chinche only
+SF9	N 08 32.454 W 081 03.801	Santa Fe	9-Jul-17	5.75	12.178									Pasture	4	4	20	10	24	14	Felled	0	0	0	El Pantano	Community
+SF10 	N 08 30.938 W 081 02.756	Santa Fe	10-Jul-17	5.731	9.804									Forest cerca Peridomestic	0	0	34	10	34	10	Felled	0	0	0	Culaco 	Community
+SF11	N 08 30.98 W 081 03.08	Santa Fe	10-11 Jul 2017	NA 	NA 									Peridomestic	0	0	25	25	25	25	Noireau 	25	0	0	Culaco 	Chinche only
+SF12	N 08 30.98 W 081 03.05	Santa Fe	10-Jul-17	NA 	NA 									Peridomestic cerca forest	2	0	46	12	48	12	Felled	0	0	0	Culaco 	Community
+SF13 	N 08 31.04 W 081 03.03	Santa Fe	10-11 Jul 2017	NA 	NA 									Forest	0	0	0	0	0	0	Noireau 	0	0	0	Culaco 	Chinche only
+SF14	N 08 31.078 W 081 03.04	Santa Fe	10-11 Jul 2017											Forest	0	0	1	1	1	1	Noireau 	1	0	0	Culaco	Chinche only
+SF15	N 08 31.136 W 081 03.265	Santa Fe	11-Jul-17											Forest cerca Peridomestic	7	4	43	12	50	16	Felled	0	0	0	Culaco	Community
+																	353	241								

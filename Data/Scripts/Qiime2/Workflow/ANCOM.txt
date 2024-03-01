@@ -1,0 +1,34 @@
+
+
+ANCOM -- July 7, 2022
+
+
+
+time qiime feature-table filter-samples \
+  --i-table /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/table_guts-August2019.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --p-where "ESPECIE='R. pallescens'" \
+  --o-filtered-table rpal-table.qza
+
+
+
+time qiime composition add-pseudocount \
+  --i-table rpal-table.qza \
+  --o-composition-table comp-rpal-table.qza
+
+
+We can then run ANCOM on the Subject column to determine what features differ in abundance across the gut samples of the two subjects.
+
+
+time qiime composition ancom \
+  --i-table comp-rpal-table.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --m-metadata-column Region \
+  --o-visualization ancom-Region2022.qzv
+
+
+time qiime composition ancom \
+  --i-table comp-rpal-table.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --m-metadata-column HABITAT \
+  --o-visualization ancom-Habitat2022.qzv

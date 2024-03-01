@@ -1,0 +1,284 @@
+id,PalmID,ESTADIO,Age_Group,New_Age_Group,SEXO,PROCEDENCIA,Habitat,Region,TypeBM,HumanBM,MammalBM,BirdBM,ReptileBM,NumberBM,TypeBM_Updated,FirstBM,SecondBM,ThirdBM,FourthBM,FifthBM,PCR_RESULTS_121_122,SingleInf_Tcruzi,PCR_RESULTS_duplex_Trangeli,R1_R2_Results_1stRun,R1_R2_GelDate_1stRun,R1_R2_Results_2ndRun,R1_R2_GelDate_2ndRun,SingleInf_Trangeli,PCR_RESULTS_duplex_Tcruzi,Coinfection,Infection_Type,faith_pd
+A1.P1,CC2,Adult,N4_Adult,N3_Adult,NA,Cerro Cama,Pasture,La Chorrera,Mammal,Yes,Yes,No,No,Two,Mammal,Human,Philander,NA,NA,NA,Positive,Positive,Negative,Negative,May-25-2022,,,Negative,Positive,No,Tcruzi,11.1150364
+A1.P2,CA2P16,Adult,N4_Adult,N3_Adult,NA,Capira,Peridomestic,Capira,Mammal,Yes,Yes,No,No,Two,Mammal,Human,Philander,NA,NA,NA,Positive,Positive,Negative,Negative,May-27-2022,,,Negative,Positive,No,Tcruzi,6.460652399
+A1.P3,SF2,Adult,N4_Adult,N3_Adult,Female,Veraguas,Pasture,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Heteromys,Didelphis,NA,NA,NA,Positive,Positive,REDO,,,,,NA,REDO,NA,Tcruzi,12.57174449
+A10.P1,CC3,N3,N1_N3,N3_Adult,NA,Cerro Cama,Pasture,La Chorrera,Mammal,No,Yes,No,No,Three,Mammal,Heteromys,Other,Mus,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,10.94120047
+A10.P2,HN9,Adult,N4_Adult,N3_Adult,TBD,La Chorrera,Peridomestic,La Chorrera,Mammal,Yes,Yes,No,No,One,Human,Human,NA,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,6.633812069
+A10.P3,SF4,N2,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Heteromys,Leopardus,NA,NA,NA,Positive,Positive,Negative,,,,,NA,Negative,No,Tcruzi,8.973277318
+A10.P4,SF15,N3,N1_N3,N3_Adult,NA,Veraguas,Forest,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Heteromys,Didelphis,Human,NA,NA,Positive,Negative,Positive,,,,,NA,Positive,Yes,Coinfection,7.534348872
+A11.P1,CC3,N2,N1_N3,N1_N2,NA,Cerro Cama,Pasture,La Chorrera,Mammal,Yes,Yes,No,No,Three,Human,Human,Mus,NA,NA,NA,Positive,Positive,Positive,Negative,May-6-2022,Negative,May-25-2022,Single,Positive,Yes,Coinfection,7.043719848
+A11.P2,HN9,N5,N4_Adult,N3_Adult,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,Yes,Yes,No,No,Three,Mammal,Human,Philander,Mus,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,7.58843251
+A11.P3,SF4,N1,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Two,Mammal,Heteromys,Human,NA,NA,NA,Positive,Positive,Negative,,,,,NA,Negative,No,Tcruzi,9.946935736
+A11.P4,SF15,N3,N1_N3,N3_Adult,NA,Veraguas,Forest,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Didelphis,Human,Heteromys,NA,NA,Positive,Positive,Positive,,,,,NA,Positive,Yes,Tcruzi,6.899334327
+A12.P1,CC3,N2,N1_N3,N1_N2,NA,Cerro Cama,Pasture,La Chorrera,Mammal,No,Yes,No,No,Two,Mus,Mus,Bos,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,7.528713451
+A12.P2,HN9,N3,N1_N3,N3_Adult,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,No,Yes,No,No,One,Mus,Mus,NA,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,8.55131392
+A12.P3,SF9,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Four,Mammal,Heteromys,Human,Didelphis,Thraupis,NA,Positive,Positive,NA,,,,,NA,NA,NA,Tcruzi,11.73260217
+A12.P4,SF15,N3,N1_N3,N3_Adult,NA,Veraguas,Forest,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Didelphis,Heteromys,Human,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,9.536693076
+A2.P1,CC2,Adult,N4_Adult,N3_Adult,NA,Cerro Cama,Pasture,La Chorrera,Bird,No,No,Yes,No,One,Bird,Piranga,NA,NA,NA,NA,Positive,Positive,Negative,Negative,May-25-2022,,,Negative,Positive,No,Tcruzi,7.358662749
+A2.P2,HN3,Adult,N4_Adult,N3_Adult,TBD,La Chorrera,Peridomestic,La Chorrera,Mammal,Yes,Yes,No,No,Three,Mammal,Philander,Human,Mus,NA,NA,Positive,Positive,Negative,,,,,Negative,Negative,No,Tcruzi,6.289576136
+A2.P3,SF3,N5,N4_Adult,N3_Adult,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Two,Mammal,Heteromys,Human,NA,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,9.395972089
+A2.P4,SF15,Adult,N4_Adult,N3_Adult,Female,Veraguas,Forest,Veraguas,Mammal,Yes,Yes,No,No,Five,Mammal,Heteromys,Mus,Human,Metachirus,Didelphis,Positive,Positive,Negative,,,,,NA,Negative,No,Tcruzi,9.293781064
+A3.P1,CC2,N3,N1_N3,N3_Adult,NA,Cerro Cama,Pasture,La Chorrera,Mix,Yes,Yes,Yes,No,Three,Bird,Human,Piranga,Other,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,6.117225942
+A3.P2,HN3,N1,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,Yes,Yes,No,No,Four,Reptile,Human,Procyon,Bos,Mus,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,6.293707172
+A3.P3,SF3,N5,N4_Adult,N3_Adult,NA,Veraguas,Pasture,Veraguas,Mix,No,Yes,Yes,No,Three,Mammal,Heteromys,Metachirus,Piranga,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,10.09781058
+A3.P4,SF15,Adult,N4_Adult,N3_Adult,Female,Veraguas,Forest,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Didelphis,Human,Bos,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,5.753437232
+A4.P1,CC3,N5,N4_Adult,N3_Adult,NA,Cerro Cama,Pasture,La Chorrera,Mix,Yes,Yes,Yes,No,Three,Mammal,Heteromys,Piranga,Human,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,8.964276995
+A4.P2,HN3,N1,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,Yes,Yes,No,No,Two,Human,Human,Mus,NA,NA,NA,NA,Negative,Negative,,,,,Negative,Negative,NA,Negative,6.760773449
+A4.P3,SF3,N3,N1_N3,N3_Adult,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Four,Mammal,Heteromys,Human,Didelphis,Other,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,6.749252279
+A4.P4,SF15,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Forest,Veraguas,Mammal,No,Yes,No,No,Three,Mammal,Didelphis,Marmosa,Heteromys,NA,NA,Positive,Positive,Positive,,,,,NA,Negative,Yes,Tcruzi,6.002346083
+A5.P1,CC3,N4,N4_Adult,N3_Adult,NA,Cerro Cama,Pasture,La Chorrera,Mammal,No,Yes,No,No,One,Mus,Mus,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,9.464944938
+A5.P2,HN3,N1,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,Yes,Yes,No,No,Two,Human,Human,Mus,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Negative,No,Tcruzi,8.317444166
+A5.P3,SF3,N2,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Heteromys,Didelphis,Human,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,7.070727354
+A5.P4,SF15,N4,N4_Adult,N3_Adult,NA,Veraguas,Forest,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Didelphis,Heteromys,Human,NA,NA,Positive,Positive,Positive,,,,,NA,Positive,Yes,Tcruzi,9.736982623
+A6.P1,CC3,N5,N4_Adult,N3_Adult,NA,Cerro Cama,Pasture,La Chorrera,Mammal,Yes,Yes,No,No,Three,Other,Human,Other,Potos,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,9.717275167
+A6.P2,HN3,N1,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,Yes,Yes,No,No,Three,Mammal,Philander,Human,Mus,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,5.412913089
+A6.P3,SF3,N1,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Four,Mammal,Heteromys,Human,Metachirus,Didelphis,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,7.315964773
+A6.P4,SF15,N3,N1_N3,N3_Adult,NA,Veraguas,Forest,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Didelphis,Human,Heteromys,NA,NA,Positive,Negative,Positive,,,,,NA,Positive,Yes,Tcruzi,11.23928578
+A7.P1,CC3,N4,N4_Adult,N3_Adult,NA,Cerro Cama,Pasture,La Chorrera,Mammal,Yes,Yes,No,No,Two,Human,Human,Mus,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,6.175002408
+A7.P2,HN3,N3,N1_N3,N3_Adult,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,Yes,Yes,No,No,Two,Mammal,Philander,Human,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,5.962479124
+A7.P3,SF4,N4,N4_Adult,N3_Adult,NA,Veraguas,Pasture,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Heteromys,Didelphis,NA,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,7.45410763
+A7.P4,SF15,N3,N1_N3,N3_Adult,NA,Veraguas,Forest,Veraguas,Mammal,Yes,Yes,No,No,Two,Mammal,Didelphis,Human,NA,NA,NA,Positive,Negative,Positive,,,,,NA,Positive,Yes,Tcruzi,15.98931185
+A8.P1,CC3,N3,N1_N3,N3_Adult,NA,Cerro Cama,Pasture,La Chorrera,Other,No,No,No,No,Three,Other,Other,Piranga,Thraupis,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,8.552682303
+A8.P2,HN3,Adult,N4_Adult,N3_Adult,TBD,La Chorrera,Peridomestic,La Chorrera,Mammal,Yes,Yes,No,No,Three,Mammal,Human,Mus,Philander,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,7.946308286
+A8.P3,SF4,N2,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mix,Yes,Yes,Yes,No,Three,Mammal,Heteromys,Human,Thraupis,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,5.928364559
+A8.P4,SF15,N3,N1_N3,N3_Adult,NA,Veraguas,Forest,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Didelphis,Heteromys,Human,NA,NA,Positive,Negative,Positive,,,,,NA,Positive,Yes,Tcruzi,7.756953467
+A9.P1,CC3,N3,N1_N3,N3_Adult,NA,Cerro Cama,Pasture,La Chorrera,Bird,No,No,Yes,No,One,Bird,Thraupis,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,5.362441367
+A9.P2,HN3,Adult,N4_Adult,N3_Adult,TBD,La Chorrera,Peridomestic,La Chorrera,Mammal,Yes,Yes,No,No,Two,Human,Human,Mus,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,7.664385365
+A9.P3,SF4,N2,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Heteromys,Metachirus,NA,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,6.277634457
+A9.P4,SF15,N3,N1_N3,N3_Adult,NA,Veraguas,Forest,Veraguas,Mammal,Yes,Yes,No,No,Four,Mammal,Heteromys,Human,Mus,Bos,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,7.699287448
+B1.P1,CC3,N1,N1_N3,N1_N2,NA,Cerro Cama,Pasture,La Chorrera,Mammal,Yes,Yes,No,No,One,Human,Human,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,10.99792916
+B1.P2,HN9,N3,N1_N3,N3_Adult,NA,La Chorrera,Peridomestic,La Chorrera,Mix,No,Yes,Yes,No,Two,Bird,Turdus,Philander,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,6.822727117
+B1.P3,SF9,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Pasture,Veraguas,Mammal,No,Yes,No,No,One,Mammal,Didelphis,NA,NA,NA,NA,Positive,Positive,Positive,,,,,NA,Negative,Yes,Coinfection,18.64618828
+B1.P4,SF15,N2,N1_N3,N1_N2,NA,Veraguas,Forest,Veraguas,Mammal,Yes,Yes,No,No,Four,Mammal,Heteromys,Human,Metachirus,Didelphis,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,12.74309688
+B10.P1,CA1P17,Adult,N4_Adult,N3_Adult,Female,Capira,Pasture,Capira,Mammal,No,Yes,No,No,Two,Mus,Mus,Other,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,16.87094199
+B10.P2,HN9,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mix,No,Yes,Yes,No,Two,Mammal,Philander,Turdus,NA,NA,NA,Positive,Negative,Negative,,,,,Negative,Negative,No,Tcruzi,8.815906406
+B11.P1,CA1P17,N3,N1_N3,N3_Adult,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Two,Human,Human,Mus,NA,NA,NA,Positive,Positive,Negative,Negative,May-25-2022,,,Negative,Positive,No,Tcruzi,5.416322057
+B11.P2,HN9,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Negative,Positive,,,,,Negative,Negative,Yes,Coinfection,9.096952448
+B12.P1,CA1P17,N2,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mix,Yes,Yes,Yes,No,Four,Bird,Piranga,Metachirus,Human,Mus,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,7.591144248
+B12.P2,HN9,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Positive,Negative,May-6-2022,,,Negative,Negative,Yes,Coinfection,5.342043437
+B2.P1,CC3,N1,N1_N3,N1_N2,NA,Cerro Cama,Pasture,La Chorrera,Mix,Yes,Yes,Yes,No,Four,Bird,Human,Piranga,Metachirus,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,7.936462506
+B2.P2,HN9,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,Yes,Yes,No,No,Two,Mammal,Philander,Human,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Positive,No,Negative,7.782162664
+B2.P3,SF9,Adult,N4_Adult,N3_Adult,Male,Veraguas,Pasture,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Didelphis,Heteromys,NA,NA,NA,Positive,Positive,Negative,,,,,NA,Negative,No,Tcruzi,10.66296706
+B3.P1,CC3,N1,N1_N3,N1_N2,NA,Cerro Cama,Pasture,La Chorrera,Mammal,Yes,Yes,No,No,Two,Mammal,Canis,Human,NA,NA,NA,Negative,Negative,Positive,Negative,May-6-2022,,,Single,Positive,No,Trangeli,7.304099595
+B3.P2,HN9,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,5.11621663
+B3.P3,SF9,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Pasture,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Heteromys,Didelphis,NA,NA,NA,Positive,Positive,Positive,,,,,NA,Positive,Yes,Coinfection,12.37755183
+B4.P1,CA1P17,Adult,N4_Adult,N3_Adult,Male,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,One,Human,Human,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Positive,No,Negative,10.7711054
+B4.P2,HN9,N1,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,Yes,Yes,No,No,Two,Mammal,Philander,Human,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Negative,No,Negative,6.706504849
+B4.P3,SF9,N4,N4_Adult,N3_Adult,NA,Veraguas,Pasture,Veraguas,Mammal,No,Yes,No,No,One,Mammal,Didelphis,NA,NA,NA,NA,Positive,Positive,Positive,,,,,NA,Negative,Yes,Coinfection,12.55061279
+B5.P1,CA1P17,N4,N4_Adult,N3_Adult,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Three,Mus,Mus,Human,Metachirus,NA,NA,Positive,Positive,Negative,Negative,May-25-2022,,,Negative,Positive,No,Tcruzi,8.987106752
+B5.P2,HN9,N5,N4_Adult,N3_Adult,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,7.756353979
+B5.P3,SF9,N5,N4_Adult,N3_Adult,NA,Veraguas,Pasture,Veraguas,Mammal,No,Yes,No,No,One,Mammal,Didelphis,NA,NA,NA,NA,Positive,Positive,Positive,,,,,NA,Negative,Yes,Coinfection,9.965263574
+B6.P1,CA1P17,N3,N1_N3,N3_Adult,NA,Capira,Pasture,Capira,Mammal,No,Yes,No,No,One,Mammal,Metachirus,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Positive,No,Negative,8.264573855
+B6.P2,HN9,N3,N1_N3,N3_Adult,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Negative,Positive,Positive,May-6-2022,,,Negative,Positive,Yes,Coinfection,6.473769518
+B6.P3,SF9,N3,N1_N3,N3_Adult,NA,Veraguas,Pasture,Veraguas,Mammal,No,Yes,No,No,One,Mammal,Didelphis,NA,NA,NA,NA,Positive,Positive,NA,,,,,NA,NA,NA,Tcruzi,13.01748213
+B7.P1,CA1P17,N3,N1_N3,N3_Adult,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Three,Mammal,Metachirus,Human,Mus,NA,NA,Positive,Positive,Negative,Negative,May-25-2022,,,Negative,Negative,No,Tcruzi,6.114269938
+B7.P2,HN9,N3,N1_N3,N3_Adult,NA,La Chorrera,Peridomestic,La Chorrera,Mix,No,Yes,Yes,No,Two,Mammal,Philander,Turdus,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,6.801578373
+B7.P3,SF9,N3,N1_N3,N3_Adult,NA,Veraguas,Pasture,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Didelphis,Heteromys,NA,NA,NA,Positive,Positive,Positive,,,,,NA,Positive,Yes,Coinfection,9.923544686
+B8.P1,CA1P17,N2,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Other,Yes,No,No,No,Three,Other,Other,Human,Metachirus,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,6.276886936
+B8.P2,HN9,N3,N1_N3,N3_Adult,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Positive,Positive,May-6-2022,,,Negative,Positive,Yes,Coinfection,5.78350515
+B8.P3,SF9,N3,N1_N3,N3_Adult,NA,Veraguas,Pasture,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Didelphis,Heteromys,NA,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,11.81295111
+B9.P1,CA1P17,N2,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,One,Human,Human,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,8.004678688
+B9.P2,HN9,N5,N4_Adult,N3_Adult,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,8.709216432
+B9.P3,SF9,N3,N1_N3,N3_Adult,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Heteromys,Didelphis,Human,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,11.86067829
+C1.P1,CA1P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Two,Human,Human,Mus,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,7.058638246
+C1.P2,HN9,N1,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mix,Yes,Yes,Yes,No,Four,Mammal,Philander,Thraupis,Other,Human,NA,Negative,Negative,Positive,Negative,May-6-2022,,,Single,Positive,No,Trangeli,5.240063434
+C10.P1,CA3P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Three,Human,Human,Mus,Other,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,14.16646526
+C10.P2,CHOR1P6,N3,N1_N3,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Bird,No,No,Yes,No,One,Bird,Thraupis,NA,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,5.589131355
+C10.P3,SF10,N3,N1_N3,N3_Adult,NA,Veraguas,Forest,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Heteromys,Didelphis,NA,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,9.05317922
+C11.P1,CA3P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,No,Yes,No,No,Two,Mammal,Philander,Mus,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,6.058103557
+C11.P2,CHOR1P6,N2,N1_N3,N1_N2,NA,La Chorrera,Pasture,La Chorrera,Mix,No,Yes,Yes,No,Two,Mammal,Philander,Thraupis,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,7.027903615
+C11.P3,SF10,N2,N1_N3,N1_N2,NA,Veraguas,Forest,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Heteromys,Human,Other,NA,NA,Positive,Positive,Positive,,,,,NA,Negative,Yes,Coinfection,7.487486063
+C12.P1,CA3P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,No,Yes,No,No,One,Mus,Mus,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,5.573578387
+C12.P2,CAM1P17,Adult,N4_Adult,N3_Adult,TBD,Campana,Peridomestic,Capira,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Positive,,,,,Negative,Negative,Yes,Coinfection,7.96072643
+C12.P3,SF10,N2,N1_N3,N1_N2,NA,Veraguas,Forest,Veraguas,Mix,No,Yes,Yes,No,Four,Mammal,Heteromys,Thraupis,Piranga,Didelphis,NA,Positive,Positive,Positive,,,,,NA,Negative,Yes,Coinfection,8.986874187
+C2.P1,CA1P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Two,Human,Human,Mus,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,5.899446616
+C2.P2,HN9,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mix,No,Yes,Yes,No,Two,Mammal,Philander,Thraupis,NA,NA,NA,Positive,Positive,Positive,,,,,Negative,Positive,Yes,Coinfection,8.607336077
+C2.P3,SF10,Adult,N4_Adult,N3_Adult,Male,Veraguas,Forest,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Heteromys,Human,Thraupis,NA,NA,Positive,Positive,NA,,,,,NA,NA,NA,Tcruzi,9.423546307
+C3.P1,CA1P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Two,Mammal,Human,Bos,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,6.595220796
+C3.P2,HN9,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mix,No,Yes,Yes,No,Three,Mammal,Philander,Thraupis,Mus,NA,NA,Negative,Negative,Positive,,,,,Single,Negative,No,Trangeli,4.112329386
+C3.P3,SF10,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Forest,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Didelphis,Heteromys,NA,NA,NA,Positive,Positive,NA,,,,,NA,NA,NA,Tcruzi,10.50093767
+C4.P1,CA1P17,N5,N4_Adult,N3_Adult,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Two,Human,Human,Mus,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,7.466715187
+C4.P2,HN9,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Positive,,,,,Negative,Positive,Yes,Coinfection,7.244352681
+C4.P3,SF10,Adult,N4_Adult,N3_Adult,Female,Veraguas,Forest,Veraguas,Mix,No,Yes,Yes,No,Three,Mammal,Heteromys,Didelphis,Thraupis,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,12.11452344
+C5.P1,CA1P17,N2,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,No,Yes,No,No,One,Mus,Mus,NA,NA,NA,NA,Positive,Positive,Negative,Negative,May-25-2022,,,Negative,Positive,No,Tcruzi,8.552407133
+C5.P2,HN9,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mix,No,Yes,Yes,No,Two,Mammal,Philander,Thraupis,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Negative,No,Tcruzi,5.958162259
+C5.P3,SF10,N5,N4_Adult,N3_Adult,NA,Veraguas,Forest,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Didelphis,Heteromys,NA,NA,NA,Positive,Positive,Positive,,,,,NA,Positive,Yes,Coinfection,13.09559206
+C6.P1,CA1P17,N2,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Four,Mus,Mus,Human,Metachirus,Philander,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,6.489354871
+C6.P2,HN9,N3,N1_N3,N3_Adult,NA,La Chorrera,Peridomestic,La Chorrera,Mix,No,Yes,Yes,No,Two,Mammal,Philander,Thraupis,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,7.398544304
+C6.P3,SF10,N5,N4_Adult,N3_Adult,NA,Veraguas,Forest,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Heteromys,Human,Didelphis,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,8.67397513
+C7.P1,CA1P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Two,Mus,Mus,Human,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,6.567256052
+C7.P2,HN9,N3,N1_N3,N3_Adult,NA,La Chorrera,Peridomestic,La Chorrera,Mix,Yes,Yes,Yes,No,Four,Mammal,Human,Philander,Bos,Thraupis,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,4.8640601
+C7.P3,SF10,N5,N4_Adult,N3_Adult,NA,Veraguas,Forest,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Heteromys,Human,Didelphis,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,7.048873735
+C8.P1,CA3P17,N2,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Three,Mus,Mus,Philander,Human,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,6.330086605
+C8.P2,CHOR1P4,N3,N1_N3,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mix,No,Yes,Yes,No,Two,Mammal,Philander,Thraupis,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Tcruzi,5.804962681
+C8.P3,SF10,N1,N1_N3,N1_N2,NA,Veraguas,Forest,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Heteromys,Didelphis,Human,NA,NA,Negative,Negative,Positive,,,,,NA,Negative,No,Trangeli,10.13244595
+C9.P1,CA3P17,N3,N1_N3,N3_Adult,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Three,Mammal,Human,Philander,Mus,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,6.017902814
+C9.P2,CHOR1P6,N5,N4_Adult,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Bird,No,No,Yes,No,One,Bird,Thraupis,NA,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,6.565971202
+C9.P3,SF10,N4,N4_Adult,N3_Adult,NA,Veraguas,Forest,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Heteromys,Didelphis,NA,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,9.547447435
+D1.P1,CA3P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,No,Yes,No,No,Two,Mammal,Philander,Bos,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,6.293700215
+D1.P2,CAM1P17,N3,N1_N3,N3_Adult,NA,Campana,Peridomestic,Capira,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,5.054806956
+D1.P3,SF12,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Didelphis,Philander,NA,NA,NA,Positive,Positive,NA,,,,,NA,NA,NA,Tcruzi,9.694957633
+D10.P1,CA7P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,No,Yes,No,No,Three,Mus,Mus,Other,Philander,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,9.807504395
+D10.P2,CHOR1P3,N5,N4_Adult,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,7.293826994
+D11.P1,CA7P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,No,Yes,No,No,Two,Mus,Mus,Philander,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,5.617641428
+D11.P2,CHOR1P3,N5,N4_Adult,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,6.55007415
+D12.P1,CA7P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Other,No,No,No,No,Two,Other,Other,Philander,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,5.598229954
+D12.P2,CHOR1P3,N5,N4_Adult,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Negative,No,Tcruzi,6.906766317
+D12.P3,SF12,N2,N1_N3,N1_N2,NA,Veraguas,Peridomestic,Veraguas,Mix,No,Yes,Yes,No,Three,Mammal,Heteromys,Didelphis,Piranga,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,9.78132775
+D2.P1,CA3P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mix,No,Yes,No,Yes,Two,Mus,Mus,Mabuya,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,6.34083477
+D2.P2,CAM1P17,N2,N1_N3,N1_N2,NA,Campana,Peridomestic,Capira,Mammal,No,Yes,No,No,Two,Mammal,Philander,Heteromys,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Negative,No,Tcruzi,7.582967904
+D2.P3,SF12,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Didelphis,Heteromys,NA,NA,NA,Positive,Positive,Positive,,,,,NA,Positive,Yes,Coinfection,8.066970572
+D3.P1,CA3P17,N2,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,4.707271252
+D3.P2,CAM1P17,N2,N1_N3,N1_N2,NA,Campana,Peridomestic,Capira,Mammal,Yes,Yes,No,No,Four,Mammal,Philander,Bos,Leopardus,Human,NA,Positive,Positive,Positive,,,,,Single,Negative,Yes,Coinfection,5.497007776
+D4.P1,CA3P17,N2,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-25-2022,,,Negative,Negative,No,Negative,6.755757236
+D4.P2,CAM1P17,N2,N1_N3,N1_N2,NA,Campana,Peridomestic,Capira,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Negative,Negative,Negative,,,,,Single,Positive,No,Negative,8.112740555
+D4.P3,SF12,Adult,N4_Adult,N3_Adult,Male,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,One,Mammal,Didelphis,NA,NA,NA,NA,Positive,Positive,Positive,,,,,NA,Positive,Yes,Coinfection,8.859112346
+D5.P1,CA3P17,Adult,N4_Adult,N3_Adult,Male,Capira,Pasture,Capira,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Negative,Negative,Positive,Negative,May-6-2022,Negative,May-25-2022,Single,Negative,No,Trangeli,6.493002258
+D5.P2,CAM1P17,N2,N1_N3,N1_N2,NA,Campana,Peridomestic,Capira,Mammal,No,Yes,No,No,Two,Mammal,Philander,Mus,NA,NA,NA,Negative,Negative,Positive,,,,,Single,Negative,No,Trangeli,7.400762679
+D5.P3,SF12,N5,N4_Adult,N3_Adult,NA,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,One,Mammal,Didelphis,NA,NA,NA,NA,Positive,Positive,NA,,,,,NA,NA,NA,Tcruzi,10.17425125
+D6.P1,CA3P17,N3,N1_N3,N3_Adult,NA,Capira,Pasture,Capira,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,4.977822066
+D6.P2,CAM2P17,Adult,N4_Adult,N3_Adult,TBD,Campana,Peridomestic,Capira,Mammal,No,Yes,No,No,Two,Mammal,Philander,Coendou,NA,NA,NA,Positive,Positive,Positive,,,,,Negative,Positive,Yes,Coinfection,5.847606808
+D6.P3,SF12,N5,N4_Adult,N3_Adult,NA,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Didelphis,Heteromys,NA,NA,NA,Positive,Positive,Positive,,,,,NA,Negative,Yes,Coinfection,7.553808496
+D7.P1,CA7P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,No,Yes,No,No,Two,Mus,Mus,Philander,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,5.75184039
+D7.P2,CAM2P17,Adult,N4_Adult,N3_Adult,TBD,Campana,Peridomestic,Capira,Mammal,No,Yes,No,No,Two,Mammal,Philander,Tamandua,NA,NA,NA,Positive,Positive,Positive,,,,,Negative,Positive,Yes,Coinfection,6.208957015
+D7.P3,SF12,N4,N4_Adult,N3_Adult,NA,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,One,Mammal,Didelphis,NA,NA,NA,NA,Positive,Positive,Positive,,,,,NA,Positive,Yes,Coinfection,9.679077322
+D8.P1,CA7P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Other,No,No,No,No,Two,Other,Other,Philander,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,5.764680245
+D8.P2,CHOR1P3,N2,N1_N3,N1_N2,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,Two,Mammal,Philander,Other,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,7.5963488
+D8.P3,SF12,N3,N1_N3,N3_Adult,NA,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Didelphis,Heteromys,NA,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,7.951678039
+D9.P1,CA7P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mix,Yes,Yes,Yes,No,Four,Mammal,Philander,Other,Thraupis,Human,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,6.716704989
+D9.P2,CHOR1P3,N4,N4_Adult,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,7.476418889
+D9.P3,SF12,N3,N1_N3,N3_Adult,NA,Veraguas,Peridomestic,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Didelphis,Heteromys,Human,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,7.073839456
+E1.P1,CA7P17,N2,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Other,Yes,No,No,No,Three,Other,Other,Human,Mus,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,16.72425157
+E1.P2,CHOR1P3,N5,N4_Adult,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,5.431052285
+E1.P3,SF6,N1,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Heteromys,Human,Didelphis,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,14.18086521
+E10.P1,CA8P17,N2,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Other,No,No,No,No,One,Other,Other,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,41.55823024
+E10.P2,CHOR1P3,N5,N4_Adult,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,10.49587875
+E10.P3,SF7,N1,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mix,Yes,Yes,Yes,No,Four,Mix,Heteromys,Piranga,Human,Thraupis,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,6.398606925
+E11.P1,CA9P17,N3,N1_N3,N3_Adult,NA,Capira,Pasture,Capira,Mammal,No,Yes,No,No,One,Mus,Mus,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,14.68401821
+E11.P2,CHOR1P3,N5,N4_Adult,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,6.554685853
+E11.P3,SF8,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Pasture,Veraguas,Mix,Yes,Yes,Yes,No,Four,Mammal,Heteromys,Thraupis,Human,Bos,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,10.52283296
+E12.P1,CA9P17,N3,N1_N3,N3_Adult,NA,Capira,Pasture,Capira,Mix,No,Yes,Yes,No,Three,Other,Other,Mus,Piranga,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,14.93899348
+E12.P2,CHOR1P3,N4,N4_Adult,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,Yes,Yes,No,No,Three,Mammal,Philander,Mus,Human,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,5.934969608
+E12.P3,SF8,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Two,Mammal,Heteromys,Human,NA,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,10.44311644
+E2.P1,CA7P17,N2,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Three,Mus,Mus,Human,Other,NA,NA,Positive,Positive,Positive,Negative,May-6-2022,Negative,May-27-2022,Negative,Negative,Yes,Coinfection,15.43197582
+E2.P2,CHOR1P3,N3,N1_N3,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,Two,Mammal,Philander,Other,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,7.296236259
+E2.P3,SF6,N2,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mix,No,Yes,No,Yes,Two,Mammal,Heteromys,Other,Lepidodactylus,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,6.578483769
+E3.P1,CA7P17,N2,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Other,No,No,No,No,One,Other,Other,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,13.70476137
+E3.P2,CHOR1P3,N3,N1_N3,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,Yes,Yes,No,No,Three,Mammal,Philander,Human,Mus,NA,NA,Positive,Positive,Negative,,,,,Negative,Negative,Yes,Tcruzi,8.463436508
+E3.P3,SF6,N2,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Two,Mammal,Heteromys,Human,NA,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,5.918142216
+E4.P1,CA7P17,N2,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Three,Other,Human,Other,Mus,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,16.86591257
+E4.P2,CHOR1P3,N2,N1_N3,N1_N2,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,Two,Mammal,Philander,Mus,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Negative,No,Tcruzi,7.252366433
+E4.P3,SF6,N2,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Heteromys,Human,Didelphis,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,7.660122575
+E5.P1,CA7P17,N5,N4_Adult,N3_Adult,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Three,Mammal,Bos,Mus,Human,NA,NA,Positive,Positive,Negative,Negative,May-27-2022,,,Negative,Positive,No,Tcruzi,15.55049178
+E5.P2,CHOR1P3,N1,N1_N3,N1_N2,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,Two,Mammal,Philander,Other,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Negative,No,Tcruzi,7.488317995
+E5.P3,SF6,N3,N1_N3,N3_Adult,NA,Veraguas,Pasture,Veraguas,Mix,Yes,Yes,Yes,No,Three,Mammal,Heteromys,Piranga,Human,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,8.60249938
+E6.P1,CA7P17,N5,N4_Adult,N3_Adult,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Two,Other,Human,Other,NA,NA,NA,Positive,Positive,Negative,Negative,May-27-2022,,,Negative,Positive,No,Tcruzi,15.05361487
+E6.P2,CHOR1P3,N1,N1_N3,N1_N2,NA,La Chorrera,Pasture,La Chorrera,Mammal,Yes,Yes,No,No,Two,Mammal,Philander,Human,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,6.478905227
+E6.P3,SF6,N3,N1_N3,N3_Adult,NA,Veraguas,Pasture,Veraguas,Mix,No,Yes,Yes,No,Two,Mammal,Heteromys,Piranga,NA,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,6.749033772
+E7.P1,CA7P17,N5,N4_Adult,N3_Adult,NA,Capira,Pasture,Capira,Mammal,No,Yes,No,No,One,Mus,Mus,NA,NA,NA,NA,Positive,Positive,Negative,Negative,May-27-2022,,,Negative,Positive,No,Tcruzi,17.12840276
+E7.P2,CHOR1P3,N1,N1_N3,N1_N2,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,Two,Mammal,Philander,Procyon,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,6.764668594
+E7.P3,SF7,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Pasture,Veraguas,Mix,No,Yes,Yes,No,Three,Mammal,Heteromys,Piranga,Other,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,9.605587317
+E8.P1,CA8P17,N4,N4_Adult,N3_Adult,NA,Capira,Pasture,Capira,Other,No,No,No,No,One,Other,Other,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,14.79758066
+E8.P2,CHOR1P3,N1,N1_N3,N1_N2,NA,La Chorrera,Pasture,La Chorrera,Mammal,Yes,Yes,No,No,Two,Mammal,Philander,Human,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,6.987767713
+E8.P3,SF7,N5,N4_Adult,N3_Adult,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Didelphis,Heteromys,Human,NA,NA,Positive,Positive,Positive,,,,,NA,Positive,Yes,Coinfection,9.911796359
+E9.P1,CA8P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Four,Mammal,Human,Mus,Potos,Other,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,11.62612057
+E9.P2,CHOR1P3,N1,N1_N3,N1_N2,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Positive,No,Negative,7.3592532
+E9.P3,SF7,N1,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Two,Mammal,Heteromys,Human,NA,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,5.15079214
+F1.P1,CA9P17,N3,N1_N3,N3_Adult,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Two,Mammal,Human,Potos,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,6.321962929
+F1.P2,CHOR1P3,N4,N4_Adult,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,7.290756108
+F1.P3,SF8,Adult,N4_Adult,N3_Adult,Male,Veraguas,Pasture,Veraguas,Mix,Yes,Yes,Yes,No,Four,Mammal,Heteromys,Thraupis,Other,Human,NA,Positive,Positive,Negative,,,,,NA,Negative,No,Tcruzi,10.26429525
+F10.P1,LP1,N3,N1_N3,N3_Adult,NA,Las Pavas,Peridomestic,La Chorrera,Other,Yes,No,No,No,Two,Other,Other,Human,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,14.9869123
+F10.P2,CHOR1P1,N2,N1_N3,N1_N2,NA,La Chorrera,Pasture,La Chorrera,Mammal,Yes,Yes,No,No,Four,Mammal,Philander,Other,Human,Bos,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,4.697060729
+F10.P3,SF8,N1,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mix,Yes,Yes,Yes,No,Three,Mammal,Heteromys,Thraupis,Human,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,7.132644481
+F11.P1,LP2_Capira0217,Adult,N4_Adult,N3_Adult,TBD,Las Pavas,Peridomestic,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Positive,Positive,May-6-2022,Positive,May-27-2022,Single,Positive,Yes,Coinfection,5.640223338
+F11.P2,CHOR1P1,N3,N1_N3,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,Two,Mammal,Other,Philander,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,7.431030722
+F11.P3,SF8,N1,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Two,Mammal,Heteromys,Human,NA,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,6.500519441
+F12.P1,LP2_Capira0217,N3,N1_N3,N3_Adult,NA,Las Pavas,Peridomestic,La Chorrera,Bird,No,No,Yes,No,One,Bird,Piranga,NA,NA,NA,NA,Negative,Negative,Positive,Negative,May-6-2022,Negative,May-27-2022,Single,Negative,No,Trangeli,6.579961945
+F12.P2,CHOR1P1,N3,N1_N3,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,Two,Mammal,Philander,Other,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,6.114637718
+F12.P3,SF8,N1,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Two,Mammal,Heteromys,Human,NA,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,5.553505212
+F2.P1,CA9P17,N5,N4_Adult,N3_Adult,NA,Capira,Pasture,Capira,Mammal,No,Yes,No,No,Two,Mus,Mus,Philander,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,8.456192874
+F2.P2,CHOR1P3,N3,N1_N3,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Positive,No,Negative,5.535802327
+F2.P3,SF8,Adult,N4_Adult,N3_Adult,Male,Veraguas,Pasture,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Heteromys,Other,NA,NA,NA,Positive,Positive,Negative,,,,,NA,Negative,No,Tcruzi,5.699529714
+F3.P1,CA11P17,N4,N4_Adult,N3_Adult,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,One,Human,Human,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,4.760793533
+F3.P2,CHOR1P3,N3,N1_N3,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Negative,No,Tcruzi,5.924407059
+F3.P3,SF8,N2,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mix,Yes,Yes,Yes,No,Four,Mammal,Heteromys,Human,Bos,Thraupis,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,3.982091015
+F4.P1,CA11P17,N2,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Other,No,No,No,No,One,Other,Other,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,8.598021605
+F4.P2,CHOR1P3,N3,N1_N3,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Negative,No,Tcruzi,6.632874355
+F4.P3,SF8,N1,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Heteromys,Human,Thraupis,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,6.273697008
+F5.P1,CA11P17,N2,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Other,No,No,No,No,One,Other,Other,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,6.911060495
+F5.P2,CHOR1P3,N3,N1_N3,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Reptile,No,No,No,Yes,Three,Reptile,Other,Lepidodactylus,Philander,NA,NA,Positive,Positive,Negative,,,,,Negative,Negative,No,Tcruzi,6.420084527
+F5.P3,SF8,N1,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mix,No,Yes,Yes,No,Three,Mammal,Heteromys,Other,Piranga,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,4.139480672
+F6.P1,CA11P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Other,No,No,No,No,One,Other,Other,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,7.111486045
+F6.P2,CHOR1P3,N1,N1_N3,N1_N2,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,4.280038461
+F6.P3,SF8,N1,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mix,No,Yes,Yes,No,Two,Mammal,Heteromys,Piranga,NA,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,7.063448254
+F7.P1,CA11P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Four,Mus,Mus,Human,Other,Philander,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,5.85877639
+F7.P2,CHOR1P3,N2,N1_N3,N1_N2,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,Two,Mammal,Other,Philander,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,6.592911966
+F7.P3,SF8,N1,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mix,Yes,Yes,No,Yes,Three,Mammal,Heteromys,Human,Lepidodactylus,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,5.290326137
+F8.P1,CA11P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Other,Yes,No,No,No,Three,Other,Other,Human,Philander,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,5.77939838
+F8.P2,CHOR1P3,N1,N1_N3,N1_N2,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,7.263979116
+F8.P3,SF8,N1,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Two,Mammal,Heteromys,Human,NA,NA,NA,Positive,Positive,Negative,,,,,NA,Negative,No,Tcruzi,4.420472658
+F9.P1,CA11P17,N1,N1_N3,N1_N2,NA,Capira,Pasture,Capira,Mammal,Yes,Yes,No,No,Two,Other,Human,Other,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,6.726589723
+F9.P2,CHOR1P3,N1,N1_N3,N1_N2,NA,La Chorrera,Pasture,La Chorrera,Mammal,Yes,Yes,No,No,Two,Mammal,Philander,Human,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,6.977071025
+F9.P3,SF8,N1,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Two,Mammal,Heteromys,Human,NA,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,6.123812509
+G1.P1,LP3_Capira0317,N3,N1_N3,N3_Adult,NA,Las Pavas,Peridomestic,La Chorrera,Mammal,Yes,Yes,No,No,Three,Mammal,Human,Philander,Mus,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,10.51556061
+G1.P2,CHOR1P1,N3,N1_N3,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mix,No,Yes,Yes,No,Four,Mus,Mus,Thraupis,Other,Philander,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,4.106989789
+G1.P3,SF8,N1,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Didelphis,Heteromys,Human,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,NA,Negative,9.429982537
+G10.P1,HN2,N1,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Other,No,No,No,No,One,Other,Other,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,19.19712742
+G10.P2,CHOR1P5,Adult,N4_Adult,N3_Adult,Female,La Chorrera,Pasture,La Chorrera,Bird,No,No,Yes,No,One,Bird,Thraupis,NA,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,8.184564566
+G10.P3,SF11,N1,N1_N3,N1_N2,NA,Veraguas,Peridomestic,Veraguas,Mix,No,Yes,Yes,No,Three,Mammal,Heteromys,Didelphis,Thraupis,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,11.28042017
+G11.P1,HN2,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,No,Yes,No,No,Two,Mus,Mus,Philander,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,7.537899113
+G11.P2,CHOR1P5,N1,N1_N3,N1_N2,NA,La Chorrera,Pasture,La Chorrera,Mix,No,Yes,Yes,No,Four,Mix,Other,Mus,Philander,Thraupis,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,6.034735781
+G11.P3,SF11,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Peridomestic,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Heteromys,Human,Didelphis,NA,NA,Negative,Negative,Negative,,,,,NA,Positive,No,Negative,10.20508582
+G12.P1,HN5,N1,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,No,Yes,No,No,One,Mus,Mus,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,8.34375039
+G12.P2,CAM1P17,N3,N1_N3,N3_Adult,NA,Campana,Peridomestic,Capira,Mammal,Yes,Yes,No,No,Two,Human,Human,Mus,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,6.651593586
+G12.P3,SF11,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,One,Mammal,Didelphis,NA,NA,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,12.52923337
+G2.P1,LP3_Capira0317,Adult,N4_Adult,N3_Adult,TBD,Las Pavas,Peridomestic,La Chorrera,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Positive,Negative,May-6-2022,,,Negative,Positive,Yes,Coinfection,8.665930503
+G2.P2,CHOR1P1,Adult,N4_Adult,N3_Adult,TBD,La Chorrera,Pasture,La Chorrera,Mix,No,Yes,Yes,No,Four,Mus,Mus,Thraupis,Other,Philander,NA,Positive,Positive,Positive,,,,,Negative,Positive,Yes,Coinfection,6.395897468
+G2.P3,SF8,N1,N1_N3,N1_N2,NA,Veraguas,Pasture,Veraguas,Mammal,Yes,Yes,No,No,Two,Mammal,Heteromys,Human,NA,NA,NA,Negative,Negative,NA,,,,,NA,NA,NA,Negative,5.46888556
+G3.P1,HN1,N1,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,Yes,Yes,No,No,Three,Mammal,Philander,Human,Mus,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,7.230797396
+G3.P2,CHOR1P1,N5,N4_Adult,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,One,Mus,Mus,NA,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Positive,No,Tcruzi,5.794393904
+G3.P3,SF11,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Didelphis,Heteromys,NA,NA,NA,Negative,Negative,NA,,,,,NA,NA,NA,Negative,6.4851634
+G4.P2,CHOR1P1,N3,N1_N3,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,One,Mus,Mus,NA,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,5.665853679
+G4.P3,SF11,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Didelphis,Heteromys,NA,NA,NA,Positive,Positive,NA,,,,,NA,NA,NA,Tcruzi,10.03725417
+G5.P1,HN7,Adult,N4_Adult,N3_Adult,TBD,La Chorrera,Peridomestic,La Chorrera,Mammal,Yes,Yes,No,No,Three,Mus,Mus,Philander,Human,NA,NA,Positive,Positive,Positive,Positive,May-6-2022,Positive,May-27-2022,Negative,Positive,Yes,Coinfection,12.99066994
+G5.P2,CHOR1P1,N3,N1_N3,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Other,No,No,No,No,One,Other,Other,NA,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,14.65325606
+G5.P3,SF11,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Didelphis,Heteromys,NA,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,8.323807319
+G6.P1,HN10,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,No,Yes,No,No,Two,Mus,Mus,Philander,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,6.864444004
+G6.P2,CHOR1P1,N2,N1_N3,N1_N2,NA,La Chorrera,Pasture,La Chorrera,Mammal,Yes,Yes,No,No,Three,Mammal,Human,Mus,Philander,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,5.774300506
+G6.P3,SF11,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Didelphis,Heteromys,NA,NA,NA,Positive,Positive,Negative,,,,,NA,Positive,No,Tcruzi,12.34107841
+G7.P1,HN11,Adult,N4_Adult,N3_Adult,Female,La Chorrera,Peridomestic,La Chorrera,Mammal,No,Yes,No,No,One,Mus,Mus,NA,NA,NA,NA,Positive,Positive,Negative,Positive,May-27-2022,,,Negative,Positive,No,Tcruzi,10.44429725
+G7.P2,CHOR1P1,N3,N1_N3,N3_Adult,NA,La Chorrera,Pasture,La Chorrera,Mammal,No,Yes,No,No,Two,Other,Other,Mus,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,5.569471245
+G7.P3,SF11,N1,N1_N3,N1_N2,NA,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,Three,Mammal,Heteromys,Didelphis,Metachirus,NA,NA,Positive,Positive,Negative,,,,,NA,Negative,No,Tcruzi,5.843866447
+G8.P1,HN11,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mix,No,Yes,Yes,No,Four,Bird,Piranga,Other,Mus,Philander,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,8.214020385
+G8.P2,CHOR1P2,N2,N1_N3,N1_N2,NA,La Chorrera,Pasture,La Chorrera,Mix,No,Yes,Yes,No,Three,Other,Other,Mus,Thraupis,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,5.487810258
+G8.P3,SF11,N1,N1_N3,N1_N2,NA,Veraguas,Peridomestic,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Didelphis,Heteromys,Human,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,7.866106947
+G9.P1,HN2,N1,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,Yes,Yes,No,No,Two,Human,Human,Mus,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,7.159282247
+G9.P2,CHOR1P2,N1,N1_N3,N1_N2,NA,La Chorrera,Pasture,La Chorrera,Mix,No,Yes,Yes,No,Three,Mus,Mus,Thraupis,Odocoileus,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,7.47404957
+G9.P3,SF11,N1,N1_N3,N1_N2,NA,Veraguas,Peridomestic,Veraguas,Mix,No,Yes,Yes,No,Three,Mammal,Heteromys,Didelphis,Thraupis,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,7.844236374
+H1.P1,HN5,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mix,Yes,Yes,Yes,No,Two,Bird,Piranga,Human,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,9.523222622
+H1.P3,SF11,Adult,N4_Adult,N3_Adult,Male,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Didelphis,Philander,NA,NA,NA,Positive,Positive,Positive,,,,,NA,Positive,Yes,Tcruzi,13.81574474
+H10.P1,HN5,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Other,No,No,No,No,One,Other,Other,NA,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,11.73676388
+H10.P2,SF1,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Peridomestic,Veraguas,Mix,Yes,Yes,Yes,No,Two,Bird,Thraupis,Philander,NA,NA,NA,Positive,Positive,Positive,,,,,Single,Negative,Yes,Coinfection,11.91876908
+H11.P1,HN5,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mix,Yes,Yes,Yes,No,Three,Bird,Human,Mus,Piranga,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,5.846659892
+H11.P2,SF1,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Philander,Procyon,NA,NA,NA,Positive,Positive,Positive,,,,,Negative,Positive,Yes,Coinfection,9.612551052
+H12.P1,HN5,N3,N1_N3,N3_Adult,NA,La Chorrera,Peridomestic,La Chorrera,Bird,No,No,Yes,No,One,Bird,Piranga,NA,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,5.203419555
+H2.P1,HN5,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Bird,No,No,Yes,No,One,Bird,Piranga,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,7.463415605
+H2.P2,CAM2P17,Adult,N4_Adult,N3_Adult,TBD,Campana,Peridomestic,Capira,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,6.070470134
+H2.P3,SF11,N1,N1_N3,N1_N2,NA,Veraguas,Peridomestic,Veraguas,Mammal,Yes,Yes,No,No,Four,Mammal,Heteromys,Human,Mus,Didelphis,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,10.08544746
+H3.P1,HN5,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mix,No,Yes,Yes,No,Two,Mammal,Leopardus,Piranga,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,5.574223467
+H3.P2,CAM2P17,N2,N1_N3,N1_N2,NA,Campana,Peridomestic,Capira,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Positive,Positive,Negative,,,,,Negative,Negative,No,Tcruzi,7.336466781
+H3.P3,SF11,N1,N1_N3,N1_N2,NA,Veraguas,Peridomestic,Veraguas,Mammal,Yes,Yes,No,No,Four,Mammal,Heteromys,Human,Didelphis,Bos,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,9.350771576
+H4.P1,HN5,N4,N4_Adult,N3_Adult,NA,La Chorrera,Peridomestic,La Chorrera,Bird,No,No,Yes,Yes,One,Bird,Piranga,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,6.125443718
+H4.P2,CAM2P17,N3,N1_N3,N3_Adult,NA,Campana,Peridomestic,Capira,Mammal,Yes,Yes,No,No,Two,Mammal,Human,Philander,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,5.40022185
+H4.P3,SF11,N1,N1_N3,N1_N2,NA,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,Three,Mammal,Heteromys,Didelphis,Other,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,18.05863048
+H5.P1,HN5,N1,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mix,Yes,Yes,Yes,No,Three,Bird,Human,Mus,Piranga,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,5.717346527
+H5.P2,CAM2P17,Adult,N4_Adult,N3_Adult,Female,Campana,Peridomestic,Capira,Mammal,No,Yes,No,No,One,Mammal,Philander,NA,NA,NA,NA,Negative,Negative,Positive,,,,,Single,Negative,No,Trangeli,7.16880361
+H5.P3,SF11,N1,N1_N3,N1_N2,NA,Veraguas,Peridomestic,Veraguas,Mammal,Yes,Yes,No,No,Three,Mammal,Human,Heteromys,Didelphis,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,9.280269094
+H6.P1,HN5,N1,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mammal,Yes,Yes,No,No,One,Human,Human,NA,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,5.733231783
+H6.P3,SF11,N1,N1_N3,N1_N2,NA,Veraguas,Peridomestic,Veraguas,Mammal,Yes,Yes,No,No,Four,Mammal,Heteromys,Other,Human,Didelphis,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,12.52763888
+H7.P1,HN5,N1,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Mix,Yes,Yes,Yes,No,Three,Mus,Mus,Human,Piranga,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,6.506518811
+H7.P3,SF11,N1,N1_N3,N1_N2,NA,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,Three,Mammal,Heteromys,Mus,Didelphis,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,7.183699957
+H8.P1,HN5,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Bird,No,No,Yes,No,Two,Bird,Piranga,Other,NA,NA,NA,Negative,Negative,Negative,Negative,May-27-2022,,,Negative,Negative,No,Negative,6.496309168
+H8.P3,SF11,N1,N1_N3,N1_N2,NA,Veraguas,Peridomestic,Veraguas,Mammal,No,Yes,No,No,Three,Mammal,Heteromys,Bos,Didelphis,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,10.67809713
+H9.P1,HN5,N2,N1_N3,N1_N2,NA,La Chorrera,Peridomestic,La Chorrera,Other,No,No,No,No,One,Other,Other,NA,NA,NA,NA,Negative,Negative,Negative,,,,,Negative,Negative,No,Negative,11.61447261
+H9.P3,SF14,Adult,N4_Adult,N3_Adult,TBD,Veraguas,Forest,Veraguas,Mammal,No,Yes,No,No,Two,Mammal,Didelphis,Heteromys,NA,NA,NA,Negative,Negative,Negative,,,,,NA,Negative,No,Negative,9.720752806

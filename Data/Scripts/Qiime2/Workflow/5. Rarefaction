@@ -1,0 +1,43 @@
+Alpha rarefaction plotting
+(September 4, 2019)
+
+(use the cluster)
+(Check for updates on gacrc format. This has since been updated in 2022 since time of run)
+
+
+nano alpha_rarefaction.sh
+
+#!/bin/bash
+#SBATCH --partition=batch
+#SBATCH --job-name=alpha_rarefaction
+#SBATCH --ntasks=1
+#SBATCH --time=6:00:00
+#SBATCH --mem=25G
+
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=ka14691@uga.edu
+
+
+cd /scratch/ka14691/gut_salivary/guts-ONLY/August2019
+
+module load QIIME2/2018.11
+
+export LC_ALL=en_US.utf-8
+export LANG=en_US.utf-8
+
+
+qiime diversity alpha-rarefaction \
+  --i-table table_guts-August2019.qza \
+  --i-phylogeny rooted-tree_guts-August2019.qza \
+  --p-max-depth 4600 \
+  --m-metadata-file /Volumes/Kaylee2.0/16S_dissertation_projects/Metadata/Guts_ONLY_metadata2017_validated.tsv \
+  --o-visualization alpha-rarefaction_August2019.qzv
+
+running time: 1 min:12 seconds
+output: alpha-rarefaction_August2019.qzv
+
+
+
+(In general, choosing a value for p-max-depth that is somewhere around the median frequency seems to work well, but you may want to increase that value if the lines in the resulting rarefaction plot don’t appear to be leveling out, or decrease that value if you seem to be losing many of your samples due to low total frequencies closer to the minimum sampling depth than the maximum sampling depth)
+
+

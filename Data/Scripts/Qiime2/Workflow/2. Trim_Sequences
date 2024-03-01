@@ -1,0 +1,17 @@
+Trim Sequences using cutadapt
+
+time qiime cutadapt trim-paired \
+  --i-demultiplexed-sequences August_guts-paired-end-demux.qza \
+  --p-cores 2 \
+  --p-front-f CCTACGGGNGGCWGCAG \
+  --p-front-r GACTACHVGGGTATCTAATCC \
+  --output August_guts-trimmed_sequences.qza
+
+output: August_guts-trimmed_sequences.qza
+(7 minutes locally)
+
+Summarize
+
+time qiime demux summarize \
+  --i-data August_guts-trimmed_sequences.qza \
+  --o-visualization August_guts-trimmed_sequences.qzv

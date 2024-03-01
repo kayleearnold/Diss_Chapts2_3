@@ -1,0 +1,28 @@
+Alpha Diversity Analysis
+
+
+time qiime diversity core-metrics-phylogenetic \
+  --i-phylogeny rooted-tree_guts-August2019.qza \
+  --i-table table_guts-August2019.qza\
+  --p-sampling-depth 1027 \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --output-dir core-metrics-results_2022
+
+(27 seconds locally)
+
+
+time qiime diversity alpha-group-significance \
+  --i-alpha-diversity core-metrics-results_2022/faith_pd_vector.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization core-metrics-results_2022/faith-pd-group-significance.qzv
+
+(2 minutes locally)
+
+time qiime diversity alpha-group-significance \
+  --i-alpha-diversity core-metrics-results_2022/evenness_vector.qza \
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata.tsv \
+  --o-visualization core-metrics-results_2022/evenness-group-significance.qzv
+
+(2 minutes locally)
+
+

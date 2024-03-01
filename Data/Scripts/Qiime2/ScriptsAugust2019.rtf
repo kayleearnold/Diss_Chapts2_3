@@ -1,0 +1,1250 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2706
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Oblique;\f2\fswiss\fcharset0 Helvetica-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red252\green117\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c56882\c100000;}
+\margl1440\margr1440\vieww25400\viewh14380\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Qiime2 scripts from August 16, 2019 and beyond. All files in /Volumes/Kaylee2.0/16S_gut_project\
+\
+\
+**Scripts updated for manuscript starting March 2020**\
+\
+\
+\
+*Signing into gacrc ssh ka14691@sapelo2.gacrc.uga.edu*\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs36 \cf0 Demultiplex\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \
+Obtain files from sequencer upload to Mr. Demuxy\
+\
+Mr. Demuxy (https://pypi.org/project/Mr_Demuxy/ - demultiplexes combinatorially tagged reads)\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs36 \cf0 Import Sequences
+\fs24 \
+\
+Check for qiime2 updates using qiime2.org\
+\
+source activate qiime2-2019.7\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\i \cf0 Create manifest file
+\f0\i0 \
+\
+Must be in this file format: (check format in textedit, excel and google sheets can add extra symbols)\
+sample-id,absolute-filepath,direction\
+sample-1,$PWD/some/filepath/sample1_R1.fastq.gz,forward\
+sample-2,$PWD/some/filepath/sample2_R1.fastq.gz,forward\
+\
+import data (make sure everything is in the right director, or add the directory name to the filename)\
+\
+time qiime tools import \\\
+ --type 'SampleData[PairedEndSequencesWithQuality]' \\\
+ --input-path guts_ONLY-manifest.txt \\\
+ --output-path August_guts-paired-end-demux.qza \\\
+ --input-format PairedEndFastqManifestPhred33\
+\
+output: August_guts-paired-end-demux.qza\
+(30 minutes locally)\
+\
+time qiime demux summarize \\\
+  --i-data August_guts-paired-end-demux.qza \\\
+  --o-visualization August_guts-paired-end-demux.qzv\
+\
+355 samples in total (including negatives and unassigned)\
+2518 reads and below covers all negatives plus one sample (H12.P2)\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs36 \cf0 Trim Sequences using cutadapt
+\fs24 \
+\
+time qiime cutadapt trim-paired \\\
+  --i-demultiplexed-sequences August_guts-paired-end-demux.qza \\\
+  --p-cores 2 \\\
+  --p-front-f CCTACGGGNGGCWGCAG \\\
+  --p-front-r GACTACHVGGGTATCTAATCC \\\
+  --output August_guts-trimmed_sequences.qza\
+\
+output: August_guts-trimmed_sequences.qza\
+(7 minutes locally)\
+\
+\
+Summarize\
+\
+time qiime demux summarize \\\
+  --i-data August_guts-trimmed_sequences.qza \\\
+  --o-visualization August_guts-trimmed_sequences.qzv\
+\
+\
+
+\fs36 DADA2 filtering (denoises and pairs)
+\fs24 \
+\
+Use FileZilla to transfer files to scratch\
+\
+Host : sftp://xfer.gacrc.uga.edu\
+Username: ka14691\
+Password: myID password\
+Port: 22\
+Quickconnect\
+\
+Using the cluster\
+\
+*signing on*\
+\
+ssh ka14691@sapelo2.gacrc.uga.edu\
+cd /scratch/ka14691/gut_salivary/guts-ONLY/August2019\
+\
+Create file\
+\
+nano dada2-guts-ONLY-August2019.sh\
+\
+#PBS -S /bin/bash\
+#PBS -q batch\
+#PBS -N dada2-guts-ONLY-August2019\
+#PBS -l nodes=1:ppn=12\
+#PBS -l mem=25gb\
+#PBS -l walltime=60:00:00\
+\
+#PBS -M ka14691@uga.edu\
+#PBS -m ae\
+\
+cd /scratch/ka14691/gut_salivary/guts-ONLY/August2019\
+\
+module load QIIME2/2018.11\
+\
+export LC_ALL=en_US.utf-8\
+export LANG=en_US.utf-8\
+\
+\
+time qiime dada2 denoise-paired \\\
+  --i-demultiplexed-seqs August_guts-trimmed_sequences.qza \\\
+  --p-trunc-len-f 270 \\\
+  --p-trunc-len-r 250 \\\
+  --o-table guts_table_trimmed_August2019.qza \\\
+  --o-representative-sequences guts_rep-seqs_trimmed_August2019.qza \\\
+  --o-denoising-stats guts_denoising-stats_trimmed_August2019.qza\
+\
+(2:45:15 on cluster)\
+\
+outputs: 	guts_denoising-stats_trimmed_August2019.qza\
+		guts_rep-seqs_trimmed_August2019.qza\
+		guts_table_trimmed_August2019.qza\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\i \cf0 summarize
+\f0\i0 \
+\
+time qiime metadata tabulate \\\
+  --m-input-file guts_denoising-stats_trimmed_August2019.qza \\\
+  --o-visualization guts_denoising-stats_trimmed_August2019.qzv\
+\
+(13 seconds locally)\
+\
+\
+
+\f1\i Rename
+\f0\i0  \
+\
+mv guts_rep-seqs_trimmed_August2019.qza rep-seqs_guts-August2019.qza\
+mv guts_table_trimmed_August2019.qza table_guts-August2019.qza\
+\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs36 \cf0 FeatureTable and FeatureData summaries 
+\fs24 \
+\
+time qiime feature-table summarize \\\
+  --i-table table_guts-August2019.qza \\\
+  --o-visualization table_guts-August2019.qzv \\\
+  --m-sample-metadata-file /Volumes/Kaylee2.0/16S_dissertation_projects/Metadata/Guts_ONLY_metadata2017_validated.tsv\
+time qiime feature-table tabulate-seqs \\\
+  --i-data rep-seqs_guts-August2019.qza \\\
+  --o-visualization rep-seqs_guts-August2019.qzv\
+\
+(20 seconds locally)\
+\
+outputs:\
+	table_guts-August2019.qzv\
+	rep-seqs_guts-August2019.qzv\
+\
+\
+time qiime phylogeny align-to-tree-mafft-fasttree \\\
+  --i-sequences rep-seqs_guts-August2019.qza \\\
+  --o-alignment aligned-rep-seqs_guts-August2019.qza \\\
+  --o-masked-alignment masked-aligned-rep-seqs_guts-August2019.qza \\\
+  --o-tree unrooted-tree_guts-August2019.qza \\\
+  --o-rooted-tree rooted-tree_guts-August2019.qza\
+\
+(7 minutes locally)\
+\
+
+\fs36 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs44 \cf0 Redo rep seqs, feature table and feature table summaries with filtered data (rpal field only) - August 2022\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \
+\
+Filter samples\
+\
+time qiime feature-table filter-samples \\\
+--i-table /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/table_guts-August2019.qza \\\
+--m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+--o-filtered-table filtered-rpal_field_table-2022.qza\
+\
+\
+time qiime feature-table summarize \\\
+  --i-table filtered-rpal_field_table-2022.qza \\\
+  --o-visualization table_guts-rpal_field-2022.qzv \\\
+  --m-sample-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \
+\
+time qiime feature-table tabulate-seqs \\\
+  --i-data /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/rep-seqs_guts-August2019.qza \\\
+  --o-visualization rep-seqs_guts-rpal_field-2022.qzv\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs36 \cf0 Alpha rarefaction plotting\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs28 \cf0 (September 4, 2019)
+\fs36 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs24 \cf0 (use the cluster)\
+\
+#PBS -S /bin/bash\
+#PBS -q batch\
+#PBS -N alpha_rarefaction\
+#PBS -l nodes=1:ppn=12\
+#PBS -l mem=25gb\
+#PBS -l walltime=6:00:00\
+\
+#PBS -M ka14691@uga.edu\
+#PBS -m ae\
+\
+cd /scratch/ka14691/gut_salivary/guts-ONLY/August2019\
+\
+module load QIIME2/2018.11\
+\
+export LC_ALL=en_US.utf-8\
+export LANG=en_US.utf-8\
+qiime diversity alpha-rarefaction \\\
+  --i-table table_guts-August2019.qza \\\
+  --i-phylogeny rooted-tree_guts-August2019.qza \\\
+  --p-max-depth 4600 \\\
+  --m-metadata-file /Volumes/Kaylee2.0/16S_dissertation_projects/Metadata/Guts_ONLY_metadata2017_validated.tsv \\\
+  --o-visualization alpha-rarefaction_August2019.qzv\
+\
+running time: 1 min:12 seconds\
+output: alpha-rarefaction_August2019.qzv\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\i \cf0 (In general, choosing a value for p-max-depth that is somewhere around the median frequency seems to work well, but you may want to increase that value if the lines in the resulting rarefaction plot don\'92t appear to be leveling out, or decrease that value if you seem to be losing many of your samples due to low total frequencies closer to the minimum sampling depth than the maximum sampling depth)
+\f0\i0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f2\b \cf0 \
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs36 \cf0 Redo Rarefaction with filtered table\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0\fs24 \cf0 time qiime diversity alpha-rarefaction \\\
+  --i-table filtered-rpal_field_table-2022.qza \\\
+  --i-phylogeny /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/rooted-tree_guts-August2019.qza \\\
+  --p-max-depth 4600 \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --o-visualization alpha-rarefaction_August2022.qzv\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs36 \cf0 Alpha diversity analyses (updated with cleaned and filtered metadata August 2022) -- \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \
+time qiime diversity core-metrics-phylogenetic \\\
+  --i-phylogeny /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/rooted-tree_guts-August2019.qza \\\
+  --i-table /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/rpal_field_filtered2022/filtered-rpal_field_table-2022.qza \\\
+  --p-sampling-depth 2133 \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --output-dir core-metrics-results_2022\
+\
+(27 seconds locally)\
+\
+\
+time qiime diversity alpha-group-significance \\\
+  --i-alpha-diversity core-metrics-results_2022/faith_pd_vector.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --o-visualization core-metrics-results_2022/faith-pd-group-significance.qzv\
+\
+(16 seconds locally)\
+\
+time qiime diversity alpha-group-significance \\\
+  --i-alpha-diversity core-metrics-results_2022/evenness_vector.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --o-visualization core-metrics-results_2022/evenness-group-significance.qzv\
+\
+\
+time qiime diversity alpha-group-significance \\\
+  --i-alpha-diversity core-metrics-results_2022/observed_features_vector.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --o-visualization core-metrics-results_2022/observed-group-significance.qzv\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs36 \cf0 Beta Diversity Analyses (Updated with cleaned metadata August 2022)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\i\fs32 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\i0 \cf0 Beta group significance
+\f1\i \
+*unweighted*
+\f0\i0\fs36 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs24 \cf0 time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column Region \\\
+  --o-visualization unweighted-unifrac-REGION-significance.qzv \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column HABITAT \\\
+  --o-visualization unweighted-unifrac-HABITAT-significance.qzv \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column ESTADIO \\\
+  --o-visualization unweighted-unifrac-AGE-significance.qzv \\\
+  --p-pairwise\
+\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column PalmID \\\
+  --o-visualization unweighted-unifrac-PalmID-significance.qzv\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column TypeBM \\\
+  --o-visualization unweighted-unifrac-TypeBM-significance.qzv \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column NumberBM \\\
+  --o-visualization unweighted-unifrac-NumberBM-significance.qzv \\\
+  --p-pairwise\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs32 \cf0 *
+\f1\i weighted*\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\i0\fs24 \cf0 time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/weighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column Region \\\
+  --o-visualization weighted-unifrac-REGION-significance.qzv \\\
+  --p-pairwise\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/weighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column PalmID \\\
+  --o-visualization weighted-unifrac-PalmID-significance.qzv\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/weighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column HABITAT \\\
+  --o-visualization weighted-unifrac-HABITAT-significance.qzv \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/weighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column ESTADIO \\\
+  --o-visualization weighted-unifrac-AGE-significance.qzv \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/weighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column TypeBM \\\
+  --o-visualization weighted-unifrac-TypeBM-significance.qzv \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/weighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column NumberBM \\\
+  --o-visualization weighted-unifrac-NumberBM-significance.qzv \\\
+  --p-pairwise\
+\
+\
+\
+Bray Curtis\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column Region \\\
+  --o-visualization bray_curtis-REGION-significance.qzv \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column PalmID \\\
+  --o-visualization bray_curtis-PalmID-significance.qzv\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column HABITAT \\\
+  --o-visualization bray_curtis-HABITAT-significance.qzv \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column ESTADIO \\\
+  --o-visualization bray_curtis-AGE-significance.qzv \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column TypeBM \\\
+  --o-visualization bray_curtis-TypeBM-significance.qzv \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column NumberBM \\\
+  --o-visualization bray_curtis-NumberBM-significance.qzv \\\
+  --p-pairwise\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs48 \cf0 \cb2 PERMDIS
+\fs30 \cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs36 \cf0 *unweighted*
+\fs24 \
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column Region \\\
+  --o-visualization unweighted-unifrac-REGION-significance.qzv \\\
+  --p-method permdisp \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column HABITAT \\\
+  --o-visualization unweighted-unifrac-HABITAT-significance.qzv \\\
+  --p-method permdisp \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column ESTADIO \\\
+  --o-visualization unweighted-unifrac-AGE-significance.qzv \\\
+  --p-method permdisp \\\
+  --p-pairwise\
+\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column PalmID \\\
+  --o-visualization unweighted-unifrac-PalmID-significance.qzv \\\
+  --p-method permdisp\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column TypeBM \\\
+  --o-visualization unweighted-unifrac-TypeBM-significance.qzv \\\
+  --p-method permdisp \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column NumberBM \\\
+  --o-visualization unweighted-unifrac-NumberBM-significance.qzv \\\
+  --p-method permdisp \\\
+  --p-pairwise\
+\
+\
+*
+\fs36 weighted
+\fs24 *\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/weighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column Region \\\
+  --o-visualization weighted-unifrac-REGION-significance.qzv \\\
+  --p-method permdisp \\\
+  --p-pairwise\
+\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/weighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column HABITAT \\\
+  --o-visualization weighted-unifrac-HABITAT-significance.qzv \\\
+  --p-method permdisp \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/weighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column ESTADIO \\\
+  --o-visualization weighted-unifrac-AGE-significance.qzv \\\
+  --p-method permdisp \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/weighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column TypeBM \\\
+  --o-visualization weighted-unifrac-TypeBM-significance.qzv \\\
+  --p-method permdisp \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/weighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column NumberBM \\\
+  --o-visualization weighted-unifrac-NumberBM-significance.qzv \\\
+  --p-method permdisp \\\
+  --p-pairwise\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/weighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column PalmID \\\
+  --o-visualization weighted-unifrac-PalmID-significance.qzv \\\
+  --p-method permdisp \\\
+  --p-pairwise\
+\
+\
+\
+Bray-Curtis\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column Region \\\
+  --o-visualization bray_curtis-REGION-significance.qzv \\\
+  --p-method permdisp \\\
+  --p-pairwise\
+\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column HABITAT \\\
+  --o-visualization bray_curtis-HABITAT-significance.qzv \\\
+  --p-method permdisp \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column ESTADIO \\\
+  --o-visualization bray_curtis-AGE-significance.qzv \\\
+  --p-method permdisp \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column TypeBM \\\
+  --o-visualization bray_curtis-TypeBM-significance.qzv \\\
+  --p-method permdisp \\\
+  --p-pairwise\
+\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column NumberBM \\\
+  --o-visualization bray_curtis-NumberBM-significance.qzv \\\
+  --p-method permdisp \\\
+  --p-pairwise\
+\
+time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --m-metadata-column PalmID \\\
+  --o-visualization bray_curtis-PalmID-significance.qzv \\\
+  --p-method permdisp \\\
+  --p-pairwise\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs30 \cf0 ADONIS
+\fs24 \
+Updated August 2022 - (originally completed July 2020 on August 2019 filtered) - Adonis test: We can also use the adonis action to look at a multivariate model. The adonis action uses a PERMANOVA test, but a different implementation that permits multiple effects to be tested simultaneously (similar to how we used ANOVA earlier for multivariate effects on alpha diversity). **qiime2 documents**\
+UPDATED SEPTEMBER 2022\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs28 \cf0 *** filter out human and mus blood meals\
+\
+Filter to remove samples without humans or mus for just FirstBM and TypeBM and NumberBM
+\fs24 \
+\
+time qiime feature-table filter-samples \\\
+--i-table /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/table_guts-August2019.qza \\\
+--m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata-Mus-Human-Bloodmeals-Removed.tsv \\\
+--o-filtered-table filtered-rpal_field_table-2022-Bloodmeals.qza\
+\
+\
+time qiime diversity core-metrics-phylogenetic \\\
+  --i-phylogeny /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/rooted-tree_guts-August2019.qza \\\
+  --i-table /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/BetaDiversity/All_Samples/filtered-rpal_field_table-2022-Bloodmeals.qza \\\
+  --p-sampling-depth 2133 \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata-Mus-Human-Bloodmeals-Removed.tsv \\\
+  --output-dir core-metrics-results_2022-Bloodmeals\
+\
+\
+UNWEIGHTED\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/BetaDiversity/All_Samples/core-metrics-results_2022-Bloodmeals/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata-Mus-Human-Bloodmeals-Removed.tsv \\\
+  --o-visualization unweighted_adonis_full_mod.qzv \\\
+  --p-formula "PalmID + Age_Group + Region + HABITAT + FirstBM + NumberBM"\
+\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/BetaDiversity/All_Samples/core-metrics-results_2022-Bloodmeals/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata-Mus-Human-Bloodmeals-Removed.tsv \\\
+  --o-visualization unweighted_adonis_mod1.qzv \\\
+  --p-formula "PalmID + Age_Group + Region"\
+\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/BetaDiversity/All_Samples/core-metrics-results_2022-Bloodmeals/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata-Mus-Human-Bloodmeals-Removed.tsv \\\
+  --o-visualization unweighted_adonis_mod2.qzv \\\
+  --p-formula "PalmID + Age_Group + HABITAT"\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/BetaDiversity/All_Samples/core-metrics-results_2022-Bloodmeals/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata-Mus-Human-Bloodmeals-Removed.tsv \\\
+  --o-visualization unweighted_adonis_mod3.qzv \\\
+  --p-formula "PalmID + Age_Group + FirstBM"\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/BetaDiversity/All_Samples/core-metrics-results_2022-Bloodmeals/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata-Mus-Human-Bloodmeals-Removed.tsv \\\
+  --o-visualization unweighted_adonis_mod4.qzv \\\
+  --p-formula "PalmID + Age_Group + NumberBM"\
+\
+\
+\
+\
+WEIGHTED\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/BetaDiversity/All_Samples/core-metrics-results_2022-Bloodmeals/weighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata-Mus-Human-Bloodmeals-Removed.tsv \\\
+  --o-visualization weighted_adonis_full_mod.qzv \\\
+  --p-formula "PalmID + Age_Group + Region + HABITAT + FirstBM + NumberBM"\
+\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/BetaDiversity/All_Samples/core-metrics-results_2022-Bloodmeals/weighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata-Mus-Human-Bloodmeals-Removed.tsv \\\
+  --o-visualization weighted_adonis_mod1.qzv \\\
+  --p-formula "PalmID + Age_Group + Region"\
+\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/BetaDiversity/All_Samples/core-metrics-results_2022-Bloodmeals/weighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata-Mus-Human-Bloodmeals-Removed.tsv \\\
+  --o-visualization weighted_adonis_mod2.qzv \\\
+  --p-formula "PalmID + Age_Group + HABITAT"\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/BetaDiversity/All_Samples/core-metrics-results_2022-Bloodmeals/weighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata-Mus-Human-Bloodmeals-Removed.tsv \\\
+  --o-visualization weighted_adonis_mod3.qzv \\\
+  --p-formula "PalmID + Age_Group + FirstBM"\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/BetaDiversity/All_Samples/core-metrics-results_2022-Bloodmeals/weighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/2022_Updated_Cleaned_Metadata-Mus-Human-Bloodmeals-Removed.tsv \\\
+  --o-visualization weighted_adonis_mod4.qzv \\\
+  --p-formula "PalmID + Age_Group + NumberBM"\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs30 \cf0 \
+Bray-Curtis\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs24 \cf0 time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --o-visualization bray-curtis_adonis_full_mod.qzv \\\
+  --p-formula "Region + PalmID + HABITAT + NumberBM + TypeBM + ESTADIO"\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --o-visualization bray-curtis_adonis_mod1.qzv \\\
+  --p-formula "ESTADIO * PalmID"\
+\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --o-visualization bray-curtis_adonis_mod2.qzv \\\
+  --p-formula "Region * HABITAT"\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --o-visualization bray-curtis_adonis_mod3.qzv \\\
+  --p-formula "Region * TypeBM"\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --o-visualization bray-curtis_adonis_mod4.qzv \\\
+  --p-formula "Region * PalmID"\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --o-visualization bray-curtis_adonis_mod5.qzv \\\
+  --p-formula "Region * ESTADIO"\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --o-visualization bray-curtis_adonis_mod6.qzv \\\
+  --p-formula "Region * NumberBM"\
+\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --o-visualization bray-curtis_adonis_mod7.qzv \\\
+  --p-formula "HABITAT * TypeBM"\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --o-visualization bray-curtis_adonis_mod8.qzv \\\
+  --p-formula "HABITAT * PalmID"\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --o-visualization bray-curtis_adonis_mod9.qzv \\\
+  --p-formula "HABITAT * ESTADIO"\
+\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --o-visualization bray-curtis_adonis_mod10.qzv \\\
+  --p-formula "HABITAT * NumberBM"\
+\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --o-visualization bray-curtis_adonis_mod11.qzv \\\
+  --p-formula "TypeBM * PalmID"\
+\
+\
+\
+time qiime diversity adonis \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/bray_curtis_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_rpal_field_2022.tsv \\\
+  --o-visualization bray-curtis_adonis_mod12.qzv \\\
+  --p-formula "TypeBM * ESTADIO"
+\fs30 \
+\
+\
+---- Redo all permanova/adnois/permdis with only Capira data\
+\
+\
+Filter samples\
+\
+
+\fs24 time qiime feature-table filter-samples \\\
+--i-table /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/table_guts-August2019.qza \\\
+--m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_2022_Updated_Cleaned_Metadata-Capira.tsv \\\
+--o-filtered-table filtered-rpal_field_table-2022-Capira.qza
+\fs30 \
+
+\fs24 \
+\
+time qiime diversity core-metrics-phylogenetic \\\
+  --i-phylogeny /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/rooted-tree_guts-August2019.qza \\\
+  --i-table /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/BetaDiversity/Capira/filtered-rpal_field_table-2022-Capira.qza \\\
+  --p-sampling-depth 2133 \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_2022_Updated_Cleaned_Metadata-Capira.tsv \\\
+  --output-dir core-metrics-results_2022\
+\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs30 \cf0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs24 \cf0 time qiime diversity beta-group-significance \\\
+  --i-distance-matrix /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/16S_guts_project_August2019/core-metrics-results_2022/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Chapter2/Metadata/Cleaned_metadata/Qiime2_2022_Updated_Cleaned_Metadata-Capira.tsv \\\
+  --m-metadata-column Region \\\
+  --o-visualization unweighted-unifrac-REGION-significance.qzv \\\
+  --p-pairwise
+\fs30 \
+\
+\
+\
+\
+ANOVA\
+\
+
+\fs24 time qiime longitudinal anova \\\
+  --m-metadata-file ./core-metrics-results/qza_files/shannon_vector.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Metadata/Guts_ONLY_metadata2017_validated-corrected.tsv \\\
+  --p-formula 'shannon ~ PalmID * SingleInf_Tcruzi' \\\
+  --o-visualization ./core-metrics-results/qzv_files/anova/shannon/palmID_Tcruzi-interactive-anova.qzv\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs30 \cf0 \
+\
+BIOENV -- bioenv only works on continuous data. GOOD TO KNOW\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \
+time qiime diversity adonis \\\
+  --i-distance-matrix 16S_guts_project_August2019/core-metrics-results/unweighted_unifrac_distance_matrix.qza \\\
+  --m-metadata-file Metadata/Variables-GUTS-ONLY.tsv \\\
+  --o-visualization 16S_guts_project_August2019/core-metrics-results/unweighted_adonis.qzv \\\
+  --p-formula PROCEDENCIA+PalmID+ESTADIO+ESPECIE+HABITAT+Region+TypeBM+HumanBM+NumberBM+SingleInf_Tcruzi+Coinfection\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs30 \cf0 \
+SONGBIRD -- Feb 2021
+\fs24 \
+\
+time qiime songbird multinomial \\\
+	--i-table /Volumes/Kaylee2.0/Dissertation_projects/16S_guts_project_August2019/table_guts-August2019.qza \\\
+	--m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Metadata/Guts_ONLY_metadata2017_validated-corrected.tsv \\\
+	--p-formula "PalmID+PROCEDENCIA+HABITAT+Region" \\\
+	--p-epochs 10000 \\\
+	--p-differential-prior 0.5 \\\
+	--p-num-random-test-examples 28 \\\
+	--p-summary-interval 1 \\\
+	--o-differentials differentials.qza \\\
+	--o-regression-stats regression-stats.qza \\\
+	--o-regression-biplot regression-biplot.qza\
+\
+(21 minutes locally)\
+\
+qiime songbird summarize-single \\\
+	--i-regression-stats regression-stats.qza \\\
+	--o-visualization regression-summary.qzv\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs28 \cf0 Generate Null Model
+\fs24 \
+\
+time qiime songbird multinomial \\\
+	--i-table /Volumes/Kaylee2.0/Dissertation_projects/16S_guts_project_August2019/table_guts-August2019.qza \\\
+	--m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Metadata/Guts_ONLY_metadata2017_validated-corrected.tsv \\\
+	--p-formula "1" \\\
+	--p-epochs 10000 \\\
+	--p-differential-prior 0.5 \\\
+	--p-training-column Testing \\\
+	--p-summary-interval 1 \\\
+	--o-differentials null-diff.qza \\\
+	--o-regression-stats null-stats.qza \\\
+	--o-regression-biplot null-biplot.qza\
+\
+\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs36 \cf0 Train classifiers\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs32 \cf0 Obtain and import reference data sets\
+(using qiime2-2018.11, must train on the same qiime2 version as cluster qiime2 version, otherwise you will get error)
+\fs36 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \
+\
+#PBS -S /bin/bash\
+#PBS -q batch\
+#PBS -N Classifier-Sept2019\
+#PBS -l nodes=1:ppn=12\
+#PBS -l mem=25gb\
+#PBS -l walltime=00:10:00\
+\
+#PBS -M ka14691@uga.edu\
+#PBS -m ae\
+\
+cd /scratch/ka14691/gut_salivary/Classifier\
+\
+module load QIIME2/2018.11\
+\
+export LC_ALL=en_US.utf-8\
+export LANG=en_US.utf-8\
+\
+qiime tools import \\\
+  --type 'FeatureData[Sequence]' \\\
+  --input-path 99_otus.fasta \\\
+  --output-path 99_otus.qza\
+\
+qiime tools import \\\
+  --type 'FeatureData[Taxonomy]' \\\
+  --input-format HeaderlessTSVTaxonomyFormat \\\
+  --input-path 99_otu_taxonomy.txt \\\
+  --output-path ref-taxonomy.qza\
+\
+\
+\
+outputs:\
+	99_otus.qza\
+	ref-taxonomy.qza\
+\
+(1 minute on the cluster)
+\fs36 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs32 \cf0 \
+Extract reference reads (use cluster to avoid error from different software versions)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs36 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs24 \cf0 #PBS -S /bin/bash\
+#PBS -q batch\
+#PBS -N classifier-ref-seqs-Sept2019\
+#PBS -l nodes=1:ppn=12\
+#PBS -l mem=25gb\
+#PBS -l walltime=00:60:00\
+\
+#PBS -M ka14691@uga.edu\
+#PBS -m ae\
+\
+cd /scratch/ka14691/gut_salivary/Classifier\
+\
+module load QIIME2/2018.11\
+\
+export LC_ALL=en_US.utf-8\
+export LANG=en_US.utf-8\
+\
+qiime feature-classifier extract-reads \\\
+  --i-sequences 99_otus.qza \\\
+  --p-f-primer CCTACGGGNGGCWGCAG\\\
+  --p-r-primer GACTACHVGGGTATCTAATCC \\\
+  --p-trunc-len 464 \\\
+  --p-min-length 400 \\\
+  --p-max-length 600 \\\
+  --o-reads ref-seqs.qza\
+\
+output\
+ref-seqs.qza\
+\
+(16 minutes on cluster)\
+\
+\
+#PBS -S /bin/bash\
+#PBS -q batch\
+#PBS -N classifier-output-Sept2019\
+#PBS -l nodes=1:ppn=12\
+#PBS -l mem=25gb\
+#PBS -l walltime=00:60:00\
+\
+#PBS -M ka14691@uga.edu\
+#PBS -m ae\
+\
+cd /scratch/ka14691/gut_salivary/Classifier\
+\
+module load QIIME2/2018.11\
+\
+export LC_ALL=en_US.utf-8\
+export LANG=en_US.utf-8\
+\
+qiime feature-classifier fit-classifier-naive-bayes \\\
+  --i-reference-reads ref-seqs.qza \\\
+  --i-reference-taxonomy ref-taxonomy.qza \\\
+  --o-classifier classifier.qza\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f2\b \cf0 (
+\f0\b0 7:01 minutes on the cluster)\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs36 \cf0 Taxonomic Analysis\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs24 \cf0 #Assign taxonomy to the sequences in our FeatureData[Sequence] QIIME 2 artifact using the trained classifiers for V3-V4\
+#Log into cluster and run \
+\
+#create .sh file \
+nano taxonomy-Sept2019.sh\
+\
+#PBS -S /bin/bash\
+#PBS -q batch\
+#PBS -N taxonomy-Sept2019\
+#PBS -l nodes=1:ppn=12\
+#PBS -l mem=25gb\
+#PBS -l walltime=60:00:00\
+\
+\
+#PBS -M ka14691@uga.edu\
+#PBS -m ae\
+\
+cd /scratch/ka14691/gut_salivary/Classifier\
+\
+export LC_ALL=en_US.utf-8\
+export LANG=en_US.utf-8\
+\
+module load QIIME2/2018.11\
+\
+time qiime feature-classifier classify-sklearn \\\
+  --i-classifier classifier.qza \\\
+  --i-reads rep-seqs_guts-August2019.qza \\\
+  --o-classification Guts_taxonomy-Sept2019.qza\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f2\b \cf0 (
+\f0\b0 6:27 minutes on the cluster)\
+\
+output: Guts_taxonomy-Sept2019.qza\
+\
+#Convert .qza to .qzv\
+\
+time qiime metadata tabulate \\\
+  --m-input-file Guts_taxonomy-Sept2019.qza \\\
+  --o-visualization Guts_taxonomy-Sept2019.qzv\
+\
+(13 seconds locally)\
+\
+output: Guts_taxonomy-Sept2019.qzv\
+\
+#Create bar plots from taxonomy\
+\
+time qiime taxa barplot \\\
+  --i-table table_guts-August2019.qza \\\
+  --i-taxonomy Guts_taxonomy-Sept2019.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/16S_dissertation_projects/Metadata/Guts_ONLY_metadata2017_validated.tsv \\\
+  --o-visualization Guts_taxa-bar-plots.qzv\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f2\b\fs36 \cf0 ANCOM\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0\fs24 \cf0 \
+conda activate qiime2-2020.11\
+\
+Filter samples that with fewer sequences than rarefaction depth (4600)\
+\
+time qiime feature-table filter-samples \\\
+  --i-table ./table_guts-August2019.qza \\\
+  --p-min-frequency 4600 \\\
+  --o-filtered-table ./table_filtered.qza\
+\
+\
+Differential Abundance \
+\
+time qiime feature-table filter-features \\\
+  --i-table ./table_filtered.qza \\\
+  --p-min-frequency 50 \\\
+  --p-min-samples 4 \\\
+  --o-filtered-table ./table_filtered_abund.qza\
+\
+To remove the zeros from our table, we can add a pseudocount\
+\
+time qiime composition add-pseudocount \\\
+  --i-table ./table_filtered_abund.qza \\\
+  --o-composition-table ./table_filtered_abund_comp.qza\
+\
+\
+Filter out University samples\
+\
+qiime feature-table filter-samples \\\
+  --i-table ./table_filtered_abund_comp.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Metadata/Guts_ONLY_metadata2017_validated.tsv \\\
+  --p-where "Region='Canal' OR Region='Veraguas' OR Region='Neg'" \\\
+  --o-filtered-table NoUniversitySamples_filtered_table.qza\
+\
+\
+ANCOM\
+\
+time qiime composition ancom \\\
+  --i-table ./NoUniversitySamples_filtered_table.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Metadata/Guts_ONLY_metadata2017_validated.tsv \\\
+  --m-metadata-column Region \\\
+  --o-visualization /Volumes/Kaylee2.0/Dissertation_projects/16S_guts_project_August2019/ANCOM/ancom_Region.qzv\
+\
+time qiime composition ancom \\\
+  --i-table ./NoUniversitySamples_filtered_table.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Metadata/Guts_ONLY_metadata2017_validated.tsv \\\
+  --m-metadata-column HABITAT \\\
+  --o-visualization /Volumes/Kaylee2.0/Dissertation_projects/16S_guts_project_August2019/ANCOM/ancom_HABITAT.qzv\
+\
+time qiime composition ancom \\\
+  --i-table ./NoUniversitySamples_filtered_table.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Metadata/Guts_ONLY_metadata2017_validated.tsv \\\
+  --m-metadata-column SingleInf_Tcruzi \\\
+  --o-visualization /Volumes/Kaylee2.0/Dissertation_projects/16S_guts_project_August2019/ANCOM/ancom_SingleInf_Tcruzi.qzv\
+\
+time qiime composition ancom \\\
+  --i-table ./NoUniversitySamples_filtered_table.qza \\\
+  --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Metadata/Guts_ONLY_metadata2017_validated.tsv \\\
+  --m-metadata-column PROCEDENCIA \\\
+  --o-visualization /Volumes/Kaylee2.0/Dissertation_projects/16S_guts_project_August2019/ANCOM/ancom_PROCEDENCIA.qzv\
+\
+\
+\
+ALDEx2\
+\
+\
+\
+time qiime aldex2 aldex2 \\\
+    --i-table NoUniversitySamples_filtered_table.qza \\\
+    --m-metadata-file /Volumes/Kaylee2.0/Dissertation_projects/Metadata/Guts_ONLY_metadata2017_validated.tsv \\\
+    --m-metadata-column Region \\\
+    --output-dir /Volumes/Kaylee2.0/Dissertation_projects/16S_guts_project_August2019/ALDEx2/Region-test\
+\
+\
+\
+\
+}

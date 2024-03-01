@@ -1,0 +1,659 @@
+Sample_Name	HABITAT	Region	AllBM_Order	AllBM_Genus	AllBM_Family	Type
+57	Pasture	Capira	Artiodactyla	Bos	Bovidae	Mammal
+12	Pasture	La Chorrera	Artiodactyla	Bos	Bovidae	Mammal
+29	Pasture	Capira	Artiodactyla	Bos	Bovidae	Mammal
+39	Pasture	Capira	Artiodactyla	Bos	Bovidae	Mammal
+139	Peridomestic	Capira	Artiodactyla	Bos	Bovidae	Mammal
+406	Peridomestic	Veraguas	Artiodactyla	Bos	Bovidae	Mammal
+413	Forest	Veraguas	Artiodactyla	Bos	Bovidae	Mammal
+368	Pasture	Veraguas	Artiodactyla	Bos	Bovidae	Mammal
+103	Peridomestic	La Chorrera	Artiodactyla	Bos	Bovidae	Mammal
+131	Peridomestic	La Chorrera	Artiodactyla	Bos	Bovidae	Mammal
+419	Forest	Veraguas	Artiodactyla	Bos	Bovidae	Mammal
+171	Pasture	La Chorrera	Artiodactyla	Bos	Bovidae	Mammal
+359	Pasture	Veraguas	Artiodactyla	Bos	Bovidae	Mammal
+400	Peridomestic	Veraguas	Artiodactyla	Bos	Bovidae	Mammal
+15	Pasture	La Chorrera	Carnivora	Canis	Canidae	Mammal
+142	Peridomestic	Capira	Rodentia	Coendou	Erethizontidae	Mammal
+260	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+262	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+407	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+413	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+414	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+415	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+416	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+417	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+418	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+421	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+422	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+408	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+410	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+236	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+237	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+239	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+240	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+241	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+242	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+243	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+348	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+381	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+255	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+256	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+257	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+258	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+293	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+294	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+295	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+296	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+297	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+298	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+299	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+300	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+301	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+302	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+303	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+382	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+383	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+384	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+385	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+391	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+397	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+398	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+261	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+264.5	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+265	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+266	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+420	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+409	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+218	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+222	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+224	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+238	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+244	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+304	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+389	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+393	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+395	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+401	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+263	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+264	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+221	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+235	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+341	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+344	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+396	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+400	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+402	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+405	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+406	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+268	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+423	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+411	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+223	Pasture	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+399	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+403	Peridomestic	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+412	Forest	Veraguas	Didelphimorphia	Didelphis	Didelphidae	Mammal
+4	Pasture	La Chorrera	Rodentia	Heteromys	Heteromyidae	Mammal
+259	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+261	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+263	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+264	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+264.5	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+265	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+266	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+267	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+268	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+412	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+419	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+420	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+423	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+409	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+411	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+10	Pasture	La Chorrera	Rodentia	Heteromys	Heteromyidae	Mammal
+218	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+219	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+220	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+221	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+222	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+223	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+224	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+225	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+226	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+227	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+228	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+235	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+238	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+244	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+341	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+342	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+343	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+344	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+345	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+346	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+347	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+353	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+356	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+359	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+360	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+361	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+362	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+368	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+370	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+371	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+372	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+373	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+375	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+376	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+377	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+378	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+379	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+381.5	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+304	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+389	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+393	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+395	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+396	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+399	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+400	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+401	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+403	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+405	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+406	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+260	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+262	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+407	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+415	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+418	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+422	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+408	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+410	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+237	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+242	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+243	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+348	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+381	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+256	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+258	Pasture	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+138	Peridomestic	Capira	Rodentia	Heteromys	Heteromyidae	Mammal
+294	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+295	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+298	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+300	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+301	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+302	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+303	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+382	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+383	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+384	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+385	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+391	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+402	Peridomestic	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+414	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+416	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+421	Forest	Veraguas	Rodentia	Heteromys	Heteromyidae	Mammal
+1	Pasture	La Chorrera	Primates	Human	Hominidae	Mammal
+3	Pasture	La Chorrera	Primates	Human	Hominidae	Mammal
+6	Pasture	La Chorrera	Primates	Human	Hominidae	Mammal
+7	Pasture	La Chorrera	Primates	Human	Hominidae	Mammal
+11	Pasture	La Chorrera	Primates	Human	Hominidae	Mammal
+13	Pasture	La Chorrera	Primates	Human	Hominidae	Mammal
+14	Pasture	La Chorrera	Primates	Human	Hominidae	Mammal
+18	Pasture	Capira	Primates	Human	Hominidae	Mammal
+23	Pasture	Capira	Primates	Human	Hominidae	Mammal
+25	Pasture	Capira	Primates	Human	Hominidae	Mammal
+27	Pasture	Capira	Primates	Human	Hominidae	Mammal
+28	Pasture	Capira	Primates	Human	Hominidae	Mammal
+29	Pasture	Capira	Primates	Human	Hominidae	Mammal
+30	Pasture	Capira	Primates	Human	Hominidae	Mammal
+35	Pasture	Capira	Primates	Human	Hominidae	Mammal
+36	Pasture	Capira	Primates	Human	Hominidae	Mammal
+56	Pasture	Capira	Primates	Human	Hominidae	Mammal
+58	Pasture	Capira	Primates	Human	Hominidae	Mammal
+61	Pasture	Capira	Primates	Human	Hominidae	Mammal
+65	Pasture	Capira	Primates	Human	Hominidae	Mammal
+67	Pasture	Capira	Primates	Human	Hominidae	Mammal
+73	Pasture	Capira	Primates	Human	Hominidae	Mammal
+179	Pasture	La Chorrera	Primates	Human	Hominidae	Mammal
+45	Peridomestic	Capira	Primates	Human	Hominidae	Mammal
+77	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+85	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+93	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+94	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+100	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+103	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+104	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+105	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+108	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+109	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+110	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+111	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+131	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+186	Peridomestic	Capira	Primates	Human	Hominidae	Mammal
+190	Peridomestic	Capira	Primates	Human	Hominidae	Mammal
+402	Peridomestic	Veraguas	Primates	Human	Hominidae	Mammal
+80	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+259	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+263	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+264	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+267	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+413	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+416	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+417	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+419	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+421	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+423	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+411	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+15	Pasture	La Chorrera	Primates	Human	Hominidae	Mammal
+19	Pasture	Capira	Primates	Human	Hominidae	Mammal
+21	Pasture	Capira	Primates	Human	Hominidae	Mammal
+22	Pasture	Capira	Primates	Human	Hominidae	Mammal
+32	Pasture	Capira	Primates	Human	Hominidae	Mammal
+33	Pasture	Capira	Primates	Human	Hominidae	Mammal
+53	Pasture	Capira	Primates	Human	Hominidae	Mammal
+54	Pasture	Capira	Primates	Human	Hominidae	Mammal
+71	Pasture	Capira	Primates	Human	Hominidae	Mammal
+72	Pasture	Capira	Primates	Human	Hominidae	Mammal
+151	Pasture	La Chorrera	Primates	Human	Hominidae	Mammal
+154	Pasture	La Chorrera	Primates	Human	Hominidae	Mammal
+157	Pasture	La Chorrera	Primates	Human	Hominidae	Mammal
+170	Pasture	La Chorrera	Primates	Human	Hominidae	Mammal
+219	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+221	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+223	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+225	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+228	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+235	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+341	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+343	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+344	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+353	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+360	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+368	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+370	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+373	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+375	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+376	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+378	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+379	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+381.5	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+74	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+79	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+89	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+95	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+102	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+106	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+107	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+114	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+116	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+202	Peridomestic	Veraguas	Primates	Human	Hominidae	Mammal
+396	Peridomestic	Veraguas	Primates	Human	Hominidae	Mammal
+399	Peridomestic	Veraguas	Primates	Human	Hominidae	Mammal
+400	Peridomestic	Veraguas	Primates	Human	Hominidae	Mammal
+264.5	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+412	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+415	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+418	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+420	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+422	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+409	Forest	Veraguas	Primates	Human	Hominidae	Mammal
+4	Pasture	La Chorrera	Primates	Human	Hominidae	Mammal
+26	Pasture	Capira	Primates	Human	Hominidae	Mammal
+34	Pasture	Capira	Primates	Human	Hominidae	Mammal
+57	Pasture	Capira	Primates	Human	Hominidae	Mammal
+161	Pasture	La Chorrera	Primates	Human	Hominidae	Mammal
+171	Pasture	La Chorrera	Primates	Human	Hominidae	Mammal
+222	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+244	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+345	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+348	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+356	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+359	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+377	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+381	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+81	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+295	Peridomestic	Veraguas	Primates	Human	Hominidae	Mammal
+301	Peridomestic	Veraguas	Primates	Human	Hominidae	Mammal
+391	Peridomestic	Veraguas	Primates	Human	Hominidae	Mammal
+403	Peridomestic	Veraguas	Primates	Human	Hominidae	Mammal
+49	Pasture	Capira	Primates	Human	Hominidae	Mammal
+361	Pasture	Veraguas	Primates	Human	Hominidae	Mammal
+125	Peridomestic	La Chorrera	Primates	Human	Hominidae	Mammal
+139	Peridomestic	Capira	Primates	Human	Hominidae	Mammal
+91	Peridomestic	La Chorrera	Carnivora	Leopardus	Felidae	Mammal
+227	Pasture	Veraguas	Carnivora	Leopardus	Felidae	Mammal
+139	Peridomestic	Capira	Carnivora	Leopardus	Felidae	Mammal
+166	Pasture	La Chorrera	Squamata	Lepidodactylus	Gekkonidae	Herp
+342	Pasture	Veraguas	Squamata	Lepidodactylus	Gekkonidae	Herp
+373	Pasture	Veraguas	Squamata	Lepidodactylus	Gekkonidae	Herp
+40	Pasture	Capira	Squamata	Mabuya	Scincidae	Herp
+414	Forest	Veraguas	Didelphimorphia	Marmosa	Didelphidae	Mammal
+20	Pasture	Capira	Didelphimorphia	Metachirus	Didelphidae	Mammal
+21	Pasture	Capira	Didelphimorphia	Metachirus	Didelphidae	Mammal
+26	Pasture	Capira	Didelphimorphia	Metachirus	Didelphidae	Mammal
+220	Pasture	Veraguas	Didelphimorphia	Metachirus	Didelphidae	Mammal
+226	Pasture	Veraguas	Didelphimorphia	Metachirus	Didelphidae	Mammal
+423	Forest	Veraguas	Didelphimorphia	Metachirus	Didelphidae	Mammal
+411	Forest	Veraguas	Didelphimorphia	Metachirus	Didelphidae	Mammal
+14	Pasture	La Chorrera	Didelphimorphia	Metachirus	Didelphidae	Mammal
+19	Pasture	Capira	Didelphimorphia	Metachirus	Didelphidae	Mammal
+22	Pasture	Capira	Didelphimorphia	Metachirus	Didelphidae	Mammal
+32	Pasture	Capira	Didelphimorphia	Metachirus	Didelphidae	Mammal
+223	Pasture	Veraguas	Didelphimorphia	Metachirus	Didelphidae	Mammal
+389	Peridomestic	Veraguas	Didelphimorphia	Metachirus	Didelphidae	Mammal
+412	Forest	Veraguas	Didelphimorphia	Metachirus	Didelphidae	Mammal
+5	Pasture	La Chorrera	Rodentia	Mus	Muridae	Mammal
+12	Pasture	La Chorrera	Rodentia	Mus	Muridae	Mammal
+19	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+24	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+31	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+32	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+33	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+34	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+38	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+40	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+47	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+50	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+51	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+54	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+59	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+63	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+66	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+71	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+174	Pasture	La Chorrera	Rodentia	Mus	Muridae	Mammal
+175	Pasture	La Chorrera	Rodentia	Mus	Muridae	Mammal
+176	Pasture	La Chorrera	Rodentia	Mus	Muridae	Mammal
+177	Pasture	La Chorrera	Rodentia	Mus	Muridae	Mammal
+182	Pasture	La Chorrera	Rodentia	Mus	Muridae	Mammal
+81	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+82	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+83	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+87	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+88	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+95	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+112	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+412	Forest	Veraguas	Rodentia	Mus	Muridae	Mammal
+7	Pasture	La Chorrera	Rodentia	Mus	Muridae	Mammal
+11	Pasture	La Chorrera	Rodentia	Mus	Muridae	Mammal
+25	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+27	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+28	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+30	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+36	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+37	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+57	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+61	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+64	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+152	Pasture	La Chorrera	Rodentia	Mus	Muridae	Mammal
+161	Pasture	La Chorrera	Rodentia	Mus	Muridae	Mammal
+179	Pasture	La Chorrera	Rodentia	Mus	Muridae	Mammal
+180	Pasture	La Chorrera	Rodentia	Mus	Muridae	Mammal
+181	Pasture	La Chorrera	Rodentia	Mus	Muridae	Mammal
+185	Pasture	La Chorrera	Rodentia	Mus	Muridae	Mammal
+85	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+93	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+100	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+104	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+105	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+108	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+109	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+141	Peridomestic	Capira	Rodentia	Mus	Muridae	Mammal
+186	Peridomestic	Capira	Rodentia	Mus	Muridae	Mammal
+405	Peridomestic	Veraguas	Rodentia	Mus	Muridae	Mammal
+80	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+419	Forest	Veraguas	Rodentia	Mus	Muridae	Mammal
+10	Pasture	La Chorrera	Rodentia	Mus	Muridae	Mammal
+21	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+35	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+53	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+56	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+151	Pasture	La Chorrera	Rodentia	Mus	Muridae	Mammal
+77	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+79	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+84	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+102	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+106	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+111	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+127	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+202	Peridomestic	Veraguas	Rodentia	Mus	Muridae	Mammal
+399	Peridomestic	Veraguas	Rodentia	Mus	Muridae	Mammal
+409	Forest	Veraguas	Rodentia	Mus	Muridae	Mammal
+26	Pasture	Capira	Rodentia	Mus	Muridae	Mammal
+103	Peridomestic	La Chorrera	Rodentia	Mus	Muridae	Mammal
+182	Pasture	La Chorrera	Artiodactyla	Odocoileus	Cervidae	Mammal
+8	Pasture	La Chorrera	Other	Other	Other	Other
+22	Pasture	Capira	Other	Other	Other	Other
+48	Pasture	Capira	Other	Other	Other	Other
+52	Pasture	Capira	Other	Other	Other	Other
+53	Pasture	Capira	Other	Other	Other	Other
+55	Pasture	Capira	Other	Other	Other	Other
+60	Pasture	Capira	Other	Other	Other	Other
+62	Pasture	Capira	Other	Other	Other	Other
+64	Pasture	Capira	Other	Other	Other	Other
+68	Pasture	Capira	Other	Other	Other	Other
+69	Pasture	Capira	Other	Other	Other	Other
+70	Pasture	Capira	Other	Other	Other	Other
+72	Pasture	Capira	Other	Other	Other	Other
+166	Pasture	La Chorrera	Other	Other	Other	Other
+168	Pasture	La Chorrera	Other	Other	Other	Other
+172	Pasture	La Chorrera	Other	Other	Other	Other
+178	Pasture	La Chorrera	Other	Other	Other	Other
+180	Pasture	La Chorrera	Other	Other	Other	Other
+181	Pasture	La Chorrera	Other	Other	Other	Other
+185	Pasture	La Chorrera	Other	Other	Other	Other
+74	Peridomestic	La Chorrera	Other	Other	Other	Other
+86	Peridomestic	La Chorrera	Other	Other	Other	Other
+98	Peridomestic	La Chorrera	Other	Other	Other	Other
+99	Peridomestic	La Chorrera	Other	Other	Other	Other
+6	Pasture	La Chorrera	Other	Other	Other	Other
+10	Pasture	La Chorrera	Other	Other	Other	Other
+24	Pasture	Capira	Other	Other	Other	Other
+49	Pasture	Capira	Other	Other	Other	Other
+50	Pasture	Capira	Other	Other	Other	Other
+56	Pasture	Capira	Other	Other	Other	Other
+58	Pasture	Capira	Other	Other	Other	Other
+73	Pasture	Capira	Other	Other	Other	Other
+144	Pasture	La Chorrera	Other	Other	Other	Other
+150	Pasture	La Chorrera	Other	Other	Other	Other
+153	Pasture	La Chorrera	Other	Other	Other	Other
+171	Pasture	La Chorrera	Other	Other	Other	Other
+173	Pasture	La Chorrera	Other	Other	Other	Other
+342	Pasture	Veraguas	Other	Other	Other	Other
+362	Pasture	Veraguas	Other	Other	Other	Other
+371	Pasture	Veraguas	Other	Other	Other	Other
+84	Peridomestic	La Chorrera	Other	Other	Other	Other
+96	Peridomestic	La Chorrera	Other	Other	Other	Other
+403	Peridomestic	Veraguas	Other	Other	Other	Other
+267	Forest	Veraguas	Other	Other	Other	Other
+3	Pasture	La Chorrera	Other	Other	Other	Other
+36	Pasture	Capira	Other	Other	Other	Other
+54	Pasture	Capira	Other	Other	Other	Other
+71	Pasture	Capira	Other	Other	Other	Other
+174	Pasture	La Chorrera	Other	Other	Other	Other
+175	Pasture	La Chorrera	Other	Other	Other	Other
+347	Pasture	Veraguas	Other	Other	Other	Other
+361	Pasture	Veraguas	Other	Other	Other	Other
+125	Peridomestic	La Chorrera	Other	Other	Other	Other
+401	Peridomestic	Veraguas	Other	Other	Other	Other
+61	Pasture	Capira	Other	Other	Other	Other
+221	Pasture	Veraguas	Other	Other	Other	Other
+37	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+39	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+41	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+42	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+43	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+44	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+49	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+132	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+135	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+144	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+145	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+146	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+147	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+148	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+149	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+150	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+151	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+152	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+153	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+154	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+155	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+157	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+158	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+159	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+160	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+161	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+162	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+163	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+164	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+165	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+167	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+169	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+170	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+171	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+173	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+75	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+78	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+79	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+102	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+106	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+107	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+114	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+115	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+116	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+117	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+118	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+119	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+120	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+121	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+122	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+123	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+124	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+125	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+126	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+127	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+128	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+129	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+130	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+136	Peridomestic	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+137	Peridomestic	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+138	Peridomestic	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+139	Peridomestic	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+140	Peridomestic	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+141	Peridomestic	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+142	Peridomestic	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+143	Peridomestic	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+187	Peridomestic	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+188	Peridomestic	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+189	Peridomestic	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+191	Peridomestic	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+201	Peridomestic	Veraguas	Didelphimorphia	Philander	Didelphidae	Mammal
+202	Peridomestic	Veraguas	Didelphimorphia	Philander	Didelphidae	Mammal
+192	Peridomestic	Veraguas	Didelphimorphia	Philander	Didelphidae	Mammal
+193	Peridomestic	Veraguas	Didelphimorphia	Philander	Didelphidae	Mammal
+194	Peridomestic	Veraguas	Didelphimorphia	Philander	Didelphidae	Mammal
+195	Peridomestic	Veraguas	Didelphimorphia	Philander	Didelphidae	Mammal
+1	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+34	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+35	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+47	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+48	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+51	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+52	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+66	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+168	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+172	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+45	Peridomestic	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+77	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+81	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+82	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+87	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+111	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+113	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+131	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+190	Peridomestic	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+200	Peridomestic	Veraguas	Didelphimorphia	Philander	Didelphidae	Mammal
+293	Peridomestic	Veraguas	Didelphimorphia	Philander	Didelphidae	Mammal
+398	Peridomestic	Veraguas	Didelphimorphia	Philander	Didelphidae	Mammal
+50	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+72	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+166	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+179	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+185	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+108	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+80	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+32	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+71	Pasture	Capira	Didelphimorphia	Philander	Didelphidae	Mammal
+174	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+175	Pasture	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+84	Peridomestic	La Chorrera	Didelphimorphia	Philander	Didelphidae	Mammal
+2	Pasture	La Chorrera	Passeriformes	Piranga	Cardinalidae	Bird
+26	Pasture	Capira	Passeriformes	Piranga	Cardinalidae	Bird
+76	Peridomestic	La Chorrera	Passeriformes	Piranga	Cardinalidae	Bird
+84	Peridomestic	La Chorrera	Passeriformes	Piranga	Cardinalidae	Bird
+89	Peridomestic	La Chorrera	Passeriformes	Piranga	Cardinalidae	Bird
+90	Peridomestic	La Chorrera	Passeriformes	Piranga	Cardinalidae	Bird
+92	Peridomestic	La Chorrera	Passeriformes	Piranga	Cardinalidae	Bird
+96	Peridomestic	La Chorrera	Passeriformes	Piranga	Cardinalidae	Bird
+101	Peridomestic	La Chorrera	Passeriformes	Piranga	Cardinalidae	Bird
+3	Pasture	La Chorrera	Passeriformes	Piranga	Cardinalidae	Bird
+4	Pasture	La Chorrera	Passeriformes	Piranga	Cardinalidae	Bird
+8	Pasture	La Chorrera	Passeriformes	Piranga	Cardinalidae	Bird
+14	Pasture	La Chorrera	Passeriformes	Piranga	Cardinalidae	Bird
+345	Pasture	Veraguas	Passeriformes	Piranga	Cardinalidae	Bird
+346	Pasture	Veraguas	Passeriformes	Piranga	Cardinalidae	Bird
+347	Pasture	Veraguas	Passeriformes	Piranga	Cardinalidae	Bird
+356	Pasture	Veraguas	Passeriformes	Piranga	Cardinalidae	Bird
+372	Pasture	Veraguas	Passeriformes	Piranga	Cardinalidae	Bird
+91	Peridomestic	La Chorrera	Passeriformes	Piranga	Cardinalidae	Bird
+268	Forest	Veraguas	Passeriformes	Piranga	Cardinalidae	Bird
+408	Forest	Veraguas	Passeriformes	Piranga	Cardinalidae	Bird
+64	Pasture	Capira	Passeriformes	Piranga	Cardinalidae	Bird
+220	Pasture	Veraguas	Passeriformes	Piranga	Cardinalidae	Bird
+371	Pasture	Veraguas	Passeriformes	Piranga	Cardinalidae	Bird
+93	Peridomestic	La Chorrera	Passeriformes	Piranga	Cardinalidae	Bird
+95	Peridomestic	La Chorrera	Passeriformes	Piranga	Cardinalidae	Bird
+100	Peridomestic	La Chorrera	Passeriformes	Piranga	Cardinalidae	Bird
+304	Peridomestic	Veraguas	Passeriformes	Piranga	Cardinalidae	Bird
+65	Pasture	Capira	Carnivora	Potos	Procyonidae	Mammal
+6	Pasture	La Chorrera	Carnivora	Potos	Procyonidae	Mammal
+61	Pasture	Capira	Carnivora	Potos	Procyonidae	Mammal
+155	Pasture	La Chorrera	Carnivora	Procyon	Procyonidae	Mammal
+103	Peridomestic	La Chorrera	Carnivora	Procyon	Procyonidae	Mammal
+201	Peridomestic	Veraguas	Carnivora	Procyon	Procyonidae	Mammal
+143	Peridomestic	Capira	Pilosa	Tamandua	Myrmecophagidae	Mammal
+9	Pasture	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+133	Pasture	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+134	Pasture	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+184	Pasture	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+200	Peridomestic	Veraguas	Passeriformes	Thraupis	Thraupidae	Bird
+268	Forest	Veraguas	Passeriformes	Thraupis	Thraupidae	Bird
+132	Pasture	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+135	Pasture	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+174	Pasture	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+175	Pasture	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+182	Pasture	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+359	Pasture	Veraguas	Passeriformes	Thraupis	Thraupidae	Bird
+361	Pasture	Veraguas	Passeriformes	Thraupis	Thraupidae	Bird
+377	Pasture	Veraguas	Passeriformes	Thraupis	Thraupidae	Bird
+125	Peridomestic	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+126	Peridomestic	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+127	Peridomestic	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+129	Peridomestic	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+130	Peridomestic	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+259	Forest	Veraguas	Passeriformes	Thraupis	Thraupidae	Bird
+261	Forest	Veraguas	Passeriformes	Thraupis	Thraupidae	Bird
+8	Pasture	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+49	Pasture	Capira	Passeriformes	Thraupis	Thraupidae	Bird
+181	Pasture	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+225	Pasture	Veraguas	Passeriformes	Thraupis	Thraupidae	Bird
+370	Pasture	Veraguas	Passeriformes	Thraupis	Thraupidae	Bird
+393	Peridomestic	Veraguas	Passeriformes	Thraupis	Thraupidae	Bird
+395	Peridomestic	Veraguas	Passeriformes	Thraupis	Thraupidae	Bird
+185	Pasture	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+235	Pasture	Veraguas	Passeriformes	Thraupis	Thraupidae	Bird
+356	Pasture	Veraguas	Passeriformes	Thraupis	Thraupidae	Bird
+368	Pasture	Veraguas	Passeriformes	Thraupis	Thraupidae	Bird
+131	Peridomestic	La Chorrera	Passeriformes	Thraupis	Thraupidae	Bird
+113	Peridomestic	La Chorrera	Passeriformes	Turdus	Turdidae	Bird
+119	Peridomestic	La Chorrera	Passeriformes	Turdus	Turdidae	Bird
+122	Peridomestic	La Chorrera	Passeriformes	Turdus	Turdidae	Bird
