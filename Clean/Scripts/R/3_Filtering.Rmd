@@ -1,0 +1,90 @@
+---
+title: "Filtering"
+author: "Kaylee Arnold"
+date: "5/10/2022"
+output: html_document
+---
+
+
+#Import
+Call phyloseq from Import.R
+```{r eval=FALSE, include=FALSE}
+
+#source("2_Import.R")
+```
+
+#Prune reads
+Prune to over 2133 reads, based on alpha rarefaction (double check rarefaction values)
+```{r include=FALSE}
+pruned_phyloseq <- sum(sample_sums(phyloseq) == 0) #we start with 355 samples (all guts)
+
+pruned_phyloseq <- prune_samples(sample_sums(phyloseq) > 0, phyloseq)
+
+pruned_phyloseq <- prune_samples(sample_sums(pruned_phyloseq) > 2132, pruned_phyloseq) #335 samples
+
+
+any(sample_sums(pruned_phyloseq) == 2132)
+```
+
+#Filtering taxa
+
+Look at all taxa from beginning -
+##Filter out non-bacteria (archaea, unassigned kingdoms)
+```{r include=FALSE}
+
+table(tax_table(pruned_phyloseq)[,"Kingdom"], exclude = NULL) #Look at all Kingdoms from beginning
+
+filtering <- subset_taxa(pruned_phyloseq, !is.na(Kingdom) & !Kingdom %in% c("", "Unassigned")) #filter out Unassigned Kingdoms
+
+table(tax_table(filtering)[,"Kingdom"], exclude = NULL) #check which Kingdoms are left after filtering
+
+filterKingdom = c("Archaea") #filter out archaea
+
+filtering = subset_taxa(filtering, !Kingdom %in% filterKingdom) # filter out Archaea
+
+table(tax_table(filtering)[,"Kingdom"], exclude = NULL) #check which Kingdoms are left after filtering -- should only have bacteria left
+
+```
+
+
+##Remove Chloroplast (but not NAs)
+```{r include=FALSE}
+filterClass = ("Chloroplast") # Filter out chloroplasts
+classfilter = subset_taxa(filtering, !Class %in% filterClass) #no chloroplasts, NAs included
+
+table(tax_table(classfilter)[, "Class"], exclude = NULL) #check which classes are left after filter (NAs included)
+```
+
+##Remove mitochondria (but not NAs)
+```{r include=FALSE}
+
+filterFamily = ("mitochondria")
+family_filter = subset_taxa(classfilter, !Family %in% filterFamily)
+table(tax_table(family_filter)[, "Family"], exclude = NULL) #check to make sure mitochondria were removed
+
+```
+
+
+
+##Remove Wolbachia from all samples
+```{r include=FALSE}
+filterWolbachia = ("Wolbachia")
+# Filter entries with unidentified Phylum.
+wolbachia_filter = subset_taxa(family_filter, !Genus %in% filterWolbachia)
+
+table(tax_table(wolbachia_filter)[, "Genus"], exclude = NULL) #check to make sure Wolbachia is removed
+
+```
+
+Examine all ASVs
+```{r include=FALSE}
+tax_table_species <- table(tax_table(wolbachia_filter)[, "Species"], exclude = NULL)
+```
+
+
+#Rename cleaned phyloseq object
+```{r include=FALSE}
+phyloseq_cleaned <- wolbachia_filter #rename (final phyloseq object has NAs in phyla and lower taxa levels, but no Chloroplasts, mitochondria, or wolbachia)
+
+```
+

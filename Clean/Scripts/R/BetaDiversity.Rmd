@@ -1,0 +1,855 @@
+---
+title: "BetaDiversity"
+author: "Kaylee Arnold"
+date: "10/8/2019" -- "Updated July 2022"
+output: pdf_document
+---
+
+Beta-diversity: Measures for differences between samples from different groups to identify if there are differences in the overall community composition and structure.
+
+****Website: https://mibwurrepo.github.io/Microbial-bioinformatics-introductory-course-Material-2018/beta-diversity-metrics.html#permanova0
+
+Unifrac - phylogenetic diversity 
+ - Unweighted Unifrac is based on presence/absence of different taxa and abundance is not important. However, it is sensitive to the sequencing depth. If a sample is sequenced more than the others then it may have many ASVs (most of them unique) consequently affecting the unifrac dissimilarity estimation.
+ 
+ Bray Curtis - weighted, non-phylogenetic
+
+
+Permanova used for BETA diversity - to assess the community structure and composition (below)
+*Weighted tests: community structure (presence + abundance) (weighted unifrac and Bray Curtis)
+*Unweighted tests: composition (unweighted unifrac and jaccard)
+
+#Load libraries
+```{r}
+#library(BiocManager)
+#BiocManager::install("microbiome")
+library(microbiome) # data analysis and visualisation
+library(phyloseq) # also the basis of data object. Data analysis and visualisation
+library(RColorBrewer) # nice color options
+library(ggpubr) # publication quality figures, based on ggplot2
+library(dplyr) # data handling  
+library(vegan)
+```
+
+
+
+Remove Singletons -- ask Liz about this
+Using rpal_field
+This data is rarefied
+This may not be wise, because my samples may be influenced by rare ASVs
+```{r}
+# if we remove OTUs that are detected atleast 10 times in 5% of the samples
+rpal_field_filtered <- core(rpal_field, detection = 10, prevalence = 0.05)
+
+summarize_phyloseq(rpal_field_filtered) #number of singltons: 0
+summarize_phyloseq(rpal_field) #number of singletons: 663
+
+```
+
+Scale reads ?? -- this should be covered rarefaction
+(not included in tutorial)
+```{r include=FALSE}
+# Scale reads to even depth 
+scale_reads <- function(physeq,n){
+  physeq.scale <- transform_sample_counts(physeq, function(x) {round((n*x/sum(x)))})
+  #otu_table(physeq.scale) = round(otu_table(physeq.scale))
+  physeq.scale = prune_taxa(taxa_sums(physeq.scale) > 0, physeq.scale)
+  return(physeq.scale)
+}
+```
+
+#ALL variables
+```{r}
+unweighted_Unifrac <- ordinate(rpal_field, method = "PCoA", distance = "unifrac")
+unweighted_Unifrac_veraguas <- ordinate(rpal_field_veraguas, method = "PCoA", distance = "unifrac")
+
+unweighted_palmID <- plot_ordination(rpal_field, unweighted_Unifrac, type = "samples", color = "PalmID") + #scale_fill_manual(values=cbPalette_) + 
+  theme_bw() + 
+  theme(panel.grid = element_blank()) +
+  stat_ellipse() + 
+  ggtitle("Unweighted UniFrac Across Palm Identity") +
+  theme(legend.position = "none")
+
+
+unweighted_habitat <- plot_ordination(rpal_field, unweighted_Unifrac, type = "samples", color = "HABITAT") + 
+  scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + 
+  theme(panel.grid = element_blank()) +
+  stat_ellipse() + 
+  ggtitle("Unweighted UniFrac Across Habitat Type")
+  #theme(legend.position = "none")
+
+unweighted_age <- plot_ordination(rpal_field, unweighted_Unifrac, type = "samples", color = "Age_Group") + 
+  #scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + 
+  theme(panel.grid = element_blank()) +
+  stat_ellipse() + 
+  #ggtitle("Unweighted UniFrac Across Age Groups") +
+  labs(fill = "Age Groups")
+  #theme(legend.position = "none")
+
+unweighted_region <- plot_ordination(rpal_field, unweighted_Unifrac, type = "samples", color = "Region") + 
+  scale_fill_manual(values=cbPalette_regions) + 
+  theme_bw() + 
+  theme(panel.grid = element_blank()) +
+  stat_ellipse() + 
+  ggtitle("Unweighted UniFrac Across Sampling Region")
+  #theme(legend.position = "none")
+
+grid.arrange(unweighted_palmID,unweighted_age,unweighted_region,unweighted_habitat)
+```
+
+```{r}
+weighted_Unifrac <- ordinate(rpal_field, method = "PCoA", distance = "wunifrac")
+
+weighted_habitat <- plot_ordination(rpal_field, weighted_Unifrac, type = "samples", color = "HABITAT") + scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + 
+  theme(panel.grid = element_blank()) +
+  stat_ellipse() + 
+  ggtitle("Weighted UniFrac Across Habitat Types")
+  #theme(legend.position = "none")
+
+weighted_region <- plot_ordination(rpal_field, weighted_Unifrac, type = "samples", color = "Region") + scale_fill_manual(values=cbPalette_regions) + 
+  theme_bw() + 
+  theme(panel.grid = element_blank()) +
+  stat_ellipse() + 
+  ggtitle("Weighted UniFrac Across Sampling Regions")
+  #theme(legend.position = "none")
+
+weighted_palmID <- plot_ordination(rpal_field, weighted_Unifrac, type = "samples", color = "PalmID") + #scale_fill_manual(values=cbPalette_ha) + 
+  theme_bw() + 
+  theme(panel.grid = element_blank()) +
+  stat_ellipse() + 
+  ggtitle("Weighted UniFrac Across Palm Identity") +
+  theme(legend.position = "none")
+
+weighted_age <- plot_ordination(rpal_field, weighted_Unifrac, type = "samples", color = "Age_Group") + #scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + 
+  theme(panel.grid = element_blank()) +
+  stat_ellipse() + 
+  ggtitle("Weighted UniFrac Across Age Groups")
+  #theme(legend.position = "none")
+
+grid.arrange(weighted_palmID,weighted_age,weighted_region,weighted_habitat)
+```
+
+#Palms
+```{r}
+weighted_Unifrac_veraguas <- ordinate(rpal_field_veraguas, method = "PCoA", distance = "wunifrac")
+
+
+unweighted_palmID <- plot_ordination(rpal_field_veraguas, unweighted_Unifrac, type = "samples", color = "PalmID") + scale_fill_manual(values = getPalette(colourCount)) + 
+  theme_bw() + 
+  theme(panel.grid = element_blank()) +
+  stat_ellipse() + 
+  ggtitle("Unweighted UniFrac Across Palm Identity (n = 14)") +
+  theme(legend.position = "none")
+
+weighted_palmID <- plot_ordination(rpal_field_veraguas, weighted_Unifrac, type = "samples", color = "PalmID") + #scale_fill_manual(values=cbPalette_ha) + 
+  theme_bw() + 
+  theme(panel.grid = element_blank()) +
+  stat_ellipse() + 
+  ggtitle("Weighted UniFrac Across Palm Identity (n = 14)") +
+  theme(legend.position = "none")
+
+grid.arrange(unweighted_palmID,weighted_palmID,ncol = 2)
+```
+
+
+#Unifrac
+##Unweighted
+PCoA
+Unweighted unifrac considers presence/absences of taxa (composition)
+```{r}
+### decide if you want to use rare ASVs or not
+ordu.unwt.uni <- ordinate(
+  physeq = rpal_field, 
+  method = "PCoA", 
+  distance = "unifrac"
+)
+
+plot_scree(ordu.unwt.uni, "Scree Plot for unfiltered")
+
+# check for Eigen values 
+barplot(ordu.unwt.uni$values$Eigenvalues[1:10])
+```
+
+###Region
+```{r}
+###### rarefied. Should i tranform to relative abundance?
+
+set.seed(1990)
+
+unweighted_Unifrac <- ordinate(rpal_field_BM_Capira, method = "PCoA", distance = "unifrac")
+
+unweighted_regions <- plot_ordination(rpal_field, unweighted_Unifrac, type = "samples", color = "Region") + scale_fill_manual(values=cbPalette_regions) + 
+  theme_bw() + stat_ellipse() + 
+   theme(panel.grid = element_blank()) +
+  ggtitle("Unweighted UniFrac Across Regions") +
+  theme(legend.position = "none") 
+
+unweighted_regions <- unweighted_regions + annotation_custom(figure_label_A)
+```
+
+#Barplots
+
+```{r}
+rpal_unifracDistance <- phyloseq::distance(rpal_field_BM, method = "unifrac")
+
+rpal_unifracDistance <- as.matrix(rpal_unifracDistance)
+head(rpal_unifracDistance)
+
+
+sub_dist <- list()
+groups_all <- sample_data(rpal_field_BM)$Region
+
+for (group in levels(groups_all)) { 
+    row_group <- which(groups_all == group)
+    
+    sample_group <- sample_names(rpal_field_BM)[row_group]
+    sub_dist[[group]] <- rpal_unifracDistance[ sample_group, sample_group]
+    sub_dist[[group]][!lower.tri(sub_dist[[group]])] <- NA
+}
+
+
+unifracGroups<- melt(sub_dist)
+df.unifrac <- unifracGroups[complete.cases(unifracGroups), ]
+df.unifrac$L1 <- factor(df.unifrac$L1, levels=names(sub_dist))
+
+head(df.unifrac)
+
+
+ggplot(df.unifrac, aes(x=L1, y=value, colour=L1)) +
+    #geom_jitter() + 
+  geom_boxplot(alpha=0.6) +  
+  theme(legend.position="none") +
+  ylab("UniFrac diversity") +
+  theme(axis.title.x=element_blank(), axis.text.x=element_text(angle=45,hjust=1,vjust=1,size=12), axis.text.y=element_text(size=12))
+
+
+#alpha.diversity <- estimate_richness(rpal_field, measures = c("Observed", "Shannon", "Chao1", "InvSimpson"))
+
+BetaDiversity_data <- cbind(sample_data(rpal_field_BM), df.unifrac)
+
+
+#Observed
+kruskal.test(Observed ~ Region, df.unifrac)
+
+df <- pairwise.wilcox.test(df.unifrac$L1, g = df.unifrac$L1, p.adjust.method = "BH")
+
+```
+
+#Boxplots - weighted regions
+```{r}
+rpal_wunifracDistance <- phyloseq::distance(rpal_field_BM, method = "wunifrac")
+
+rpal_wunifracDistance <- as.matrix(rpal_wunifracDistance)
+head(rpal_wunifracDistance)
+
+
+sub_dist <- list()
+groups_all <- sample_data(rpal_field_BM)$Region
+
+for (group in levels(groups_all)) { 
+    row_group <- which(groups_all == group)
+    
+    sample_group <- sample_names(rpal_field_BM)[row_group]
+    sub_dist[[group]] <- rpal_wunifracDistance[ sample_group, sample_group]
+    sub_dist[[group]][!lower.tri(sub_dist[[group]])] <- NA
+}
+
+
+wunifracGroups<- melt(sub_dist)
+df.wunifrac <- wunifracGroups[complete.cases(wunifracGroups), ]
+df.wunifrac$L1 <- factor(df.wunifrac$L1, levels=names(sub_dist))
+
+head(df.wunifrac)
+
+
+ggplot(df.wunifrac, aes(x=L1, y=value, colour=L1)) +
+    #geom_jitter() + 
+  geom_boxplot(alpha=0.6) +  
+  theme(legend.position="none") +
+  ylab("WUniFrac diversity") +
+  theme(axis.title.x=element_blank(), axis.text.x=element_text(angle=45,hjust=1,vjust=1,size=12), axis.text.y=element_text(size=12))
+```
+
+
+###Create labels
+```{r}
+# create labels for combined figures
+library(grid)
+figure_label_A <- grobTree(textGrob("(a)", x=0.05,  y=0.95, hjust=0,
+  gp=gpar(col="black", fontsize=13)))
+
+figure_label_B <- grobTree(textGrob("(b)", x=0.05,  y=0.95, hjust=0,
+  gp=gpar(col="black", fontsize=13)))
+
+
+  
+```
+
+
+####Pasture
+```{r}
+###### rarefied. Should i tranform to relative abundance?
+
+set.seed(1990)
+
+unweighted_Unifrac <- ordinate(rpal_field_pasture, method = "PCoA", distance = "unifrac")
+
+unweighted_pasture <- plot_ordination(rpal_field_pasture, unweighted_Unifrac, type = "samples", color = "Region") + scale_fill_manual(values=cbPalette_regions) + 
+  theme_bw() + stat_ellipse() + 
+   theme(panel.grid = element_blank()) +
+  ggtitle("Unweighted UniFrac Across Pasture Palms") +
+  theme(legend.position = "none")
+
+unweighted_pasture <- unweighted_pasture + annotation_custom(figure_label_A)
+#composition
+  
+```
+
+
+####Peridomestic
+```{r}
+###### rarefied. Should i tranform to relative abundance?
+
+unweighted_Unifrac <- ordinate(rpal_field_peridomestic, method = "PCoA", distance = "unifrac")
+
+unweighted_peridomestic <- plot_ordination(rpal_field_peridomestic, unweighted_Unifrac, type = "samples", color = "Region") + scale_fill_manual(values=cbPalette_regions) + 
+  theme_bw() + stat_ellipse() + 
+   theme(panel.grid = element_blank()) +
+  ggtitle("Unweighted UniFrac Across Peridomestic Palms") +
+  theme(legend.position = "none")
+
+unweighted_peridomestic <- unweighted_peridomestic + annotation_custom(figure_label_A)
+
+#composition
+  
+```
+###Habitat 
+```{r}
+
+unweighted_Unifrac <- ordinate(rpal_field, method = "PCoA", distance = "unifrac")
+
+unweighted_habitat <- plot_ordination(rpal_field, unweighted_Unifrac, type = "samples", color = "HABITAT") + scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + 
+  theme(panel.grid = element_blank()) +
+  stat_ellipse() + 
+  ggtitle("Unweighted UniFrac Across Habitat Types") +
+  theme(legend.position = "none")
+
+unweighted_habitat <- unweighted_habitat + annotation_custom(figure_label_A)
+
+```
+
+
+####Veraguas
+```{r}
+###### With rare ASVs
+
+unweighted_Unifrac_veraguas <- ordinate(rpal_field_veraguas, method = "PCoA", distance = "unifrac")
+
+unweighted_veraguas <- plot_ordination(rpal_field_veraguas, unweighted_Unifrac_veraguas, type = "samples", color = "HABITAT") + scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + 
+  theme(panel.grid = element_blank()) +
+  stat_ellipse() + 
+  ggtitle("Unweighted UniFrac Across Veraguas Palms") +
+  theme(legend.position = "none")
+
+unweighted_veraguas <- unweighted_veraguas + annotation_custom(figure_label_A)
+```
+
+####Capira
+```{r}
+###### With rare ASVs
+
+unweighted_Unifrac_capira <- ordinate(rpal_field_capira, method = "PCoA", distance = "unifrac")
+
+unweighted_capira <- plot_ordination(rpal_field_capira, unweighted_Unifrac_capira, type = "samples", color = "HABITAT") + scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + 
+  theme(panel.grid = element_blank()) +
+  stat_ellipse() + 
+  ggtitle("Unweighted UniFrac Across Capira Palms") +
+  theme(legend.position = "none")
+
+unweighted_capira <- unweighted_capira + annotation_custom(figure_label_A)
+
+```
+
+####La Chorrera
+```{r}
+###### With rare ASVs
+
+unweighted_Unifrac_chorrera <- ordinate(rpal_field_laChorrera, method = "PCoA", distance = "unifrac")
+
+unweighted_chorrera <- plot_ordination(rpal_field_laChorrera, unweighted_Unifrac_chorrera, type = "samples", color = "HABITAT") + scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + 
+  theme(panel.grid = element_blank()) +
+  stat_ellipse() + 
+  ggtitle("Unweighted UniFrac Across La Chorrera Palms") +
+  theme(legend.position = "none")
+
+unweighted_chorrera <- unweighted_chorrera + annotation_custom(figure_label_A)
+
+```
+
+####Canal
+```{r}
+###### With rare ASVs
+
+unwt.unifrac_canal <- ordinate(rpal_field_canal, "PCoA", distance = "unifrac")
+
+unwt.unifrac_canal_plot <- plot_ordination(rpal_field_canal, 
+                                     unwt.unifrac_canal, color="HABITAT") 
+
+unwt.unifrac_canal_plot <- unwt.unifrac_canal_plot + ggtitle("Unweighted UniFrac across Canal Habitat Types") + 
+  geom_point(size = 2) + 
+  theme_bw() +
+  theme(panel.grid = element_blank()) + scale_fill_manual(values=cbPalette_habitat)
+
+print(unwt.unifrac_canal_plot + stat_ellipse())
+
+```
+
+###First BM
+```{r}
+###### rarefied
+ordu.unwt.uni <- ordinate(rpal_field_BM_genera, "PCoA", distance = "unifrac")
+
+unwt.unifrac <- plot_ordination(rpal_field_BM_genera, 
+                                     ordu.unwt.uni, color="TypeBM") +
+  ggtitle("Unweighted UniFrac across Blood meal genera") + 
+  geom_point(size = 2) +
+  theme_bw() +
+  theme(panel.grid = element_blank())
+
+print(unwt.unifrac + stat_ellipse())
+```
+
+Age
+```{r}
+###### With rare ASVs
+unwt.unifrac <- plot_ordination(rpal_field, 
+                                     ordu.unwt.uni, color="ESTADIO") 
+unwt.unifrac <- unwt.unifrac + ggtitle("Unweighted UniFrac") + geom_point(size = 2)
+unwt.unifrac <- unwt.unifrac + theme_classic() + scale_color_brewer("ESTADIO", palette = "Set2")
+print(unwt.unifrac + stat_ellipse())
+```
+
+####Permanova
+Not split by habitat
+Unweighted
+```{r}
+set.seed(1990)
+ #relative abundance
+
+metadf <- data.frame(sample_data(rpal_field_BM_Capira))
+
+unifrac.dist <- UniFrac(rpal_field_BM_Capira, 
+                        weighted = FALSE, 
+                        normalized = TRUE,  
+                        parallel = FALSE, 
+                        fast = TRUE)
+
+permanova_mod1 <- adonis2(unifrac.dist ~ PalmID + HABITAT, data = metadf, permutations = 999)
+
+permanova_mod1
+```
+
+##Weighted
+Weighted unifrac considers abundances
+###Region
+```{r}
+set.seed(1990)
+rpal_field_rel <- microbiome::transform(rpal_field, "compositional") #relative abundance
+
+wt.unifrac <- ordinate(rpal_field, method = "PCoA", distance = "wunifrac")
+
+# check for Eigen values 
+# barplot(ordu.unwt.uni$values$Eigenvalues[1:10])
+
+weighted_regions <- plot_ordination(rpal_field, wt.unifrac, color="Region") + 
+  geom_point(size = 2) +
+  theme_bw() + stat_ellipse() + 
+   theme(panel.grid = element_blank()) +
+  ggtitle("Weighted UniFrac Across Regions")
+
+print(plot + stat_ellipse()) #add ellipses
+
+weighted_regions <- weighted_regions + annotation_custom(figure_label_B)
+
+```
+
+Weighted
+###Habitat
+```{r}
+
+wt.unifrac <- ordinate(rpal_field, method = "PCoA", distance = "wunifrac")
+
+# check for Eigen values 
+# barplot(ordu.unwt.uni$values$Eigenvalues[1:10])
+
+weighted_habitat <- plot_ordination(rpal_field, wt.unifrac, type = "samples", color = "HABITAT") + scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + 
+  theme(panel.grid = element_blank()) +
+  stat_ellipse() + 
+  ggtitle("Weighted UniFrac Across Habitat Types") +
+  guides(col= guide_legend(title= "Habitat Type"))
+
+print(plot + stat_ellipse()) #add ellipses
+
+weighted_habitat <- weighted_habitat + annotation_custom(figure_label_B)
+
+```
+
+Weighted
+####Veraguas
+```{r}
+
+wt.unifrac_veraguas <- ordinate(rpal_field_veraguas, method = "PCoA", distance = "wunifrac")
+
+weighted_veraguas <- plot_ordination(rpal_field_veraguas, wt.unifrac_veraguas, type = "samples", color = "HABITAT") + scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + stat_ellipse() + 
+   theme(panel.grid = element_blank()) +
+  ggtitle("Weighted UniFrac Across Veraguas") +
+  guides(col= guide_legend(title= "Habitat Type"))
+
+weighted_veraguas <- weighted_veraguas + annotation_custom(figure_label_B)
+
+```
+
+Weighted
+####Canal
+```{r}
+#rpal_field_canal_rel <- microbiome::transform(rpal_field_canal, "compositional") #relative abundance
+
+wt.unifrac_canal <- ordinate(rpal_field_canal, "PCoA", "wunifrac")
+
+# check for Eigen values 
+# barplot(ordu.unwt.uni$values$Eigenvalues[1:10])
+
+plot_ordination(rpal_field_canal, wt.unifrac_canal, type = "samples", color = "HABITAT") + scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + stat_ellipse() + 
+   theme(panel.grid = element_blank()) +
+  ggtitle("Weighted UniFrac Across Canal Palms")
+
+```
+
+####Capira
+```{r}
+#rpal_field_canal_rel <- microbiome::transform(rpal_field_canal, "compositional") #relative abundance
+
+wt.unifrac_capira <- ordinate(rpal_field_capira, "PCoA", "wunifrac")
+
+# check for Eigen values 
+# barplot(ordu.unwt.uni$values$Eigenvalues[1:10])
+
+weighted_capira <- plot_ordination(rpal_field_capira, wt.unifrac_capira, type = "samples", color = "HABITAT") + scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + stat_ellipse() + 
+   theme(panel.grid = element_blank()) +
+  ggtitle("Weighted UniFrac Across Capira Palms") +
+  guides(col= guide_legend(title= "Habitat Type"))
+
+weighted_capira <- weighted_capira + annotation_custom(figure_label_B)
+
+```
+
+
+####Chorrera
+```{r}
+#rpal_field_canal_rel <- microbiome::transform(rpal_field_canal, "compositional") #relative abundance
+
+wt.unifrac_lachorrera <- ordinate(rpal_field_laChorrera, "PCoA", "wunifrac")
+
+# check for Eigen values 
+# barplot(ordu.unwt.uni$values$Eigenvalues[1:10])
+
+weighted_chorrera <- plot_ordination(rpal_field_laChorrera, wt.unifrac_lachorrera, type = "samples", color = "HABITAT") + scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + stat_ellipse() + 
+   theme(panel.grid = element_blank()) +
+  ggtitle("Weighted UniFrac Across La Chorrera Palms") +
+  guides(col= guide_legend(title= "Habitat Type"))
+
+weighted_chorrera <- weighted_chorrera + annotation_custom(figure_label_B)
+
+```
+
+##Pasture
+```{r}
+
+wt.unifrac_pasture <- ordinate(rpal_field_pasture, "PCoA", "wunifrac")
+
+# check for Eigen values 
+# barplot(ordu.unwt.uni$values$Eigenvalues[1:10])
+
+weighted_pasture <- plot_ordination(rpal_field_pasture, wt.unifrac_pasture, type = "samples", color = "Region") + scale_fill_manual(values=cbPalette_regions) + 
+  theme_bw() + stat_ellipse() + 
+   theme(panel.grid = element_blank()) +
+  ggtitle("Weighted UniFrac Across Pasture Palms") 
+
+weighted_pasture <- weighted_pasture + annotation_custom(figure_label_B)
+
+```
+
+##Peridomestic
+```{r}
+wt.unifrac_peridomestic <- ordinate(rpal_field_peridomestic, "PCoA", "wunifrac")
+
+weighted_peridomestic <- plot_ordination(rpal_field_peridomestic, wt.unifrac_peridomestic, type = "samples", color = "Region") + scale_fill_manual(values=cbPalette_regions) + 
+  theme_bw() + 
+  theme(panel.grid = element_blank()) +
+  stat_ellipse() + 
+  ggtitle("Weighted UniFrac Across Peridomestic Palms")
+
+weighted_peridomestic <- weighted_peridomestic + annotation_custom(figure_label_B)
+
+
+```
+
+
+#Combined plots
+```{r}
+# sampling regions
+grid.arrange(unweighted_regions,weighted_regions, ncol = 2, widths = c(2.5,3))
+
+grid.arrange(unweighted_pasture,weighted_pasture, ncol = 2, widths = c(2.5,3))
+
+grid.arrange(unweighted_peridomestic,weighted_peridomestic, ncol = 2, widths = c(2.5,3))
+
+grid.arrange(unweighted_habitat,weighted_habitat, ncol = 2, widths = c(2.5,3))
+
+grid.arrange(unweighted_veraguas,weighted_veraguas, ncol = 2, widths = c(2.5,3))
+
+grid.arrange(unweighted_capira,weighted_capira, ncol = 2, widths = c(2.5,3))
+
+grid.arrange(unweighted_chorrera,weighted_chorrera, ncol = 2, widths = c(2.5,3))
+
+```
+
+#Bray-Curtis
+##Region
+```{r}
+bray_pcoa <- ordinate(
+  physeq = rpal_field, 
+  method = "PCoA", 
+  distance = "bray"
+)
+  
+plot_ordination(rpal_field, bray_pcoa, type = "samples", color = "Region") + scale_fill_manual(values=cbPalette_regions) + 
+  theme_bw() + stat_ellipse() + 
+   theme(panel.grid = element_blank()) +
+  ggtitle("Bray-Curtis Across Regions")
+```
+
+##Habitat
+```{r}
+bray_pcoa <- ordinate(
+  physeq = rpal_field, 
+  method = "PCoA", 
+  distance = "bray"
+)
+  
+  
+plot_ordination(rpal_field, bray_pcoa, type = "samples", color = "HABITAT") + scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + stat_ellipse() + 
+   theme(panel.grid = element_blank()) +
+  guides(col = guide_legend("Habitat Type")) +
+  ggtitle("Bray-Curtis Across Habitat Types")
+```
+
+###Veraguas
+```{r}
+bray_pcoa <- ordinate(
+  physeq = rpal_field_veraguas, 
+  method = "PCoA", 
+  distance = "bray"
+)
+  
+plot_ordination(rpal_field_veraguas, bray_pcoa, type = "samples", color = "HABITAT") + scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + stat_ellipse() + 
+   theme(panel.grid = element_blank()) +
+  guides(col = guide_legend("Habitat Type")) +
+  ggtitle("Bray-Curtis Across Veragus Palms")
+```
+
+###Capira
+```{r}
+bray_pcoa <- ordinate(
+  physeq = rpal_field_capira, 
+  method = "PCoA", 
+  distance = "bray"
+)
+  
+plot_ordination(rpal_field_capira, bray_pcoa, type = "samples", color = "HABITAT") + scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + stat_ellipse() + 
+   theme(panel.grid = element_blank()) +
+  guides(col = guide_legend("Habitat Type")) +
+  ggtitle("Bray-Curtis Across Capira Palms")
+```
+
+###La Chorrera
+```{r}
+bray_pcoa <- ordinate(
+  physeq = rpal_field_laChorrera, 
+  method = "PCoA", 
+  distance = "bray"
+)
+  
+plot_ordination(rpal_field_laChorrera, bray_pcoa, type = "samples", color = "HABITAT") + scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + stat_ellipse() + 
+   theme(panel.grid = element_blank()) +
+  guides(col = guide_legend("Habitat Type")) +
+  ggtitle("Bray-Curtis Across La Chorrera Palms")
+```
+
+###Canal
+```{r}
+bray_pcoa <- ordinate(
+  physeq = rpal_field_canal, 
+  method = "PCoA", 
+  distance = "bray"
+)
+  
+plot_ordination(rpal_field_canal, bray_pcoa, type = "samples", color = "HABITAT") + scale_fill_manual(values=cbPalette_habitat) + 
+  theme_bw() + stat_ellipse() + 
+   theme(panel.grid = element_blank()) +
+  guides(col = guide_legend("Habitat Type")) +
+  ggtitle("Bray-Curtis Across Canal Palms")
+```
+
+##Pasture
+```{r}
+bray_pcoa <- ordinate(
+  physeq = rpal_field_pasture, 
+  method = "PCoA", 
+  distance = "bray"
+)
+  
+plot_ordination(rpal_field_pasture, bray_pcoa, type = "samples", color = "Region") + scale_fill_manual(values=cbPalette_regions) + 
+  theme_bw() + stat_ellipse() + 
+   theme(panel.grid = element_blank()) +
+  guides(col = guide_legend("Region")) +
+  ggtitle("Bray-Curtis Across Pasture Palms") +
+  theme(legend.position = "none")
+```
+
+##Peridomestic
+```{r}
+bray_pcoa <- ordinate(
+  physeq = rpal_field_peridomestic, 
+  method = "PCoA", 
+  distance = "bray"
+)
+  
+plot_ordination(rpal_field_peridomestic, bray_pcoa, type = "samples", color = "Region") + scale_fill_manual(values=cbPalette_regions) + 
+  theme_bw() + stat_ellipse() + 
+   theme(panel.grid = element_blank()) +
+  guides(col = guide_legend("Region")) +
+  ggtitle("Bray-Curtis Across Peridomestic Palms")
+```
+
+
+#Population Density Figure
+```{r}
+p <- plot_landscape(rpal_field_rel, 
+                    "NMDS", 
+                    "bray", 
+                    col = "Region") +
+       labs(title = paste("NMDS / Bray-Curtis"))   
+
+p + scale_color_brewer(palette = "Dark2")+ scale_fill_gradient(low = "#e0ecf4", high = "#6e016b") 
+```
+
+#Adonis
+##Bray Curtis
+
+https://rpubs.com/lconteville/714853
+
+we need to transform the data to relative abundance and create a new phyloseq object
+```{r}
+
+relab_genera = transform_sample_counts(rpal_field, function(x) x / sum(x) * 100) 
+```
+
+Calculate Bray-Curtis distance among samples and convert the result to a matrix:
+```{r}
+abrel_bray <- phyloseq::distance(relab_genera, method = "bray")
+abrel_bray <- as.matrix(abrel_bray)
+
+```
+
+Run permanova
+```{r}
+samples <- data.frame(sample_data(relab_genera))
+
+permanovaBrayCurtis <- adonis2(abrel_bray ~  PalmID + Region + HABITAT + NumberBM + TypeBM + ESTADIO, data = samples)
+
+
+
+```
+
+##Weighted Unifrac
+Calculate distances
+```{r}
+wuniFrac <- UniFrac(rpal_field, weighted=TRUE, normalized=TRUE, parallel=FALSE, fast=TRUE)
+```
+
+Run permanova with same model as before
+```{r}
+permanovawUniFrac <- adonis2(wuniFrac ~  PalmID, data = samples)
+```
+
+##Unweighted
+Calculate distances
+```{r}
+uniFrac <- UniFrac(rpal_field, weighted=FALSE, normalized=TRUE, parallel=FALSE, fast=TRUE)
+```
+
+Run permanova with same model as before
+```{r}
+permanovaUniFrac <- adonis2(uniFrac ~  PalmID + Region + HABITAT + NumberBM + TypeBM + ESTADIO, data = samples)
+
+adonis2(uniFrac ~  HABITAT * Region , data = samples)
+```
+
+#Permanova and Dispersion
+##Jaccard
+
+###Region
+```{r}
+jacc_GP <- distance(rpal_field, "jaccard", binary = T)
+
+df_GP <- as(sample_data(rpal_field), "data.frame")
+
+## PERMANOVA
+adonis_jaccGP <- adonis2(jacc_GP ~ Region, data = df_GP)
+adonis_jaccGP
+
+## Significant PERMANOVA indicates that centroid (or spatial median) among groups is different and/or with-group dispersion among groups is different
+
+## PERMDISP
+groups_GP <- df_GP[["Region"]]
+jacc_dispGP <-betadisper(jacc_GP, groups_GP, type=c("median"))
+anova(jacc_dispGP)
+
+## If PERMANOVA and PERMDISP are both significant, you can use plotting to tell if PERMANOVA was significant based on centroid (or spatial median)
+
+plot(jacc_dispGP)
+?plot.betadisper
+
+## Would look better with higher replication for groups
+plot(jacc_dispGP, label = F)
+
+## Plot with 1 standard deviation ellipses around the group medians
+## sample size issue here, but you get the idea
+plot(jacc_dispGP, label = F, hull = F, ellipse = T)
+
+## Within-group dispersion that PERMDISP is testing
+boxplot(jacc_dispGP)
+
+## pairwise p-values
+TukeyHSD(jacc_dispGP)
+```
+
+

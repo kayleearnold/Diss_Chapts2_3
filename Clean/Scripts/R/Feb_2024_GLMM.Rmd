@@ -1,0 +1,479 @@
+---
+title: "MixedModels_March2023"
+author: "Kaylee Arnold"
+date: "2023-03-13" "Updated Feb 16 2024"
+output: html_document
+---
+
+#load libraries
+
+```{r}
+library(lmerTest)
+library(car)
+library(lme4)
+library(MuMIn)
+library(DHARMa)
+library(corrr)
+library(ggcorrplot)
+```
+
+
+Variation in gut microbiome diversity and composition across region
+GLMM ** Will use poisson for Observed data (integers) and Gamma for Faith and Shannon (non-integers)
+
+
+Test for normality
+```{r}
+library(ggpubr)
+
+#Density Plot
+ggdensity(adiv_all_variables_BM$Shannon, fill = "lightgray")
+# QQ plot
+ggqqplot(adiv_all_variables_BM$Shannon)
+
+shapiro.test(adiv_all_variables_BM$Shannon) #significant - data non normal
+
+```
+
+
+
+We already know alpha is split by region (Veraguas v Canal) and age group (N1-N3 v N4-adult). Now, what drives these differences other than just these variables (if any)
+
+#Shannon diversity (alpha)
+##Veraguas N4-adult 
+```{r}
+library(lmerTest)
+library(car)
+library(lme4)
+library(MuMIn)
+library(DHARMa)
+
+
+null_mod1 <- glmer(Shannon ~ (1 | PalmID), data = adiv_all_variables_veraguas_N4Adult, family = Gamma(link = "inverse")) #null model only includes the fixed effects 
+
+full_mod1a <- glmer(Shannon ~ Habitat + SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = Gamma(link = "inverse"))
+
+full_mod1b <- glmer(Shannon ~ Habitat * SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = Gamma(link = "inverse")) #infection and habitat highly correlated in interaction effect
+
+full_mod1c <- glmer(Shannon ~ Habitat + SingleInf_Tcruzi * TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = Gamma(link = "inverse"))
+
+mod1a <- glmer(Shannon ~ Habitat + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = Gamma(link = "inverse"))
+
+mod1b <- glmer(Shannon ~ SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = Gamma(link = "inverse")) 
+
+mod1c <- glmer(Shannon ~ TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = Gamma(link = "inverse")) #best fit
+
+mod1d <- glmer(Shannon ~ Habitat + SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = Gamma(link = "inverse"))
+
+mod1e <- glmer(Shannon ~ Habitat * SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = Gamma(link = "inverse"))
+
+mod1f <- glmer(Shannon ~ Habitat + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = Gamma(link = "inverse"))
+
+mod1g <- glmer(Shannon ~ Habitat * TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = Gamma(link = "inverse"))
+
+mod1h <- glmer(Shannon ~ SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = Gamma(link = "inverse")) #best fit
+
+
+
+AIC(null_mod1, full_mod1a,full_mod1b,full_mod1c,mod1a,mod1b,mod1c, mod1d,mod1e,mod1f,mod1g,mod1h)
+
+```
+
+##Canal N4 Adult
+```{r}
+null_mod2 <- glmer(Shannon ~ (1 | PalmID), data = adiv_all_variables_N4Adult_canal, family = Gamma(link = "inverse")) #null model only includes the fixed effects 
+
+full_mod2a <- glmer(Shannon ~ Habitat + SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = Gamma(link = "inverse")) #doesn't converge
+
+full_mod2b <- glmer(Shannon ~ Habitat * SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = Gamma(link = "inverse"))
+
+full_mod2c <- glmer(Shannon ~ Habitat + SingleInf_Tcruzi * TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = Gamma(link = "inverse"))
+
+
+mod2a <- glmer(Shannon ~ Habitat + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = Gamma(link = "inverse"))
+
+mod2b <- glmer(Shannon ~ SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = Gamma(link = "inverse")) #
+
+mod2c <- glmer(Shannon ~ TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = Gamma(link = "inverse"))
+
+
+mod2d <- glmer(Shannon ~ Habitat + SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = Gamma(link = "inverse"))
+
+mod2e <- glmer(Shannon ~ Habitat * SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = Gamma(link = "inverse"))
+
+mod2f <- glmer(Shannon ~ Habitat + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = Gamma(link = "inverse"))
+
+mod2g <- glmer(Shannon ~ Habitat * TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = Gamma(link = "inverse"))
+
+mod2h <- glmer(Shannon ~ SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = Gamma(link = "inverse"))
+
+
+
+
+AIC(null_mod2,full_mod2a,full_mod2b,full_mod2c,mod2a,mod2b,mod2c, mod2d,mod2e,mod2f,mod2g,mod2h)
+
+
+```
+
+
+
+## Veraguas N1 N3
+```{r}
+null_mod3 <- glmer(Shannon ~ (1 | PalmID), data = adiv_all_variables_veraguas_N1N3, family = Gamma(link = "inverse")) #null model only includes the fixed effects 
+
+full_mod3a <- glmer(Shannon ~ Habitat + SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = Gamma(link = "inverse")) #Only mammals
+
+full_mod3b <- glmer(Shannon ~ Habitat * SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = Gamma(link = "inverse"))
+
+full_mod3c <- glmer(Shannon ~ Habitat + SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = Gamma(link = "inverse"))
+
+
+mod3a <- glmer(Shannon ~ Habitat + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = Gamma(link = "inverse"))
+
+mod3b <- glmer(Shannon ~ SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = Gamma(link = "inverse")) 
+
+#mod3c <- glmer(Shannon ~ TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = Gamma(link = "inverse"))
+
+mod3d <- glmer(Shannon ~ Habitat + SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = Gamma(link = "inverse"))
+
+mod3e <- glmer(Shannon ~ Habitat * SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = Gamma(link = "inverse"))
+
+#mod3f <- glmer(Shannon ~ Habitat + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = Gamma(link = "inverse"))
+
+#mod3g <- glmer(Shannon ~ Habitat * TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = Gamma(link = "inverse"))
+
+#mod3h <- glmer(Shannon ~ SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = Gamma(link = "inverse"))
+
+
+AIC(null_mod3,full_mod3a,full_mod3b,mod3a,mod3b, mod3d,mod3e)
+
+```
+
+
+## Canal N1 N3
+```{r}
+null_mod4 <- glmer(Shannon ~ (1 | PalmID), data = adiv_all_variables_N1N3_canal, family = Gamma(link = "inverse")) #null model only includes the fixed effects 
+
+full_mod4a <- glmer(Shannon ~ Habitat + SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = Gamma(link = "inverse")) 
+
+full_mod4b <- glmer(Shannon ~ Habitat * SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = Gamma(link = "inverse"))
+
+full_mod4c <- glmer(Shannon ~ Habitat + SingleInf_Tcruzi * TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = Gamma(link = "inverse")) #does not converge
+
+
+mod4a <- glmer(Shannon ~ Habitat + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = Gamma(link = "inverse"))
+
+mod4b <- glmer(Shannon ~ SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = Gamma(link = "inverse")) 
+
+mod4c <- glmer(Shannon ~ TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = Gamma(link = "inverse"))
+
+
+mod4d <- glmer(Shannon ~ Habitat + SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = Gamma(link = "inverse"))
+
+mod4e <- glmer(Shannon ~ Habitat * SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = Gamma(link = "inverse"))
+
+mod4f <- glmer(Shannon ~ Habitat + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = Gamma(link = "inverse"))
+
+mod4g <- glmer(Shannon ~ Habitat * TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = Gamma(link = "inverse"))
+
+mod4h <- glmer(Shannon ~ SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = Gamma(link = "inverse"))
+
+
+
+
+AIC(null_mod4,full_mod4a,full_mod4b,full_mod4c,mod4a,mod4b,mod4c, mod4d,mod4e,mod4f,mod4g,mod4h)
+
+```
+
+
+
+# Observed
+## Veraguas N4 Adult
+```{r}
+library(lmerTest)
+library(car)
+library(lme4)
+library(MuMIn)
+library(DHARMa)
+
+
+null_mod5 <- glmer(Observed ~ (1 | PalmID), data = adiv_all_variables_veraguas_N4Adult, family = poisson(link = "log")) #null model only includes the fixed effects 
+
+full_mod5a <- glmer(Observed ~ Habitat + SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = poisson(link = "log"))
+
+full_mod5b <- glmer(Observed ~ Habitat * SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = poisson(link = "log"))
+
+full_mod5b <- glmer(Observed ~ Habitat + SingleInf_Tcruzi * TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = poisson(link = "log"))
+
+
+mod5a <- glmer(Observed ~ Habitat + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = poisson(link = "log"))
+
+mod5b <- glmer(Observed ~ SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = poisson(link = "log")) 
+
+mod5c <- glmer(Observed ~ TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = poisson(link = "log"))
+
+
+mod5d <- glmer(Observed ~ Habitat + SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = poisson(link = "log"))
+
+mod5e <- glmer(Observed ~ Habitat * SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = poisson(link = "log"))
+
+mod5f <- glmer(Observed ~ Habitat + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = poisson(link = "log"))
+
+mod5g <- glmer(Observed ~ Habitat * TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = poisson(link = "log"))
+
+mod5h <- glmer(Observed ~ SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N4Adult, family = poisson(link = "log"))
+
+
+
+
+AIC(null_mod5, full_mod5a,full_mod5b,mod5a,mod5b,mod5c, mod5d,mod5e,mod5f,mod5g,mod5h)
+
+```
+
+##Canal N4 Adult
+```{r}
+null_mod6 <- glmer(Observed ~ (1 | PalmID), data = adiv_all_variables_N4Adult_canal, family = poisson(link = "log")) #null model only includes the fixed effects 
+
+full_mod6a <- glmer(Observed ~ Habitat + SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = poisson(link = "log")) #doesn't converge
+
+full_mod6b <- glmer(Observed ~ Habitat * SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = poisson(link = "log"))
+
+full_mod6c <- glmer(Observed ~ Habitat + SingleInf_Tcruzi * TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = poisson(link = "log"))
+
+
+mod6a <- glmer(Observed ~ Habitat + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = poisson(link = "log"))
+
+mod6b <- glmer(Observed ~ SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = poisson(link = "log")) ## best fit model -- infection drives alpha differences
+
+mod6c <- glmer(Observed ~ TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = poisson(link = "log"))
+
+
+mod6d <- glmer(Observed ~ Habitat + SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = poisson(link = "log"))
+
+mod6e <- glmer(Observed ~ Habitat * SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = poisson(link = "log"))
+
+mod6f <- glmer(Observed ~ Habitat + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = poisson(link = "log"))
+
+mod6g <- glmer(Observed ~ Habitat * TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = poisson(link = "log"))
+
+mod6h <- glmer(Observed ~ SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N4Adult_canal, family = poisson(link = "log"))
+
+
+
+
+AIC(null_mod6,full_mod6a,mod6a,mod6b,mod6c, mod6d,mod6e,mod6f,mod6g,mod6h)
+
+```
+
+
+
+## Veraguas N1 N3
+```{r}
+null_mod7 <- glmer(Observed ~ (1 | PalmID), data = adiv_all_variables_veraguas_N1N3, family = Gamma(link = "inverse")) #null model only includes the fixed effects 
+
+full_mod7a <- glmer(Observed ~ Habitat + SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = poisson(link = "log")) 
+
+full_mod7b <- glmer(Observed ~ Habitat * SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = poisson(link = "log"))
+
+full_mod7c <- glmer(Observed ~ Habitat + SingleInf_Tcruzi * TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = poisson(link = "log"))
+
+
+mod7a <- glmer(Observed ~ Habitat + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = poisson(link = "log"))
+
+mod7b <- glmer(Observed ~ SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = poisson(link = "log"))
+
+mod7c <- glmer(Observed ~ TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = poisson(link = "log"))
+
+
+mod7d <- glmer(Observed ~ Habitat + SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = poisson(link = "log"))
+
+mod7e <- glmer(Observed ~ Habitat * SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = poisson(link = "log"))
+
+mod7f <- glmer(Observed ~ Habitat + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = poisson(link = "log"))
+
+mod7g <- glmer(Observed ~ Habitat * TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = poisson(link = "log"))
+
+mod7h <- glmer(Observed ~ SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_veraguas_N1N3, family = poisson(link = "log"))
+
+
+
+AIC(null_mod7,full_mod7a,full_mod7b,full_mod7c,mod7a,mod7b,mod7c, mod7d,mod7e,mod7f,mod7g,mod7h)
+
+```
+
+
+## Canal N1 N3 obserevd
+```{r}
+null_mod8 <- glmer(Observed ~ (1 | PalmID), data = adiv_all_variables_N1N3_canal, family = poisson(link = "log")) #null model only includes the fixed effects 
+
+full_mod8a <- glmer(Observed ~ Habitat + SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = poisson(link = "log")) 
+
+full_mod8b <- glmer(Observed ~ Habitat * SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = poisson(link = "log"))
+
+full_mod8c <- glmer(Observed ~ Habitat + SingleInf_Tcruzi * TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = poisson(link = "log")) #does not converge
+
+
+mod8a <- glmer(Observed ~ Habitat + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = poisson(link = "log"))
+
+mod8b <- glmer(Observed ~ SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = poisson(link = "log")) 
+
+mod8c <- glmer(Observed ~ TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = poisson(link = "log"))
+
+
+mod8d <- glmer(Observed ~ Habitat + SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = poisson(link = "log"))
+
+mod8e <- glmer(Observed ~ Habitat * SingleInf_Tcruzi + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = poisson(link = "log"))
+
+mod8f <- glmer(Observed ~ Habitat + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = poisson(link = "log"))
+
+mod8g <- glmer(Observed ~ Habitat * TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = poisson(link = "log"))
+
+mod8h <- glmer(Observed ~ SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=adiv_all_variables_N1N3_canal, family = poisson(link = "log"))
+
+
+AIC(null_mod8,full_mod8b,mod8a,mod8b,mod8c, mod8d,mod8e,mod8f,mod8g,mod8h)
+
+```
+
+# Faith
+##Veraguas N4 - Adult
+```{r}
+
+null_mod9 <- glmer(faith_pd ~ (1 | PalmID), data = FaithBM_Veraguas_N4Adult, family = Gamma(link = "inverse")) #null model only includes the fixed effects 
+
+full_mod9a <- glmer(faith_pd ~ Habitat + SingleInf_Tcruzi + TypeBM_Updated_Updated + (1 | PalmID), data=FaithBM_Veraguas_N4Adult, family = Gamma(link = "inverse")) #does not converge
+
+full_mod9b <- glmer(faith_pd ~ Habitat * SingleInf_Tcruzi + TypeBM_Updated_Updated + (1 | PalmID), data=FaithBM_Veraguas_N4Adult, family = Gamma(link = "inverse")) # does not converge
+
+full_mod9c <- glmer(faith_pd ~ Habitat + SingleInf_Tcruzi * TypeBM_Updated_Updated + (1 | PalmID), data=FaithBM_Veraguas_N4Adult, family = Gamma(link = "inverse"))
+
+
+mod9a <- glmer(faith_pd ~ Habitat + (1 | PalmID), data=FaithBM_Veraguas_N4Adult, family = Gamma(link = "inverse"))
+
+mod9b <- glmer(faith_pd ~ SingleInf_Tcruzi + (1 | PalmID), data=FaithBM_Veraguas_N4Adult, family = Gamma(link = "inverse")) ## best fit model -- infection drives alpha differences
+
+mod9c <- glmer(faith_pd ~ TypeBM_Updated_Updated + (1 | PalmID), data=FaithBM_Veraguas_N4Adult, family = Gamma(link = "inverse"))
+
+
+mod9d <- glmer(faith_pd ~ Habitat + SingleInf_Tcruzi + (1 | PalmID), data=FaithBM_Veraguas_N4Adult, family = Gamma(link = "inverse"))
+
+mod9e <- glmer(faith_pd ~ Habitat * SingleInf_Tcruzi + (1 | PalmID), data=FaithBM_Veraguas_N4Adult, family = Gamma(link = "inverse"))
+
+mod9f <- glmer(faith_pd ~ Habitat + TypeBM_Updated + (1 | PalmID), data=FaithBM_Veraguas_N4Adult, family = Gamma(link = "inverse"))
+
+mod9g <- glmer(faith_pd ~ Habitat * TypeBM_Updated + (1 | PalmID), data=FaithBM_Veraguas_N4Adult, family = Gamma(link = "inverse"))
+
+mod9h <- glmer(faith_pd ~ SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=FaithBM_Veraguas_N4Adult, family = Gamma(link = "inverse"))
+
+
+AIC(null_mod9, full_mod9a,full_mod9b,full_mod9c,mod9a,mod9b,mod9c, mod9d,mod9e,mod9f,mod9g,mod9h)
+```
+
+
+## Canal N4 Adult - Faith
+```{r}
+
+null_mod10 <- glmer(faith_pd ~ (1 | PalmID), data = FaithBM_Canal_N4Adult, family = Gamma(link = "inverse")) #null model only includes the fixed effects 
+
+full_mod10a <- glmer(faith_pd ~ Habitat + SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=FaithBM_Canal_N4Adult, family = Gamma(link = "inverse"))
+
+full_mod10b <- glmer(faith_pd ~ Habitat * SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=FaithBM_Canal_N4Adult, family = Gamma(link = "inverse")) # does not converge
+
+full_mod10c <- glmer(faith_pd ~ Habitat + SingleInf_Tcruzi * TypeBM_Updated + (1 | PalmID), data=FaithBM_Canal_N4Adult, family = Gamma(link = "inverse"))
+
+
+mod10a <- glmer(faith_pd ~ Habitat + (1 | PalmID), data=FaithBM_Canal_N4Adult, family = Gamma(link = "inverse"))
+
+mod10b <- glmer(faith_pd ~ SingleInf_Tcruzi + (1 | PalmID), data=FaithBM_Canal_N4Adult, family = Gamma(link = "inverse")) ## best fit model -- infection drives alpha differences
+
+mod10c <- glmer(faith_pd ~ TypeBM_Updated + (1 | PalmID), data=FaithBM_Canal_N4Adult, family = Gamma(link = "inverse"))
+
+
+mod10d <- glmer(faith_pd ~ Habitat + SingleInf_Tcruzi + (1 | PalmID), data=FaithBM_Canal_N4Adult, family = Gamma(link = "inverse"))
+
+mod10e <- glmer(faith_pd ~ Habitat * SingleInf_Tcruzi + (1 | PalmID), data=FaithBM_Canal_N4Adult, family = Gamma(link = "inverse"))
+
+mod10f <- glmer(faith_pd ~ Habitat + TypeBM_Updated + (1 | PalmID), data=FaithBM_Canal_N4Adult, family = Gamma(link = "inverse")) # does not converege
+
+mod10g <- glmer(faith_pd ~ Habitat * TypeBM_Updated + (1 | PalmID), data=FaithBM_Canal_N4Adult, family = Gamma(link = "inverse"))
+
+mod10h <- glmer(faith_pd ~ SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=FaithBM_Canal_N4Adult, family = Gamma(link = "inverse"))
+
+
+
+
+AIC(null_mod10, full_mod10a,full_mod10b,full_mod10c,mod10a,mod10b,mod10c, mod10d,mod10e,mod10f,mod10g,mod10h)
+```
+
+##Veraguas N1 N3 - Faith
+```{r}
+
+null_mod11 <- glmer(faith_pd ~ (1 | PalmID), data = FaithBM_Veraguas_N1N3, family = Gamma(link = "inverse")) #null model only includes the fixed effects 
+
+full_mod11a <- glmer(faith_pd ~ Habitat + SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=FaithBM_Veraguas_N1N3, family = Gamma(link = "inverse"))
+
+full_mod11b <- glmer(faith_pd ~ Habitat * SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=FaithBM_Veraguas_N1N3, family = Gamma(link = "inverse")) # does not converge
+
+full_mod11c <- glmer(faith_pd ~ Habitat + SingleInf_Tcruzi * TypeBM_Updated + (1 | PalmID), data=FaithBM_Veraguas_N1N3, family = Gamma(link = "inverse"))
+
+
+mod11a <- glmer(faith_pd ~ Habitat + (1 | PalmID), data=FaithBM_Veraguas_N1N3, family = Gamma(link = "inverse"))
+
+mod11b <- glmer(faith_pd ~ SingleInf_Tcruzi + (1 | PalmID), data=FaithBM_Veraguas_N1N3, family = Gamma(link = "inverse")) ## best fit model -- infection drives alpha differences
+
+mod11c <- glmer(faith_pd ~ TypeBM_Updated + (1 | PalmID), data=FaithBM_Veraguas_N1N3, family = Gamma(link = "inverse"))
+
+
+mod11d <- glmer(faith_pd ~ Habitat + SingleInf_Tcruzi + (1 | PalmID), data=FaithBM_Veraguas_N1N3, family = Gamma(link = "inverse"))
+
+mod11e <- glmer(faith_pd ~ Habitat * SingleInf_Tcruzi + (1 | PalmID), data=FaithBM_Veraguas_N1N3, family = Gamma(link = "inverse"))
+
+mod11f <- glmer(faith_pd ~ Habitat + TypeBM_Updated + (1 | PalmID), data=FaithBM_Veraguas_N1N3, family = Gamma(link = "inverse")) 
+
+mod11g <- glmer(faith_pd ~ Habitat * TypeBM_Updated + (1 | PalmID), data=FaithBM_Veraguas_N1N3, family = Gamma(link = "inverse"))
+
+mod11h <- glmer(faith_pd ~ SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=FaithBM_Veraguas_N1N3, family = Gamma(link = "inverse"))
+
+
+
+
+AIC(null_mod11, full_mod11a,full_mod11b,full_mod11c,mod11a,mod11b,mod11c, mod11d,mod11e,mod11f,mod11g,mod11h)
+```
+
+
+## Canal N1 N3 Faith
+```{r}
+
+null_mod12 <- glmer(faith_pd ~ (1 | PalmID), data = FaithBM_Canal_N1N3, family = Gamma(link = "inverse")) #null model only includes the fixed effects 
+
+full_mod12a <- glmer(faith_pd ~ Habitat + SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=FaithBM_Canal_N1N3, family = Gamma(link = "inverse"))
+
+full_mod12b <- glmer(faith_pd ~ Habitat * SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=FaithBM_Canal_N1N3, family = Gamma(link = "inverse")) # does not converge
+
+full_mod12c <- glmer(faith_pd ~ Habitat + SingleInf_Tcruzi * TypeBM_Updated + (1 | PalmID), data=FaithBM_Canal_N1N3, family = Gamma(link = "inverse"))
+
+
+mod12a <- glmer(faith_pd ~ Habitat + (1 | PalmID), data=FaithBM_Canal_N1N3, family = Gamma(link = "inverse"))
+
+mod12b <- glmer(faith_pd ~ SingleInf_Tcruzi + (1 | PalmID), data=FaithBM_Canal_N1N3, family = Gamma(link = "inverse")) ## best fit model -- infection drives alpha differences
+
+mod12c <- glmer(faith_pd ~ TypeBM_Updated + (1 | PalmID), data=FaithBM_Canal_N1N3, family = Gamma(link = "inverse"))
+
+
+mod12d <- glmer(faith_pd ~ Habitat + SingleInf_Tcruzi + (1 | PalmID), data=FaithBM_Canal_N1N3, family = Gamma(link = "inverse"))
+
+mod12e <- glmer(faith_pd ~ Habitat * SingleInf_Tcruzi + (1 | PalmID), data=FaithBM_Canal_N1N3, family = Gamma(link = "inverse"))
+
+mod12f <- glmer(faith_pd ~ Habitat + TypeBM_Updated + (1 | PalmID), data=FaithBM_Canal_N1N3, family = Gamma(link = "inverse")) #does not converege
+
+mod12g <- glmer(faith_pd ~ Habitat * TypeBM_Updated + (1 | PalmID), data=FaithBM_Canal_N1N3, family = Gamma(link = "inverse"))
+
+mod12h <- glmer(faith_pd ~ SingleInf_Tcruzi + TypeBM_Updated + (1 | PalmID), data=FaithBM_Canal_N1N3, family = Gamma(link = "inverse"))
+
+mod13h <- glmer(faith_pd ~ SingleInf_Tcruzi * TypeBM_Updated + (1 | PalmID), data=FaithBM_Canal_N1N3, family = Gamma(link = "inverse"))
+
+
+
+
+AIC(null_mod12, full_mod12a,full_mod12b,full_mod12c,mod12a,mod12b,mod12c, mod12d,mod12e,mod12f,mod12g,mod12h,mod13h)
+```

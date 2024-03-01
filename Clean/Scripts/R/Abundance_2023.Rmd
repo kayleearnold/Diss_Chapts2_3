@@ -1,0 +1,736 @@
+---
+title: "Abundance_clean_2023"
+author: "Kaylee Arnold"
+date: "2023-02-22"
+output: html_document
+---
+
+This document creates relative abundance figures
+
+#Phylum
+##All samples
+Prune to top 20 phyla - using rpal_field
+```{r}
+
+top10P.names = sort(tapply(taxa_sums(rpal_field_BM), tax_table(rpal_field_BM)[, "Phylum"], sum), TRUE)[1:10]
+#Cut down the physeq.tree data to only the top 10 Genus
+top10P = subset_taxa(rpal_field, Phylum %in% names(top10P.names)) #new phyloseq object at top 20 genera
+
+```
+
+###Convert to relative abundance
+```{r}
+ps_phylum <- top10P %>%
+  tax_glom(taxrank = "Phylum") %>%                     # agglomerate at genus level
+  transform_sample_counts(function(x) {x/sum(x)} ) %>% # Transform to rel. abundance
+  psmelt() %>%                                         # Melt to long format
+  filter(Abundance > 0.01) %>%                         # Filter out low abundance taxa
+  arrange(Phylum) 
+```
+
+###Re-Set color scale for graph
+```{r}
+#display.brewer.all(n=NULL, type="all", select=NULL, exact.n=TRUE,
+#colorblindFriendly=TRUE)
+
+colourCount <- 10 # max number of categories you need (10 because we are looking at top 10 genera)
+getPalette <- colorRampPalette(brewer.pal(10, "Paired")) # 10 is for the number of distinct colors to use, and 12 is the most for "Paired"
+
+```
+
+###All Samples
+####Relative abundance of top 10 genus 
+```{r}
+
+phyla_barplot <- ggplot(ps_phylum, aes(x = Sample_Name, y = Abundance, fill = Phylum)) + 
+  geom_bar(stat = "identity", position = "fill", width = .8) + #width is individual bar width
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  #scale_color_manual(breaks=c('Sphingomonas', 'Erwinia', 'Stenotrophomonas', 'Delftia', "Dietzia", "Staphylococcus", "Pseudomonas", "Corynebacterium", "Enterobacter", "Streptococcus")) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top Phyla") +
+  ggtitle("Genera Composition Across Samples") 
+  #theme(legend.position = "none")
+```
+
+
+#Genus Relative Abundance
+##All samples, Region, and Habitat
+Prune to top 20 genera - using rpal_field
+```{r}
+
+top10G.names = sort(tapply(taxa_sums(rpal_field), tax_table(rpal_field)[, "Genus"], sum), TRUE)[1:10]
+#Cut down the physeq.tree data to only the top 10 Genus
+top10G = subset_taxa(rpal_field, Genus %in% names(top10G.names)) #new phyloseq object at top 20 genera
+
+```
+
+###Convert to relative abundance
+```{r}
+ps_genus <- top10G %>%
+  tax_glom(taxrank = "Genus") %>%                     # agglomerate at genus level
+  transform_sample_counts(function(x) {x/sum(x)} ) %>% # Transform to rel. abundance
+  psmelt() %>%                                         # Melt to long format
+  filter(Abundance > 0.01) %>%                         # Filter out low abundance taxa
+  arrange(Genus) 
+```
+
+###Re-Set color scale for graph
+```{r}
+#display.brewer.all(n=NULL, type="all", select=NULL, exact.n=TRUE,
+#colorblindFriendly=TRUE)
+
+colourCount <- 10 # max number of categories you need (10 because we are looking at top 10 genera)
+getPalette <- colorRampPalette(brewer.pal(10, "Paired")) # 10 is for the number of distinct colors to use, and 12 is the most for "Paired"
+
+```
+
+###All Samples
+####Relative abundance of top 10 genus 
+```{r}
+
+ggplot(ps_genus, aes(x = Sample_Name, y = Abundance, fill = Genus)) + 
+  geom_bar(stat = "identity", position = "fill", width = 1) + #width is individual bar width
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  scale_color_manual(breaks=c('Sphingomonas', 'Erwinia', 'Stenotrophomonas', 'Delftia', "Dietzia", "Staphylococcus", "Pseudomonas", "Corynebacterium", "Enterobacter", "Streptococcus")) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top 10 Genera") +
+  ggtitle("Genera Composition Across Samples") 
+  #theme(legend.position = "none")
+```
+
+####Count data for top 10 genera
+```{r}
+TGroup <- tax_glom(top10G, taxrank = "Genus")
+PGroup <- transform_sample_counts(TGroup, function(x)100* x / sum(x))
+OTUg <- otu_table(PGroup)
+TAXg <- tax_table(PGroup)[,"Genus"]
+AverageD <- as.data.frame(rowMeans(OTUg))
+names(AverageD) <- c("Mean")
+GTable <- merge(TAXg, AverageD, by=0, all=TRUE)
+GTable$Row.names = NULL
+GTable <- GTable[order(desc(GTable$Mean)),]
+head(GTable)
+```
+
+
+#Species level
+```{r}
+
+################
+# to view all species, not just the top ones
+
+ALLSpecies.names = sort(tapply(taxa_sums(rpal_field), tax_table(rpal_field)[, "Species"], sum), TRUE)
+
+#Cut down the physeq.tree data to only the top 20 species
+ALLSpecies = subset_taxa(rpal_field, Species %in% names(ALLSpecies.names)) #new phyloseq object at top 20 ASVs
+
+#######################
+
+top10S.names = sort(tapply(taxa_sums(rpal_field), tax_table(rpal_field)[, "Species"], sum), TRUE)[1:10]
+#Cut down the physeq.tree data to only the top 10 species
+top10S = subset_taxa(rpal_field, Species %in% names(top10S.names)) #new phyloseq object at top 20 ASVs
+
+```
+
+###Convert to relative abundance
+```{r}
+
+##### for all species, not just top ones
+ps_species_ALL <- ALLSpecies %>%
+  tax_glom(taxrank = "Species") %>%                     # agglomerate at species level
+  transform_sample_counts(function(x) {x/sum(x)} ) %>% # Transform to rel. abundance
+  psmelt() %>%                                         # Melt to long format
+  filter(Abundance > 0.01) %>%                         # Filter out low abundance taxa
+  arrange(Species)
+
+###########
+
+ps_species <- top10S %>%
+  tax_glom(taxrank = "Species") %>%                     # agglomerate at species level
+  transform_sample_counts(function(x) {x/sum(x)} ) %>% # Transform to rel. abundance
+  psmelt() %>%                                         # Melt to long format
+  filter(Abundance > 0.01) %>%                         # Filter out low abundance taxa
+  arrange(Species) 
+```
+
+write out csv of ASV table for species of all samples
+```{r}
+write_csv(ps_species_ALL, "ASV_Table_allSpecies.csv")
+
+```
+
+
+###Re-Set color scale for graph
+```{r}
+#display.brewer.all(n=NULL, type="all", select=NULL, exact.n=TRUE,
+#colorblindFriendly=TRUE)
+
+colourCount <- 10 # max number of categories you need (10 because we are looking at top 10 genera)
+getPalette <- colorRampPalette(brewer.pal(10, "Paired")) # 10 is for the number of distinct colors to use, and 12 is the most for "Paired"
+
+```
+
+###All Samples
+####Relative abundance of top 10 genus 
+```{r}
+
+species_barplot <- ggplot(ps_species, aes(x = Sample_Name, y = Abundance, fill = Species)) +
+  geom_bar(stat = "identity", position = "fill") + #width is individual bar width
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  scale_color_manual(breaks=c('Sphingomonas', 'Erwinia', 'Stenotrophomonas', 'Delftia', "Dietzia", "Staphylococcus", "Pseudomonas", "Corynebacterium", "Enterobacter", "Streptococcus")) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top 10 Genera") +
+  ggtitle("Genera Composition Across Samples")
+  #theme(legend.position = "none")
+```
+
+####Count data for top 20 species
+```{r}
+TGroup <- tax_glom(top20S, taxrank = "Species")
+PGroup <- transform_sample_counts(TGroup, function(x)100* x / sum(x))
+OTUg <- otu_table(PGroup)
+TAXg <- tax_table(PGroup)[,"Species"]
+AverageD <- as.data.frame(rowMeans(OTUg))
+names(AverageD) <- c("Mean")
+GTable <- merge(TAXg, AverageD, by=0, all=TRUE)
+GTable$Row.names = NULL
+GTable <- GTable[order(desc(GTable$Mean)),]
+head(GTable)
+```
+
+##Region
+
+Plot - species
+```{r}
+
+ggplot(ps_species, aes(x = Sample_Name, y = Abundance, fill = Species)) + 
+  facet_wrap(~Region, scales = "free_x") +
+  geom_bar(stat = "identity", position = "fill", width = 1) + #width is individual bar width
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  scale_color_manual(breaks=c('Sphingomonas', 'Erwinia', 'Stenotrophomonas', 'Delftia', "Dietzia", "Staphylococcus", "Pseudomonas", "Corynebacterium", "Enterobacter", "Streptococcus")) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top 10 ASVs") +
+  ggtitle("ASV Composition Across Samples")
+  #theme(legend.position = "none")
+```
+
+
+##Habitat
+
+
+Plot - species
+```{r}
+
+ggplot(ps_species, aes(x = Sample_Name, y = Abundance, fill = Species)) + 
+  facet_wrap(~HABITAT, scales = "free_x") +
+  geom_bar(stat = "identity", position = "fill", width = 1) + #width is individual bar width
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  scale_color_manual(breaks=c('Sphingomonas', 'Erwinia', 'Stenotrophomonas', 'Delftia', "Dietzia", "Staphylococcus", "Pseudomonas", "Corynebacterium", "Enterobacter", "Streptococcus")) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top 10 Genera") +
+  ggtitle("Genera Composition Across Samples")
+  #theme(legend.position = "none")
+```
+
+##Infection
+
+```{r}
+
+ggplot(ps_species, aes(x = Sample_Name, y = Abundance, fill = Species)) + 
+  facet_wrap(~SingleInf_Tcruzi, scales = "free_x") +
+  geom_bar(stat = "identity", position = "fill", width = 1) + #width is individual bar width
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  scale_color_manual(breaks=c('Sphingomonas', 'Erwinia', 'Stenotrophomonas', 'Delftia', "Dietzia", "Staphylococcus", "Pseudomonas", "Corynebacterium", "Enterobacter", "Streptococcus")) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top 10 Genera") +
+  ggtitle("Genera Composition Across Samples")
+  #theme(legend.position = "none")
+```
+
+##PalmID
+```{r}
+
+ggplot(ps_species, aes(x = PalmID, y = Abundance, fill = Species)) + 
+  facet_wrap(~HABITAT, scales = "free_x") +
+  geom_bar(stat = "identity", position = "fill", width = 1) + #width is individual bar width
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  scale_color_manual(breaks=c('Sphingomonas', 'Erwinia', 'Stenotrophomonas', 'Delftia', "Dietzia", "Staphylococcus", "Pseudomonas", "Corynebacterium", "Enterobacter", "Streptococcus")) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top 10 Genera") +
+  ggtitle("Genera Composition Across Samples")
+  #theme(legend.position = "none")
+```
+
+#Veraguas
+
+```{r}
+top10S.names = sort(tapply(taxa_sums(rpal_field_veraguas), tax_table(rpal_field_veraguas)[, "Species"], sum), TRUE)[1:10]
+#Cut down the physeq.tree data to only the top 10 Genus
+top10S = subset_taxa(rpal_field_veraguas, Species %in% names(top10S.names)) #new phyloseq object at top 20 ASVs
+
+```
+
+Convert to relative abundance
+```{r}
+ps_species_veraguas <- top10S %>%
+  tax_glom(taxrank = "Species") %>%                     # agglomerate at species level
+  transform_sample_counts(function(x) {x/sum(x)} ) %>% # Transform to rel. abundance
+  psmelt() %>%                                         # Melt to long format
+  filter(Abundance > 0.01) %>%                         # Filter out low abundance taxa
+  arrange(Species) 
+```
+
+Re-Set color scale for graph
+```{r}
+#display.brewer.all(n=NULL, type="all", select=NULL, exact.n=TRUE,
+#colorblindFriendly=TRUE)
+
+colourCount <- 10 # max number of categories you need (10 because we are looking at top 10 genera)
+getPalette <- colorRampPalette(brewer.pal(10, "Paired")) # 10 is for the number of distinct colors to use, and 12 is the most for "Paired"
+
+```
+
+###PalmID
+
+```{r}
+
+ggplot(ps_species_veraguas, aes(x = PalmID, y = Abundance, fill = Species)) +
+  geom_bar(stat = "identity", position = "fill") + #width is individual bar width
+  facet_wrap(~HABITAT, scales = "free_x") +
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top 10 Genera") +
+  ggtitle("Genera Composition Across Veraguas")
+  #theme(legend.position = "none")
+```
+
+###Habitat type
+```{r}
+
+ggplot(ps_species_veraguas, aes(x = Sample_Name, y = Abundance, fill = Species)) +
+  geom_bar(stat = "identity", position = "fill") + #width is individual bar width
+  facet_wrap(~HABITAT, scales = "free_x") +
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top 10 Genera") +
+  ggtitle("Genera Composition Across Veraguas")
+  #theme(legend.position = "none")
+```
+
+###Tcruzi
+```{r}
+
+ggplot(ps_species_veraguas, aes(x = Sample_Name, y = Abundance, fill = Species)) +
+  geom_bar(stat = "identity", position = "fill") + #width is individual bar width
+  facet_wrap(~SingleInf_Tcruzi, scales = "free_x") +
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top 10 Genera") +
+  ggtitle("Genera Composition Across Veraguas")
+  #theme(legend.position = "none")
+```
+
+###Forest Tcruzi
+
+Reset using ony forest samples
+```{r}
+top10S.names = sort(tapply(taxa_sums(rpal_field_forest), tax_table(rpal_field_forest)[, "Species"], sum), TRUE)[1:10]
+#Cut down the physeq.tree data to only the top 10 Genus
+top10S = subset_taxa(rpal_field_forest, Species %in% names(top10S.names)) #new phyloseq object at top 20 ASVs
+
+```
+
+Convert to relative abundance
+```{r}
+ps_species_forest <- top10S %>%
+  tax_glom(taxrank = "Species") %>%                     # agglomerate at species level
+  transform_sample_counts(function(x) {x/sum(x)} ) %>% # Transform to rel. abundance
+  psmelt() %>%                                         # Melt to long format
+  filter(Abundance > 0.01) %>%                         # Filter out low abundance taxa
+  arrange(Species) 
+```
+
+####Plot
+```{r}
+
+ggplot(ps_species_forest, aes(x = Sample_Name, y = Abundance, fill = Species)) +
+  geom_bar(stat = "identity", position = "fill") + #width is individual bar width
+  facet_wrap(~SingleInf_Tcruzi, scales = "free_x") +
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top 10 Genera") +
+  ggtitle("Genera Composition Across Veraguas")
+  #theme(legend.position = "none")
+```
+
+##Capira
+Reset using only capira samples
+```{r}
+top10S.names = sort(tapply(taxa_sums(rpal_field_capira), tax_table(rpal_field_capira)[, "Species"], sum), TRUE)[1:10]
+#Cut down the physeq.tree data to only the top 10 Genus
+top10S = subset_taxa(rpal_field_capira, Species %in% names(top10S.names)) #new phyloseq object at top 20 ASVs
+
+```
+
+Convert to relative abundance
+```{r}
+ps_species_capira <- top10S %>%
+  tax_glom(taxrank = "Species") %>%                     # agglomerate at species level
+  transform_sample_counts(function(x) {x/sum(x)} ) %>% # Transform to rel. abundance
+  psmelt() %>%                                         # Melt to long format
+  filter(Abundance > 0.01) %>%                         # Filter out low abundance taxa
+  arrange(Species) 
+```
+
+####Habitat type
+```{r}
+
+ggplot(ps_species_capira, aes(x = Sample_Name, y = Abundance, fill = Species)) +
+  geom_bar(stat = "identity", position = "fill") + #width is individual bar width
+  facet_wrap(~HABITAT, scales = "free_x") +
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top 10 Genera") +
+  ggtitle("Genera Composition Across Capira")
+  #theme(legend.position = "none")
+```
+
+####Tcruzi
+```{r}
+
+ggplot(ps_species_capira, aes(x = Sample_Name, y = Abundance, fill = Species)) +
+  geom_bar(stat = "identity", position = "fill") + #width is individual bar width
+  facet_wrap(~SingleInf_Tcruzi, scales = "free_x") +
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top 10 Genera") +
+  ggtitle("Genera Composition Across Veraguas")
+  #theme(legend.position = "none")
+```
+
+PalmID
+```{r}
+
+ggplot(ps_species_capira, aes(x = PalmID, y = Abundance, fill = Species)) +
+  geom_bar(stat = "identity", position = "fill") + #width is individual bar width
+  #facet_wrap(~PalmID, scales = "free_x") +
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top 10 Genera") +
+  ggtitle("Genera Composition Across Capira")
+  #theme(legend.position = "none")
+```
+
+##Forest
+```{r}
+top10S.names = sort(tapply(taxa_sums(rpal_Palm_SF10), tax_table(rpal_Palm_SF10)[, "Species"], sum), TRUE)[1:10]
+#Cut down the physeq.tree data to only the top 10 Genus
+top10S = subset_taxa(rpal_Palm_SF10, Species %in% names(top10S.names)) #new phyloseq object at top 20 ASVs
+
+```
+
+Convert to relative abundance
+```{r}
+ps_species_Palm_SF10 <- top10S %>%
+  tax_glom(taxrank = "Species") %>%                     # agglomerate at species level
+  transform_sample_counts(function(x) {x/sum(x)} ) %>% # Transform to rel. abundance
+  psmelt() %>%                                         # Melt to long format
+  filter(Abundance > 0.01) %>%                         # Filter out low abundance taxa
+  arrange(Species) 
+```
+
+```{r}
+
+ggplot(ps_species_Palm_SF10, aes(x = Sample_Name, y = Abundance, fill = Species)) +
+  geom_bar(stat = "identity", position = "fill") + #width is individual bar width
+  facet_wrap(~FirstBM, scales = "free_x") +
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top 10 Genera") +
+  ggtitle("Genera Composition Across Capira")
+  #theme(legend.position = "none")
+```
+
+#Age
+##Phyla
+Prune to top 20 phyla - using rpal_field
+```{r}
+
+top10P.names = sort(tapply(taxa_sums(rpal_field), tax_table(rpal_field)[, "Phylum"], sum), TRUE)[1:10]
+#Cut down the physeq.tree data to only the top 10 Genus
+top10P = subset_taxa(rpal_field, Phylum %in% names(top10P.names)) #new phyloseq object at top 20 genera
+
+```
+
+
+Convert to relative abundance
+```{r}
+ps_phylum <- top10P %>%
+  tax_glom(taxrank = "Phylum") %>%                     # agglomerate at genus level
+  transform_sample_counts(function(x) {x/sum(x)} ) %>% # Transform to rel. abundance
+  psmelt() %>%                                         # Melt to long format
+  filter(Abundance > 0.01) %>%                         # Filter out low abundance taxa
+  arrange(Phylum) 
+```
+
+Re-Set color scale for graph
+```{r}
+#display.brewer.all(n=NULL, type="all", select=NULL, exact.n=TRUE,
+#colorblindFriendly=TRUE)
+
+colourCount <- 10 # max number of categories you need (10 because we are looking at top 10 genera)
+getPalette <- colorRampPalette(brewer.pal(10, "Paired")) # 10 is for the number of distinct colors to use, and 12 is the most for "Paired"
+
+```
+
+All Samples
+Relative abundance of top 10 genus 
+```{r}
+
+phyla_barplot <- ggplot(ps_phylum, aes(x = Sample_Name, y = Abundance, fill = Phylum)) + 
+  geom_bar(stat = "identity", position = "fill", width = .8) + #width is individual bar width
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  #scale_color_manual(breaks=c('Sphingomonas', 'Erwinia', 'Stenotrophomonas', 'Delftia', "Dietzia", "Staphylococcus", "Pseudomonas", "Corynebacterium", "Enterobacter", "Streptococcus")) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top Phyla") +
+  ggtitle("Genera Composition Across Samples") 
+  #theme(legend.position = "none")
+```
+
+
+Genus Relative Abundance
+All samples, Region, and Habitat
+Prune to top 20 genera - using rpal_field
+```{r}
+
+top10G.names = sort(tapply(taxa_sums(rpal_field), tax_table(rpal_field)[, "Genus"], sum), TRUE)[1:10]
+#Cut down the physeq.tree data to only the top 10 Genus
+top10G = subset_taxa(rpal_field, Genus %in% names(top10G.names)) #new phyloseq object at top 20 genera
+
+```
+
+Convert to relative abundance
+```{r}
+ps_genus <- top10G %>%
+  tax_glom(taxrank = "Genus") %>%                     # agglomerate at genus level
+  transform_sample_counts(function(x) {x/sum(x)} ) %>% # Transform to rel. abundance
+  psmelt() %>%                                         # Melt to long format
+  filter(Abundance > 0.01) %>%                         # Filter out low abundance taxa
+  arrange(Genus) 
+```
+
+Re-Set color scale for graph
+```{r}
+#display.brewer.all(n=NULL, type="all", select=NULL, exact.n=TRUE,
+#colorblindFriendly=TRUE)
+
+colourCount <- 10 # max number of categories you need (10 because we are looking at top 10 genera)
+getPalette <- colorRampPalette(brewer.pal(10, "Paired")) # 10 is for the number of distinct colors to use, and 12 is the most for "Paired"
+
+```
+
+All Samples
+Relative abundance of top 10 genus 
+```{r}
+
+ggplot(ps_genus, aes(x = Sample_Name, y = Abundance, fill = Genus)) + 
+  geom_bar(stat = "identity", position = "fill", width = 5) + #width is individual bar width
+  facet_grid(~Age_Group) +
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  scale_color_manual(breaks=c('Sphingomonas', 'Erwinia', 'Stenotrophomonas', 'Delftia', "Dietzia", "Staphylococcus", "Pseudomonas", "Corynebacterium", "Enterobacter", "Streptococcus")) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top 10 Genera") +
+  ggtitle("Genera Composition Across Samples") 
+  #theme(legend.position = "none")
+```
+
+Count data for top 10 genera
+```{r}
+TGroup <- tax_glom(top10G, taxrank = "Genus")
+PGroup <- transform_sample_counts(TGroup, function(x)100* x / sum(x))
+OTUg <- otu_table(PGroup)
+TAXg <- tax_table(PGroup)[,"Genus"]
+AverageD <- as.data.frame(rowMeans(OTUg))
+names(AverageD) <- c("Mean")
+GTable <- merge(TAXg, AverageD, by=0, all=TRUE)
+GTable$Row.names = NULL
+GTable <- GTable[order(desc(GTable$Mean)),]
+head(GTable)
+```
+
+
+##Species level
+```{r}
+
+################
+# to view all species, not just the top ones
+
+ALLSpecies.names = sort(tapply(taxa_sums(rpal_field), tax_table(rpal_field)[, "Species"], sum), TRUE)
+
+#Cut down the physeq.tree data to only the top 20 species
+ALLSpecies = subset_taxa(rpal_field, Species %in% names(ALLSpecies.names)) #new phyloseq object at top 20 ASVs
+
+#######################
+
+top10S.names = sort(tapply(taxa_sums(rpal_field), tax_table(rpal_field)[, "Species"], sum), TRUE)[1:10]
+#Cut down the physeq.tree data to only the top 10 species
+top10S = subset_taxa(rpal_field, Species %in% names(top10S.names)) #new phyloseq object at top 20 ASVs
+
+```
+
+Convert to relative abundance
+```{r}
+
+##### for all species, not just top ones
+ps_species_ALL <- ALLSpecies %>%
+  tax_glom(taxrank = "Species") %>%                     # agglomerate at species level
+  transform_sample_counts(function(x) {x/sum(x)} ) %>% # Transform to rel. abundance
+  psmelt() %>%                                         # Melt to long format
+  filter(Abundance > 0.01) %>%                         # Filter out low abundance taxa
+  arrange(Species)
+
+###########
+
+ps_species <- top10S %>%
+  tax_glom(taxrank = "Species") %>%                     # agglomerate at species level
+  transform_sample_counts(function(x) {x/sum(x)} ) %>% # Transform to rel. abundance
+  psmelt() %>%                                         # Melt to long format
+  filter(Abundance > 0.01) %>%                         # Filter out low abundance taxa
+  arrange(Species) 
+```
+
+write out csv of ASV table for species of all samples
+```{r}
+write_csv(ps_species_ALL, "ASV_Table_allSpecies.csv")
+
+```
+
+
+Re-Set color scale for graph
+```{r}
+#display.brewer.all(n=NULL, type="all", select=NULL, exact.n=TRUE,
+#colorblindFriendly=TRUE)
+
+colourCount <- 10 # max number of categories you need (10 because we are looking at top 10 genera)
+getPalette <- colorRampPalette(brewer.pal(10, "Paired")) # 10 is for the number of distinct colors to use, and 12 is the most for "Paired"
+
+```
+
+All Samples
+Relative abundance of top 10 genus 
+```{r}
+
+species_barplot <- ggplot(ps_species, aes(x = Sample_Name, y = Abundance, fill = Species)) +
+  geom_bar(stat = "identity", position = "fill") + #width is individual bar width
+  scale_fill_manual(values = getPalette(colourCount)) +
+  # Remove x axis title and axis ticks
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank()) + 
+    theme(plot.title = element_text(size = 12, hjust = 0.5, face = "bold")) +
+  theme(panel.border = element_blank(),
+    panel.background = element_blank()) +
+  guides(fill = guide_legend(reverse = TRUE, keywidth = 1, keyheight = 1)) +
+  scale_color_manual(breaks=c('Sphingomonas', 'Erwinia', 'Stenotrophomonas', 'Delftia', "Dietzia", "Staphylococcus", "Pseudomonas", "Corynebacterium", "Enterobacter", "Streptococcus")) +
+  labs(x = 'Samples', y = "Relative Abundance", fill = "Top 10 Genera") +
+  ggtitle("Genera Composition Across Samples")
+  #theme(legend.position = "none")
+```
+
+Count data for top 20 species
+```{r}
+TGroup <- tax_glom(top20S, taxrank = "Species")
+PGroup <- transform_sample_counts(TGroup, function(x)100* x / sum(x))
+OTUg <- otu_table(PGroup)
+TAXg <- tax_table(PGroup)[,"Species"]
+AverageD <- as.data.frame(rowMeans(OTUg))
+names(AverageD) <- c("Mean")
+GTable <- merge(TAXg, AverageD, by=0, all=TRUE)
+GTable$Row.names = NULL
+GTable <- GTable[order(desc(GTable$Mean)),]
+head(GTable)
+```
+
