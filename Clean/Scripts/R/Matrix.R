@@ -10,6 +10,18 @@ library(reshape2)
 library(ggplot2)
 
 meltData <- dcast(ASV_table, Sample_Name~OTU, fun.aggregate=length)
+write.csv(meltData, "./Clean/Metadata/meltData.csv")
+
+presabs_AllBugs <-ifelse(meltData>0,1,0)
+write.csv(presabs_AllBugs, "./Clean/Metadata/presabs_All.csv")
+
+meltData.V2 <- dcast(ASV_table, OTU~Sample_Name, fun.aggregate=length)
+write.csv(meltData.V2, "./Clean/Metadata/meltData.V2.csv")
+
+presabs_AllBugs.V2 <-ifelse(meltData.V2>0,1,0)
+write.csv(presabs_AllBugs.V2, "./Clean/Metadata/presabs_All.V2.csv")
+
+#####
 
 meltData_Region <- dcast(ASV_table, Region~OTU, fun.aggregate=length)
 
