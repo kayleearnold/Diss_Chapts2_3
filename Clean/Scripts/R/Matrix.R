@@ -1,19 +1,50 @@
 ## Reshape ASV Data
 
+library(here)
+library(readr)
+here()
 
-ASV_Table <- read_csv("ASV_Table_allSpecies.csv")
+ASV_table <- read_csv("./Clean/Metadata/ASV_Table_allSpecies.csv")
 
 library(reshape2)
 library(ggplot2)
-meltData <- dcast(ASV_Table, Sample_Name~OTU)
+
+meltData <- dcast(ASV_table, Sample_Name~OTU, fun.aggregate=length)
+
+meltData_Region <- dcast(ASV_table, Region~OTU, fun.aggregate=length)
+
+presabs_Region <-ifelse(meltData_Region>0,1,0)
+
+write.csv(presabs_Region, "./Clean/Metadata/presabs_Region.csv")
+
+####
+meltData_Habitat <- dcast(ASV_table, Habitat~OTU, fun.aggregate=length)
+
+presabs_Habitat <-ifelse(meltData_Habitat>0,1,0)
+write.csv(presabs_Habitat, "./Clean/Metadata/presabs_Habitat.csv")
+
+###
+meltData_Infection <- dcast(ASV_table, SingleInf_Tcruzi~OTU, fun.aggregate=length)
+
+presabs_Infection <-ifelse(meltData_Infection>0,1,0)
+write.csv(presabs_Infection, "./Clean/Metadata/presabs_Infection.csv")
+
+###
+meltData_BM <- dcast(ASV_table, TypeBM_Updated~OTU, fun.aggregate=length)
+
+presabs_BM <-ifelse(meltData_BM>0,1,0)
+write.csv(presabs_BM, "./Clean/Metadata/presabs_BM.csv")
 
 
-meltData <- ASV_Table %>% spread(variable = "OTU")
 
-matrix_ASVData <- matrix()
+meltData.1 <- melt(ASV_table, value.name = "OTU")
+
+meltData <- ASV_table %>% spread(variable = "OTU")
+
+matrix_ASVData <- matrix(meltData)
 
 
-ggplot(melt(ASV_Table), aes(OTU, Sample, fill = Phylum)) +
+ggplot(melt(ASV_table), aes(OTU, Sample, fill = Phylum)) +
   geom_tile(colour = "gray50") +
   scale_alpha_identity(guide = "none") +
   coord_equal(expand = 0) +
